@@ -2,7 +2,7 @@
 name: editor-local
 description: Prepare, abra e opere o editor local Me Ensina AI quando o usuário pedir para abrir o editor ou editar vídeos, legendas e imagens com este plugin.
 ---
-# Me Ensina AI Editor
+# Me Ensina AI — Editor de Vídeo 2.0
 
 Piloto para macOS Apple Silicon. Não exige que o usuário encontre ou instale o comando Codex no Terminal para abrir o editor. Este plugin oferece skill e inicializador; não declara MCP de edição da timeline.
 

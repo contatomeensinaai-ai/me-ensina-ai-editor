@@ -1,14 +1,14 @@
 {
   "name": "me-ensina-ai",
   "interface": {
-    "displayName": "Me Ensina Ai"
+    "displayName": "Me Ensina AI"
   },
   "plugins": [
     {
-      "name": "me-ensina-ai-editor",
+      "name": "me-ensina-ai-video-editor",
       "source": {
         "source": "local",
-        "path": "./plugins/me-ensina-ai-editor"
+        "path": "./plugins/me-ensina-ai-video-editor"
       },
       "policy": {
         "installation": "AVAILABLE",

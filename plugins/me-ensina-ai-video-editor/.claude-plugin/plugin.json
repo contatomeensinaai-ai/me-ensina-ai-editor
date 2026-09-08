@@ -1,7 +1,7 @@
 {
-  "name": "me-ensina-ai-editor",
-  "version": "0.1.2",
-  "description": "Prepare e abra o editor local Me Ensina AI. Piloto para Mac Apple Silicon.",
+  "name": "me-ensina-ai-video-editor",
+  "version": "2.0.0",
+  "description": "Me Ensina AI — Editor de Vídeo 2.0. Piloto local para Mac Apple Silicon.",
   "author": {
     "name": "Me Ensina AI"
   },

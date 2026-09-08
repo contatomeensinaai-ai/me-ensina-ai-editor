@@ -8,9 +8,9 @@
   },
   "plugins": [
     {
-      "name": "me-ensina-ai-editor",
-      "source": "./plugins/me-ensina-ai-editor",
-      "description": "Editor de vídeo local. Piloto para Claude Code em Mac Apple Silicon."
+      "name": "me-ensina-ai-video-editor",
+      "source": "./plugins/me-ensina-ai-video-editor",
+      "description": "Me Ensina AI — Editor de Vídeo 2.0. Piloto para Mac Apple Silicon."
     }
   ]
 }

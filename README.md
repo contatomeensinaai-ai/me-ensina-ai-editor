@@ -1,12 +1,16 @@
-# Me Ensina AI Editor
+# Me Ensina AI — Editor de Vídeo 2.0
 
 Editor local de vídeo com plugin para Codex. **Versão pública piloto para Mac com chip Apple Silicon (M1 ou mais recente).** Intel e Windows ainda não homologados.
 
+## Nome e atualização
+
+O plugin agora se chama **Me Ensina AI — Editor de Vídeo 2.0**, com identificador `me-ensina-ai-video-editor`, para distinguir de plugins anteriores. Atualize o marketplace e instale o novo identificador. O plugin antigo não é removido automaticamente. A versão 2.0.0 identifica este pacote; o runtime piloto continua usando a release 0.1.1 já validada, sem promessa de funcionalidades adicionais.
+
 ## Instalar no Claude Code
 
-Este repositório também contém `.claude-plugin/marketplace.json`, o formato exigido pelo Claude. Adicione o mesmo link na tela de marketplaces do Claude e instale **me-ensina-ai-editor**. Se a tentativa anterior falhou por manifesto ausente, tente adicionar novamente; se já estiver listado, atualize o marketplace.
+Este repositório também contém `.claude-plugin/marketplace.json`, o formato exigido pelo Claude. Adicione o mesmo link na tela de marketplaces do Claude e instale **me-ensina-ai-video-editor**. Se a tentativa anterior falhou por manifesto ausente, tente adicionar novamente; se já estiver listado, atualize o marketplace.
 
-Depois, no **Claude Code executando localmente no Mac**, peça: **Abra o editor Me Ensina AI**. A skill também pode ser chamada por `/me-ensina-ai-editor:editor-local`.
+Depois, no **Claude Code executando localmente no Mac**, peça: **Abra o editor Me Ensina AI**. A skill também pode ser chamada por `/me-ensina-ai-video-editor:editor-local`.
 
 O formato do marketplace/plugin foi validado pela CLI Claude. Isso não significa homologação do fluxo completo no Claude Desktop/Cowork: o launcher requer macOS Apple Silicon e não roda dentro de um container Linux. Os botões de IA específicos do Codex ainda dependem de uma instalação e conta Codex; não são convertidos em recursos Claude por instalar este plugin.
 
@@ -16,7 +20,7 @@ No Codex, abra **Plugins**, escolha a opção de adicionar/importar um **marketp
 
 **https://github.com/contatomeensinaai-ai/me-ensina-ai-editor**
 
-No marketplace **Me Ensina AI**, instale **Me Ensina AI Editor**. Abra uma conversa nova e peça:
+No marketplace **Me Ensina AI**, instale **Me Ensina AI — Editor de Vídeo 2.0**. Abra uma conversa nova e peça:
 
 > Abra o editor Me Ensina AI e me ajude a editar um vídeo.
 
@@ -42,13 +46,13 @@ Pasta local: `~/Library/Application Support/Me Ensina AI`. Não a apague para at
 
 ## Desenvolvimento
 
-O fonte da interface está em `editor-source/`; servidor em `runtime/`; catálogo em `.agents/plugins/marketplace.json`; skill em `plugins/me-ensina-ai-editor`.
+O fonte da interface está em `editor-source/`; servidor em `runtime/`; catálogo em `.agents/plugins/marketplace.json`; skill em `plugins/me-ensina-ai-video-editor`.
 
 Para registrar via CLI compatível, opcionalmente:
 
 ```sh
 codex plugin marketplace add https://github.com/contatomeensinaai-ai/me-ensina-ai-editor
-codex plugin add me-ensina-ai-editor@me-ensina-ai
+codex plugin add me-ensina-ai-video-editor@me-ensina-ai
 ```
 
 A release contém Node/npm oficiais e fonte. `setup-editor.mjs` verifica hashes dos arquivos vendor de uma revisão fixa do upstream, executa `npm ci --ignore-scripts` com lockfile e compila a interface. Bibliotecas de terceiros são obtidas diretamente das fontes originais na máquina de destino; a release não contém FFmpeg/libav compilados, modelos ou amostras de voz. Não rode esse setup em uma pasta compartilhada com conteúdo não confiável.
