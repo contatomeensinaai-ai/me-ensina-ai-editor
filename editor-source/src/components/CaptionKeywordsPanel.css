@@ -1,0 +1,10 @@
+.caption-keywords-panel { display: grid; gap: 10px; padding: 14px; border: 1px solid #ffffff1f; border-radius: 10px; }
+.caption-keywords-panel p, .caption-keywords-panel small { margin: 0; color: #aab8c1; font-size: 12px; line-height: 1.45; }
+.caption-keywords-panel label { display: grid; gap: 6px; font-size: 12px; }
+.caption-keywords-panel textarea { box-sizing: border-box; width: 100%; min-height: 64px; padding: 8px; border: 1px solid #ffffff35; border-radius: 6px; color: #eef5f7; background: #090e14; font: inherit; resize: vertical; }
+.caption-keywords-panel .caption-keywords-color { display: flex; align-items: center; justify-content: space-between; }
+.caption-keywords-color input { width: 44px; height: 36px; padding: 2px; border: 1px solid #ffffff35; border-radius: 6px; background: transparent; }
+.caption-keywords-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.caption-keywords-actions button { flex: 1; min-height: 40px; padding: 8px; border: 1px solid #ffffff35; border-radius: 6px; color: #eef5f7; background: #202c35; cursor: pointer; }
+.caption-keywords-actions button:disabled { opacity: .4; cursor: default; }
+.caption-keywords-panel :focus-visible { outline: 2px solid #35f0dd; outline-offset: 2px; }

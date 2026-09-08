@@ -1,0 +1,39 @@
+.caption-style-dialog {
+  width: min(420px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid #3a484f;
+  border-radius: 14px;
+  background: #141b22;
+  color: #eef5f7;
+  box-shadow: 0 24px 80px #0009;
+}
+
+.caption-style-dialog::backdrop { background: #0009; }
+.caption-style-dialog form { display: grid; gap: 16px; }
+.caption-style-dialog label { font-size: 16px; font-weight: 700; }
+.caption-style-dialog input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #66747d;
+  border-radius: 8px;
+  background: #090e14;
+  color: #eef5f7;
+  font-size: 16px;
+}
+.caption-style-dialog footer { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.caption-style-dialog button {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #66747d;
+  border-radius: 8px;
+  background: #202c35;
+  color: #eef5f7;
+  cursor: pointer;
+}
+.caption-style-dialog button[type="submit"] { background: #35ead9; color: #062621; border-color: #35ead9; font-weight: 700; }
+.caption-style-dialog :focus-visible { outline: 2px solid #5df7e7; outline-offset: 3px; }

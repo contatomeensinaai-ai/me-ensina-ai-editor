@@ -1,0 +1,14 @@
+node_modules/
+dist/
+editor/
+bin/
+lib/
+*.zip
+*.tar.gz
+*.log
+.DS_Store
+.env*
+!*.example
+editor-source/public/vendor/
+editor-source/src/vendor/**/*.wasm
+editor-source/src/vendor/**/*.mjs

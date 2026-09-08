@@ -1,0 +1,20 @@
+{
+  "name": "me-ensina-ai",
+  "interface": {
+    "displayName": "Me Ensina Ai"
+  },
+  "plugins": [
+    {
+      "name": "me-ensina-ai-editor",
+      "source": {
+        "source": "local",
+        "path": "./plugins/me-ensina-ai-editor"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

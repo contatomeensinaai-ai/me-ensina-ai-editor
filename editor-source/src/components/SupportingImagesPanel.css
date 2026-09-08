@@ -1,0 +1,24 @@
+.supporting-images-panel { display: grid; gap: 12px; min-width: 0; padding: 12px; color: inherit; }
+.supporting-images-panel h3, .supporting-images-panel p, .supporting-images-panel figure { margin: 0; }
+.supporting-images-panel label { display: grid; gap: 6px; font-size: 12px; min-width: 0; }
+.supporting-images-panel input, .supporting-images-panel textarea, .supporting-images-panel select { width: 100%; min-width: 0; box-sizing: border-box; color: inherit; background: var(--panel-bg, #202126); border: 1px solid #626570; border-radius: 6px; padding: 8px; }
+.supporting-images-panel input[type="range"] { padding: 0; }
+.supporting-images-panel input[type="file"] { font-size: 11px; }
+.supporting-images-panel textarea { resize: vertical; }
+.supporting-images-panel button { min-height: 36px; padding: 7px 10px; white-space: normal; overflow-wrap: anywhere; }
+.supporting-images-panel :is(button, input, textarea, select, summary):focus-visible { outline: 2px solid #74caff; outline-offset: 3px; }
+.supporting-images-panel small, .supporting-images-panel p { font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.supporting-images-panel fieldset { display: grid; gap: 10px; padding: 10px; min-width: 0; border: 1px solid #626570; border-radius: 8px; }
+.supporting-image-library { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; }
+.supporting-image-library figure { min-width: 0; display: grid; gap: 5px; }
+.supporting-image-library img { width: 100%; height: 90px; object-fit: contain; background: #111; }
+.supporting-image-library figcaption { font-size: 11px; overflow-wrap: anywhere; }
+.supporting-time-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.supporting-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.supporting-actions button { flex: 1 1 100px; }
+.supporting-preview { display: grid; gap: 8px; }
+.supporting-preview-frame { width: 100%; max-width: 240px; margin: auto; background: #000; overflow: hidden; }
+.supporting-preview-frame > div { width: 100%; overflow: hidden; }
+.supporting-preview-frame :is(img, video) { width: 100%; height: 100%; object-fit: contain; display: block; }
+.supporting-images-panel details { min-width: 0; }
+.supporting-images-panel details[open] { display: grid; gap: 10px; }

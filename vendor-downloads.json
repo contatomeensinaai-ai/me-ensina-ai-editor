@@ -1,0 +1,62 @@
+[
+  {
+    "path": "public/vendor/opencv.js",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/opencv.js",
+    "sha256": "6876ef3eedf2d1baf72f101199fa9e1c1a7893e5df0fa7a75dffc2c0e717db05"
+  },
+  {
+    "path": "public/vendor/migan-ort/ort-wasm-simd.jsep.wasm",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/migan-ort/ort-wasm-simd.jsep.wasm",
+    "sha256": "4e5a1310493aa5a7c5e1e49068a10f8280886cc4d491f353ef2bfaef89590853"
+  },
+  {
+    "path": "public/vendor/vocal-remover/tf.min.js",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/vocal-remover/tf.min.js",
+    "sha256": "300dfae273d20b4046f46a06d735688f03675a807561e9bcb5f664eb2f3d2831"
+  },
+  {
+    "path": "public/vendor/vocal-remover/tf-backend-webgpu.js",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/vocal-remover/tf-backend-webgpu.js",
+    "sha256": "c02ae6ef5e7fff6dc9cec8b14b45e36e8894614f3ef006973e98f7568b590f3f"
+  },
+  {
+    "path": "public/vendor/mediapipe/vision/vision_wasm_nosimd_internal.wasm",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/mediapipe/vision/vision_wasm_nosimd_internal.wasm",
+    "sha256": "850d2d7b318c017e71c11b712947df65088e966de3453b9cdf263556d8ae47a6"
+  },
+  {
+    "path": "public/vendor/mediapipe/vision/vision_wasm_nosimd_internal.js",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/mediapipe/vision/vision_wasm_nosimd_internal.js",
+    "sha256": "d800583847e99502e839483b17392bce00f72681881618c0ffd4dff252864eb0"
+  },
+  {
+    "path": "public/vendor/mediapipe/vision/vision_wasm_module_internal.wasm",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/mediapipe/vision/vision_wasm_module_internal.wasm",
+    "sha256": "1ae2e642e25b4def087b4108ec0478e03f85561ec8b0e915b6c994c562face04"
+  },
+  {
+    "path": "public/vendor/mediapipe/vision/vision_wasm_internal.wasm",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/mediapipe/vision/vision_wasm_internal.wasm",
+    "sha256": "c266c65f3789bea74ab12dd6609edc96c68655da4540d6097d0732d8be80b742"
+  },
+  {
+    "path": "public/vendor/mediapipe/vision/vision_wasm_module_internal.js",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/mediapipe/vision/vision_wasm_module_internal.js",
+    "sha256": "2f6ed70d58a5a79797ea3694f08f6c433a5556fe9c11b2f93e27f559a9643c55"
+  },
+  {
+    "path": "public/vendor/mediapipe/vision/vision_wasm_internal.js",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/public/vendor/mediapipe/vision/vision_wasm_internal.js",
+    "sha256": "539f53000d418a0f68957a36d7814654964b8f578d0eb05247e060a0a96f44f0"
+  },
+  {
+    "path": "src/vendor/libav-timeline-compat/libav-6.9.8.1-timeline-compat.wasm.mjs",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/src/vendor/libav-timeline-compat/libav-6.9.8.1-timeline-compat.wasm.mjs",
+    "sha256": "792f84a639afc707a4b047f4a3d9d977c61e409e4a5d0d2221a7a815c36498b6"
+  },
+  {
+    "path": "src/vendor/libav-timeline-compat/libav-6.9.8.1-timeline-compat.wasm.wasm",
+    "url": "https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/src/vendor/libav-timeline-compat/libav-6.9.8.1-timeline-compat.wasm.wasm",
+    "sha256": "5267e3b27c68f664022a2c1de41b95ae963d8ebf265524f4f360e9155111567c"
+  }
+]

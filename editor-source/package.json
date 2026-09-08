@@ -1,0 +1,60 @@
+{
+  "name": "web-player",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first browser AI video editor for WebGPU AI music, AI repair, voiceovers, captions, talking avatars, and deterministic export.",
+  "license": "MIT",
+  "homepage": "https://video-editor.ai-creator.top/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MartinDelophy/ai-video-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MartinDelophy/ai-video-editor/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@diffusionstudio/vits-web": "^1.0.3",
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
+    "@heyputer/puter.js": "^2.6.2",
+    "@huggingface/transformers": "^3.8.1",
+    "@libav.js/variant-webcodecs": "^6.9.8",
+    "@mediabunny/aac-encoder": "^1.50.8",
+    "@mediapipe/tasks-vision": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@phosphor-icons/react": "^2.1.10",
+    "fflate": "^0.8.3",
+    "hangul-romanization": "^1.0.1",
+    "kokoro-js": "^1.2.1",
+    "mediabunny": "^1.50.8",
+    "onnxruntime-web": "^1.27.0",
+    "onnxruntime-web-migan": "npm:onnxruntime-web@^1.16.3",
+    "pinyin-pro": "^3.27.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-react": "^5.0.4",
+    "eslint": "^10.7.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5",
+    "typescript": "^7.0.2",
+    "vite": "^6.4.2"
+  },
+  "overrides": {
+    "tar": "7.5.21"
+  }
+}
