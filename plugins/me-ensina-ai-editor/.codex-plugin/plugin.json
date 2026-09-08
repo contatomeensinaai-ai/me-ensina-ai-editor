@@ -1,6 +1,6 @@
 {
   "name": "me-ensina-ai-editor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Editor local de vídeo Me Ensina AI com preparação guiada pelo Codex. Piloto para Mac Apple Silicon.",
   "author": {
     "name": "Me Ensina AI"

@@ -1,0 +1,16 @@
+{
+  "name": "me-ensina-ai-editor",
+  "version": "0.1.2",
+  "description": "Prepare e abra o editor local Me Ensina AI. Piloto para Mac Apple Silicon.",
+  "author": {
+    "name": "Me Ensina AI"
+  },
+  "homepage": "https://github.com/contatomeensinaai-ai/me-ensina-ai-editor",
+  "repository": "https://github.com/contatomeensinaai-ai/me-ensina-ai-editor",
+  "license": "MIT",
+  "keywords": [
+    "video",
+    "editor",
+    "macos"
+  ]
+}

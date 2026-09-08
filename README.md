@@ -2,6 +2,14 @@
 
 Editor local de vídeo com plugin para Codex. **Versão pública piloto para Mac com chip Apple Silicon (M1 ou mais recente).** Intel e Windows ainda não homologados.
 
+## Instalar no Claude Code
+
+Este repositório também contém `.claude-plugin/marketplace.json`, o formato exigido pelo Claude. Adicione o mesmo link na tela de marketplaces do Claude e instale **me-ensina-ai-editor**. Se a tentativa anterior falhou por manifesto ausente, tente adicionar novamente; se já estiver listado, atualize o marketplace.
+
+Depois, no **Claude Code executando localmente no Mac**, peça: **Abra o editor Me Ensina AI**. A skill também pode ser chamada por `/me-ensina-ai-editor:editor-local`.
+
+O formato do marketplace/plugin foi validado pela CLI Claude. Isso não significa homologação do fluxo completo no Claude Desktop/Cowork: o launcher requer macOS Apple Silicon e não roda dentro de um container Linux. Os botões de IA específicos do Codex ainda dependem de uma instalação e conta Codex; não são convertidos em recursos Claude por instalar este plugin.
+
 ## Instalar pelo Codex
 
 No Codex, abra **Plugins**, escolha a opção de adicionar/importar um **marketplace** e informe este repositório:
