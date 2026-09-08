@@ -1,7 +1,7 @@
 {
-  "name": "me-ensina-ai",
+  "name": "me-ensina-ai-video-2",
   "interface": {
-    "displayName": "Me Ensina AI"
+    "displayName": "Me Ensina AI — Editor de Vídeo 2.0"
   },
   "plugins": [
     {

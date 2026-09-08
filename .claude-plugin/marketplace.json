@@ -1,10 +1,10 @@
 {
-  "name": "me-ensina-ai",
+  "name": "me-ensina-ai-video-2",
   "owner": {
     "name": "Me Ensina AI"
   },
   "metadata": {
-    "description": "Plugins Me Ensina AI para edição local de vídeo."
+    "description": "Me Ensina AI — Editor de Vídeo 2.0"
   },
   "plugins": [
     {

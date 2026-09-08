@@ -2,6 +2,12 @@
 
 Editor local de vídeo com plugin para Codex. **Versão pública piloto para Mac com chip Apple Silicon (M1 ou mais recente).** Intel e Windows ainda não homologados.
 
+## Arquivo para instalar no Claude
+
+Se preferir a opção **Enviar/Upload de plugin**, baixe **Me-Ensina-AI-Editor-de-Video-2.0-Claude.zip** na [release do plugin 2.0](https://github.com/contatomeensinaai-ai/me-ensina-ai-editor/releases/tag/plugin-v2.0.0). Este é o ZIP do plugin, diferente do pacote de preparação do editor.
+
+Marketplace exclusivo: `me-ensina-ai-video-2`. Plugin: `me-ensina-ai-video-editor`. Os manifestos internos continuam com os nomes exigidos pelo Claude.
+
 ## Nome e atualização
 
 O plugin agora se chama **Me Ensina AI — Editor de Vídeo 2.0**, com identificador `me-ensina-ai-video-editor`, para distinguir de plugins anteriores. Atualize o marketplace e instale o novo identificador. O plugin antigo não é removido automaticamente. A versão 2.0.0 identifica este pacote; o runtime piloto continua usando a release 0.1.1 já validada, sem promessa de funcionalidades adicionais.
@@ -20,7 +26,7 @@ No Codex, abra **Plugins**, escolha a opção de adicionar/importar um **marketp
 
 **https://github.com/contatomeensinaai-ai/me-ensina-ai-editor**
 
-No marketplace **Me Ensina AI**, instale **Me Ensina AI — Editor de Vídeo 2.0**. Abra uma conversa nova e peça:
+No marketplace **Me Ensina AI — Editor de Vídeo 2.0**, instale **Me Ensina AI — Editor de Vídeo 2.0**. Abra uma conversa nova e peça:
 
 > Abra o editor Me Ensina AI e me ajude a editar um vídeo.
 
@@ -52,7 +58,7 @@ Para registrar via CLI compatível, opcionalmente:
 
 ```sh
 codex plugin marketplace add https://github.com/contatomeensinaai-ai/me-ensina-ai-editor
-codex plugin add me-ensina-ai-video-editor@me-ensina-ai
+codex plugin add me-ensina-ai-video-editor@me-ensina-ai-video-2
 ```
 
 A release contém Node/npm oficiais e fonte. `setup-editor.mjs` verifica hashes dos arquivos vendor de uma revisão fixa do upstream, executa `npm ci --ignore-scripts` com lockfile e compila a interface. Bibliotecas de terceiros são obtidas diretamente das fontes originais na máquina de destino; a release não contém FFmpeg/libav compilados, modelos ou amostras de voz. Não rode esse setup em uma pasta compartilhada com conteúdo não confiável.
