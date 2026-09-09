@@ -62,6 +62,11 @@ a:hover{color:var(--blue-400)}
 .cmdhead span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3)}
 .cmdbody{margin:0;padding:14px 15px;font-family:var(--fmono);font-size:12.5px;line-height:1.85;
   color:var(--gold-50);white-space:pre-wrap;word-break:break-all}
+.alt{font-size:13.5px;color:var(--tx3);margin:12px 0 4px}
+.lnk{background:none;border:none;color:var(--blue-300);font-family:var(--fmain);font-size:13.5px;
+  font-weight:600;cursor:pointer;padding:0;border-bottom:1px dashed rgba(107,154,255,.45)}
+.lnk:hover{color:var(--blue-400)}
+.hide{display:none}
 .cp{background:var(--bg3);border:1px solid var(--line);
   color:var(--tx2);border-radius:7px;padding:6px 12px;font-family:var(--fmain);font-size:11px;
   font-weight:600;cursor:pointer;transition:all .15s;flex:none}
@@ -120,9 +125,14 @@ footer div{margin:6px 0}
     <div class="card">
       <h3><span class="dot d-gold"></span> Claude Code</h3>
       <p class="mkt">marketplace: me-ensina-ai-claude</p>
-      <p class="hint"><strong>É um plugin só.</strong> São dois comandos porque o primeiro cadastra a loja no seu Claude e o segundo instala o plugin que está nela. Cole os dois juntos, de uma vez.</p>
+      <p class="hint"><strong>Você não precisa saber comando.</strong> Copie a frase abaixo, cole na conversa do Claude e mande. Ele instala sozinho e pede sua autorização no caminho.</p>
       <div class="cmdbox">
-        <div class="cmdhead"><span>os 2 comandos</span><button class="cp" data-t="cmd-claude">Copiar</button></div>
+        <div class="cmdhead"><span>cole isso na conversa</span><button class="cp" data-t="frase-claude">Copiar</button></div>
+        <pre class="cmdbody" id="frase-claude">Instala o plugin do Editor de Vídeo da Me Ensina AI. Adiciona o marketplace contatomeensinaai-ai/me-ensina-ai-claude e instala o plugin me-ensina-ai-video-editor.</pre>
+      </div>
+      <p class="alt">Prefere fazer na mão? <button class="lnk" data-x="man-claude">mostrar os comandos</button></p>
+      <div class="cmdbox hide" id="man-claude">
+        <div class="cmdhead"><span>é um plugin só, são 2 comandos</span><button class="cp" data-t="cmd-claude">Copiar</button></div>
         <pre class="cmdbody" id="cmd-claude">claude plugin marketplace add contatomeensinaai-ai/me-ensina-ai-claude
 claude plugin install me-ensina-ai-video-editor@me-ensina-ai-claude</pre>
       </div>
@@ -142,9 +152,9 @@ claude plugin install me-ensina-ai-video-editor@me-ensina-ai-claude</pre>
   <h2>Passo a passo, no Claude Code</h2>
 
   <div class="step"><div class="num">1</div><div>
-    <h3>Cole os dois comandos</h3>
-    <p>Copie o bloco acima e cole no Claude Code. O primeiro comando cadastra a loja da Me Ensina AI, o segundo instala o plugin que está nela. <strong>É um plugin só</strong>, e você faz isso uma vez na vida.</p>
-    <p>Se aparecer <code>Successfully installed plugin</code>, deu certo.</p>
+    <h3>Cole a frase na conversa</h3>
+    <p>Copie o bloco acima, cole na conversa do Claude e mande. Ele cadastra a loja da Me Ensina AI e instala o plugin sozinho, pedindo sua autorização no caminho. <strong>É um plugin só</strong>, e você faz isso uma vez na vida.</p>
+    <p>Deu certo quando aparecer <code>Successfully installed plugin</code>.</p>
   </div></div>
 
   <div class="step"><div class="num">2</div><div>
@@ -229,6 +239,11 @@ async function copy(text,el,txt){
 document.querySelectorAll('.cp').forEach(b=>b.addEventListener('click',()=>{
   const box=document.getElementById(b.dataset.t);
   copy(box.textContent.trim(),b,'Copiado');
+}));
+document.querySelectorAll('.lnk[data-x]').forEach(b=>b.addEventListener('click',()=>{
+  const box=document.getElementById(b.dataset.x);
+  box.classList.toggle('hide');
+  b.textContent = box.classList.contains('hide') ? 'mostrar os comandos' : 'esconder os comandos';
 }));
 document.querySelectorAll('.btn[data-copy]').forEach(b=>b.addEventListener('click',()=>{
   copy(b.dataset.copy,b,'Link copiado');
