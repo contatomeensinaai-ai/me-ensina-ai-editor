@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editor de Vídeo Me Ensina AI</title>
+<meta name="description" content="Editor de vídeo local que abre dentro da conversa. Instalação por marketplace para Claude Code e Codex.">
+<style>
+:root{
+  --bg:#0b0f14; --card:#121821; --line:#1e2733; --tx:#e8eef6; --dim:#93a3b8;
+  --ac:#35f0dd; --ac2:#7c5cff; --code:#0a0e13;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+header{padding:76px 0 54px;border-bottom:1px solid var(--line);
+  background:radial-gradient(900px 380px at 15% -10%,rgba(53,240,221,.13),transparent 60%),
+             radial-gradient(700px 340px at 90% 0,rgba(124,92,255,.13),transparent 60%)}
+.tag{display:inline-block;font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ac);border:1px solid rgba(53,240,221,.32);border-radius:999px;padding:5px 13px;margin-bottom:22px}
+h1{font-size:clamp(30px,5.5vw,46px);line-height:1.12;margin:0 0 16px;letter-spacing:-.02em}
+.lead{font-size:19px;color:var(--dim);max-width:640px;margin:0}
+h2{font-size:25px;margin:56px 0 10px;letter-spacing:-.01em}
+h3{font-size:17px;margin:26px 0 8px}
+p{color:var(--dim)}
+p strong,li strong{color:var(--tx)}
+section{padding-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{margin-top:0;font-size:19px;display:flex;align-items:center;gap:9px}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.c-claude{background:var(--ac)} .c-codex{background:var(--ac2)}
+pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:15px;
+  overflow-x:auto;margin:12px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px}
+pre code{color:#bff5ee}
+p code,li code{background:var(--code);border:1px solid var(--line);border-radius:5px;
+  padding:1px 6px;font-size:13.5px;color:#bff5ee}
+ul{color:var(--dim);padding-left:20px}
+li{margin:9px 0}
+.note{border-left:3px solid var(--ac);background:rgba(53,240,221,.06);
+  border-radius:0 10px 10px 0;padding:15px 18px;margin:20px 0}
+.warn{border-left-color:#ffb347;background:rgba(255,179,71,.07)}
+.note p{margin:0;color:var(--tx)}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}
+th{color:var(--tx);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+td{color:var(--dim)}
+a{color:var(--ac)}
+footer{margin-top:66px;padding:30px 0 60px;border-top:1px solid var(--line);color:var(--dim);font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="tag">Me Ensina AI</span>
+    <h1>Editor de vídeo que abre dentro da sua conversa</h1>
+    <p class="lead">Você pede, o editor abre no painel ao lado. Corta, legenda e exporta conversando, sem sair da janela e sem instalar nada no Terminal.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <h2>Escolha a sua versão</h2>
+  <p>São dois marketplaces separados, um para cada ferramenta. Instale só o da sua. Ativar os dois na mesma conversa causa confusão.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3><span class="dot c-claude"></span> Claude Code</h3>
+      <p>Marketplace <code>me-ensina-ai-claude</code></p>
+      <pre><code>claude plugin marketplace add contatomeensinaai-ai/me-ensina-ai-claude
+
+claude plugin install me-ensina-ai-video-editor@me-ensina-ai-claude</code></pre>
+      <p>Dentro de uma sessão interativa, o equivalente é <code>/plugin marketplace add</code> seguido de <code>/plugin install</code>.</p>
+      <p><a href="https://github.com/contatomeensinaai-ai/me-ensina-ai-claude">Ver repositório</a></p>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot c-codex"></span> Codex</h3>
+      <p>Marketplace <code>me-ensina-ai-codex</code></p>
+      <pre><code>https://github.com/contatomeensinaai-ai/me-ensina-ai-codex</code></pre>
+      <p>Adicione esse repositório como marketplace no Codex e instale o plugin <code>me-ensina-ai-video-codex</code>.</p>
+      <p><a href="https://github.com/contatomeensinaai-ai/me-ensina-ai-codex">Ver repositório</a></p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p>Depois de instalar, abra uma conversa nova e peça: <strong>"Abre o editor Me Ensina AI"</strong>. Você não precisa procurar arquivo, clicar em nada, nem abrir o Terminal.</p>
+  </div>
+</section>
+
+<section>
+  <h2>O que roda</h2>
+  <table>
+    <tr><th>Sistema</th><th>Situação</th></tr>
+    <tr><td>Mac Apple Silicon (M1 em diante)</td><td>Suportado</td></tr>
+    <tr><td>Mac Intel</td><td>Suportado</td></tr>
+    <tr><td>Windows 10 e 11, 64 bits</td><td>Suportado</td></tr>
+    <tr><td>Windows ARM, Linux, WSL, containers</td><td>Não suportado</td></tr>
+  </table>
+  <p>No Windows, use disco local. Pasta de rede não funciona.</p>
+</section>
+
+<section>
+  <h2>A primeira abertura demora</h2>
+  <p>Na primeira vez, o editor baixa o pacote e prepara as bibliotecas. Isso leva alguns minutos e é normal. Cada biblioteca é conferida por assinatura SHA-256 antes de ser usada, e o pacote inteiro também.</p>
+  <p><strong>Nenhum modelo de IA é baixado nessa etapa.</strong> Da segunda vez em diante, o editor sobe em segundos.</p>
+</section>
+
+<section>
+  <h2>Dicas de quem já usou</h2>
+
+  <h3>Não vejo o editor, só a conversa</h3>
+  <p>O editor abre no painel de navegador do Claude, e esse painel pode estar recolhido na sua janela. Abra o painel e ele está lá. Não peça para abrir de novo, isso não resolve.</p>
+
+  <h3>Fechei a janela e ele continua rodando</h3>
+  <p>Fechar a aba ou a janela do navegador <strong>não desliga o editor</strong>. Ele é um programa rodando no seu computador, e a página é só a tela dele. Se quiser trocar de versão ou reiniciar, peça isso ao assistente.</p>
+
+  <h3>Não consigo editar o texto da legenda</h3>
+  <p>Consegue. O campo <strong>Texto da legenda</strong> fica num painel que rola, e às vezes ele nasce acima da área visível. Role o painel para cima que o campo aparece. Ou simplesmente peça: "role até o campo de texto da legenda".</p>
+
+  <h3>Meu projeto sumiu quando reabri</h3>
+  <p>Ele fica salvo no navegador. Ao reabrir, o editor pergunta <strong>"Recuperar o projeto anterior?"</strong>. Clique em recuperar. Cuidado: a outra opção começa um projeto novo e descarta o anterior.</p>
+
+  <h3>Alguns botões de IA não funcionam</h3>
+  <p>Os botões de sugerir palavras, imagens de apoio e restauração dependem de uma ferramenta externa instalada na sua máquina, com a sua própria conta. Sem ela, esses botões ficam indisponíveis. <strong>Todo o resto funciona</strong>: importar, cortar, legendar, estilizar e exportar.</p>
+
+  <h3>Antes de publicar, assista</h3>
+  <p>O assistente enxerga a estrutura do vídeo, não escuta o áudio. Ele acerta o corte e o tempo, mas quem julga se a fala ficou boa é você. Assista antes de postar.</p>
+</section>
+
+<section>
+  <h2>Seus dados</h2>
+  <p>Tudo fica na sua máquina. O projeto é salvo no seu navegador e os arquivos ficam em <code>Library/Application Support/Me Ensina AI</code> no Mac ou <code>%LOCALAPPDATA%\Me Ensina AI</code> no Windows. Nenhuma credencial vem dentro do pacote.</p>
+  <div class="note warn">
+    <p>Este é um piloto. Se algo quebrar, mande a <strong>mensagem de erro exata</strong> que aparecer. "Não funcionou" não dá para consertar.</p>
+  </div>
+</section>
+
+<footer>
+  <div>Fonte, releases e licenças: <a href="https://github.com/contatomeensinaai-ai/me-ensina-ai-editor">me-ensina-ai-editor</a></div>
+  <div>Adaptado pela Me Ensina AI da base Timeline Studio de MartinDelophy. Licença MIT original preservada.</div>
+</footer>
+
+</div>
+</body>
+</html>
