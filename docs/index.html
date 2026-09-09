@@ -3,93 +3,157 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Editor de Vídeo Me Ensina AI</title>
-<meta name="description" content="Editor de vídeo local que abre dentro da conversa. Instalação por marketplace para Claude Code e Codex.">
+<title>Editor de Vídeo · Me Ensina AI</title>
+<meta name="description" content="Editor de vídeo local que abre dentro da conversa. Como instalar no Claude Code e no Codex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0b0f14; --card:#121821; --line:#1e2733; --tx:#e8eef6; --dim:#93a3b8;
-  --ac:#35f0dd; --ac2:#7c5cff; --code:#0a0e13;
+  --gold-50:#FFF8E7; --gold-200:#FFD980; --gold-300:#FFCA50;
+  --gold-400:#F5A623; --gold-500:#E8961E; --gold-600:#CC7A00;
+  --blue-300:#6B9AFF; --blue-400:#4D7CFF; --blue-500:#3A66E0;
+  --bg:#0A0A0F; --bg2:#12121A; --bg3:#1A1A25; --card:#151520;
+  --line:#252535; --line-h:#353545;
+  --tx:#FFFFFF; --tx2:#9898AA; --tx3:#65657A;
+  --ok:#00E68A; --warn:#FFD166; --err:#FF6B6B;
+  --fmain:'Inter',system-ui,-apple-system,sans-serif;
+  --fmono:'JetBrains Mono',ui-monospace,Menlo,monospace;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);
-  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased}
-.wrap{max-width:920px;margin:0 auto;padding:0 22px}
-header{padding:76px 0 54px;border-bottom:1px solid var(--line);
-  background:radial-gradient(900px 380px at 15% -10%,rgba(53,240,221,.13),transparent 60%),
-             radial-gradient(700px 340px at 90% 0,rgba(124,92,255,.13),transparent 60%)}
-.tag{display:inline-block;font-size:12px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ac);border:1px solid rgba(53,240,221,.32);border-radius:999px;padding:5px 13px;margin-bottom:22px}
-h1{font-size:clamp(30px,5.5vw,46px);line-height:1.12;margin:0 0 16px;letter-spacing:-.02em}
-.lead{font-size:19px;color:var(--dim);max-width:640px;margin:0}
-h2{font-size:25px;margin:56px 0 10px;letter-spacing:-.01em}
-h3{font-size:17px;margin:26px 0 8px}
-p{color:var(--dim)}
-p strong,li strong{color:var(--tx)}
-section{padding-bottom:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:26px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
-.card h3{margin-top:0;font-size:19px;display:flex;align-items:center;gap:9px}
-.dot{width:9px;height:9px;border-radius:50%;flex:none}
-.c-claude{background:var(--ac)} .c-codex{background:var(--ac2)}
-pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:15px;
-  overflow-x:auto;margin:12px 0}
-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px}
-pre code{color:#bff5ee}
-p code,li code{background:var(--code);border:1px solid var(--line);border-radius:5px;
-  padding:1px 6px;font-size:13.5px;color:#bff5ee}
-ul{color:var(--dim);padding-left:20px}
-li{margin:9px 0}
-.note{border-left:3px solid var(--ac);background:rgba(53,240,221,.06);
-  border-radius:0 10px 10px 0;padding:15px 18px;margin:20px 0}
-.warn{border-left-color:#ffb347;background:rgba(255,179,71,.07)}
-.note p{margin:0;color:var(--tx)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:var(--fmain);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px}
+
+header{padding:84px 0 60px;
+  background:radial-gradient(760px 340px at 12% -12%,rgba(245,166,35,.16),transparent 62%),
+             radial-gradient(680px 320px at 92% -4%,rgba(77,124,255,.14),transparent 62%);
+  border-bottom:1px solid var(--line)}
+.bolt{font-size:34px;filter:drop-shadow(0 0 14px rgba(245,166,35,.65));margin-bottom:14px}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold-400);border:1px solid rgba(245,166,35,.34);border-radius:999px;padding:6px 14px;margin-bottom:22px}
+h1{font-weight:800;font-size:clamp(31px,5.4vw,48px);line-height:1.1;margin:0 0 18px;letter-spacing:-.025em;
+  background:linear-gradient(180deg,var(--gold-200),var(--gold-400),var(--gold-600));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:19px;color:var(--tx2);max-width:660px;margin:0}
+
+h2{font-weight:800;font-size:27px;margin:60px 0 8px;letter-spacing:-.015em}
+h3{font-weight:700;font-size:17px;margin:26px 0 6px;color:var(--tx)}
+p{color:var(--tx2);margin:10px 0}
+p strong,li strong{color:var(--tx);font-weight:600}
+ul{color:var(--tx2);padding-left:20px} li{margin:8px 0}
+a{color:var(--blue-300);text-decoration:none;border-bottom:1px solid rgba(107,154,255,.3)}
+a:hover{color:var(--blue-400)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:border-color .2s}
+.card:hover{border-color:var(--line-h)}
+.card h3{margin-top:0;font-size:20px;font-weight:800;display:flex;align-items:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.d-gold{background:var(--gold-400);box-shadow:0 0 10px rgba(245,166,35,.6)}
+.d-blue{background:var(--blue-400);box-shadow:0 0 10px rgba(77,124,255,.6)}
+.mkt{font-family:var(--fmono);font-size:13px;color:var(--tx3);margin:0 0 16px}
+
+.cmd{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:10px;
+  padding:14px 52px 14px 15px;margin:10px 0;font-family:var(--fmono);font-size:13px;
+  color:var(--gold-50);overflow-x:auto;white-space:pre}
+.cp{position:absolute;top:8px;right:8px;background:var(--bg3);border:1px solid var(--line);
+  color:var(--tx2);border-radius:7px;padding:6px 10px;font-family:var(--fmain);font-size:11px;
+  font-weight:600;cursor:pointer;transition:all .15s}
+.cp:hover{border-color:var(--blue-400);color:var(--blue-300)}
+.cp.ok{border-color:var(--ok);color:var(--ok)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue-400);color:#fff;
+  border:none;border-radius:10px;padding:11px 18px;font-family:var(--fmain);font-size:14px;
+  font-weight:600;cursor:pointer;transition:all .15s;margin-top:6px}
+.btn:hover{background:var(--blue-500)}
+.btn.ok{background:var(--ok);color:#062}
+
+.step{display:flex;gap:16px;margin:22px 0}
+.num{flex:none;width:32px;height:32px;border-radius:50%;background:rgba(245,166,35,.14);
+  border:1px solid rgba(245,166,35,.36);color:var(--gold-400);font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center}
+.step > div:last-child{flex:1}
+.step h3{margin:3px 0 4px}
+
 table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
-th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}
-th{color:var(--tx);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
-td{color:var(--dim)}
-a{color:var(--ac)}
-footer{margin-top:66px;padding:30px 0 60px;border-top:1px solid var(--line);color:var(--dim);font-size:14px}
+th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}
+th{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3)}
+td{color:var(--tx2)}
+.yes{color:var(--ok);font-weight:600} .no{color:var(--err);font-weight:600}
+
+.note{border-left:3px solid var(--gold-400);background:rgba(245,166,35,.07);
+  border-radius:0 12px 12px 0;padding:16px 20px;margin:22px 0}
+.note.blue{border-left-color:var(--blue-400);background:rgba(77,124,255,.07)}
+.note p{margin:0;color:var(--tx)}
+
+code{font-family:var(--fmono);font-size:13.5px;background:var(--bg2);border:1px solid var(--line);
+  border-radius:5px;padding:2px 7px;color:var(--gold-200)}
+
+footer{margin-top:70px;padding:34px 0 64px;border-top:1px solid var(--line);color:var(--tx3);font-size:14px}
+footer div{margin:6px 0}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <span class="tag">Me Ensina AI</span>
+    <div class="bolt">⚡</div>
+    <span class="badge">Me Ensina AI</span>
     <h1>Editor de vídeo que abre dentro da sua conversa</h1>
-    <p class="lead">Você pede, o editor abre no painel ao lado. Corta, legenda e exporta conversando, sem sair da janela e sem instalar nada no Terminal.</p>
+    <p class="lead">Você pede, o editor abre no painel ao lado. Corta, legenda e exporta conversando, sem sair da janela e sem abrir o Terminal.</p>
   </div>
 </header>
 
 <div class="wrap">
 
 <section>
-  <h2>Escolha a sua versão</h2>
-  <p>São dois marketplaces separados, um para cada ferramenta. Instale só o da sua. Ativar os dois na mesma conversa causa confusão.</p>
+  <h2>Como instalar</h2>
+  <p>São dois marketplaces separados, um para cada ferramenta. <strong>Instale só o da sua.</strong> Ativar os dois na mesma conversa causa conflito.</p>
 
   <div class="grid">
     <div class="card">
-      <h3><span class="dot c-claude"></span> Claude Code</h3>
-      <p>Marketplace <code>me-ensina-ai-claude</code></p>
-      <pre><code>claude plugin marketplace add contatomeensinaai-ai/me-ensina-ai-claude
-
-claude plugin install me-ensina-ai-video-editor@me-ensina-ai-claude</code></pre>
-      <p>Dentro de uma sessão interativa, o equivalente é <code>/plugin marketplace add</code> seguido de <code>/plugin install</code>.</p>
-      <p><a href="https://github.com/contatomeensinaai-ai/me-ensina-ai-claude">Ver repositório</a></p>
+      <h3><span class="dot d-gold"></span> Claude Code</h3>
+      <p class="mkt">marketplace: me-ensina-ai-claude</p>
+      <div class="cmd" id="c1">claude plugin marketplace add contatomeensinaai-ai/me-ensina-ai-claude<button class="cp" data-t="c1">Copiar</button></div>
+      <div class="cmd" id="c2">claude plugin install me-ensina-ai-video-editor@me-ensina-ai-claude<button class="cp" data-t="c2">Copiar</button></div>
+      <button class="btn" data-copy="https://github.com/contatomeensinaai-ai/me-ensina-ai-claude">Copiar link do repositório</button>
     </div>
 
     <div class="card">
-      <h3><span class="dot c-codex"></span> Codex</h3>
-      <p>Marketplace <code>me-ensina-ai-codex</code></p>
-      <pre><code>https://github.com/contatomeensinaai-ai/me-ensina-ai-codex</code></pre>
-      <p>Adicione esse repositório como marketplace no Codex e instale o plugin <code>me-ensina-ai-video-codex</code>.</p>
-      <p><a href="https://github.com/contatomeensinaai-ai/me-ensina-ai-codex">Ver repositório</a></p>
+      <h3><span class="dot d-blue"></span> Codex</h3>
+      <p class="mkt">marketplace: me-ensina-ai-codex</p>
+      <p>No Codex, adicione o repositório abaixo como marketplace e instale o plugin <code>me-ensina-ai-video-codex</code>.</p>
+      <button class="btn" data-copy="https://github.com/contatomeensinaai-ai/me-ensina-ai-codex">Copiar link do repositório</button>
     </div>
   </div>
+</section>
 
-  <div class="note">
-    <p>Depois de instalar, abra uma conversa nova e peça: <strong>"Abre o editor Me Ensina AI"</strong>. Você não precisa procurar arquivo, clicar em nada, nem abrir o Terminal.</p>
+<section>
+  <h2>Passo a passo, no Claude Code</h2>
+
+  <div class="step"><div class="num">1</div><div>
+    <h3>Adicione o marketplace</h3>
+    <p>Cole o primeiro comando. Ele baixa a lista de plugins da Me Ensina AI. Você faz isso uma vez só.</p>
+  </div></div>
+
+  <div class="step"><div class="num">2</div><div>
+    <h3>Instale o plugin</h3>
+    <p>Cole o segundo comando. Se aparecer <code>Successfully installed plugin</code>, deu certo.</p>
+  </div></div>
+
+  <div class="step"><div class="num">3</div><div>
+    <h3>Abra uma conversa nova</h3>
+    <p>O plugin entra em vigor na próxima conversa. Na conversa atual ele ainda não aparece.</p>
+  </div></div>
+
+  <div class="step"><div class="num">4</div><div>
+    <h3>Peça para abrir</h3>
+    <p>Escreva <strong>"Abre o editor Me Ensina AI"</strong>. Só isso. Você não procura arquivo, não clica em nada, não abre Terminal.</p>
+  </div></div>
+
+  <div class="note blue">
+    <p><strong>Prefere pelo menu?</strong> Dentro de uma sessão interativa você pode usar <code>/plugin marketplace add</code> e depois <code>/plugin install</code>, que fazem exatamente o mesmo.</p>
   </div>
 </section>
 
@@ -97,17 +161,17 @@ claude plugin install me-ensina-ai-video-editor@me-ensina-ai-claude</code></pre>
   <h2>O que roda</h2>
   <table>
     <tr><th>Sistema</th><th>Situação</th></tr>
-    <tr><td>Mac Apple Silicon (M1 em diante)</td><td>Suportado</td></tr>
-    <tr><td>Mac Intel</td><td>Suportado</td></tr>
-    <tr><td>Windows 10 e 11, 64 bits</td><td>Suportado</td></tr>
-    <tr><td>Windows ARM, Linux, WSL, containers</td><td>Não suportado</td></tr>
+    <tr><td>Mac Apple Silicon (M1 em diante)</td><td class="yes">Suportado</td></tr>
+    <tr><td>Mac Intel</td><td class="yes">Suportado</td></tr>
+    <tr><td>Windows 10 e 11, 64 bits</td><td class="yes">Suportado</td></tr>
+    <tr><td>Windows ARM, Linux, WSL, containers</td><td class="no">Não suportado</td></tr>
   </table>
   <p>No Windows, use disco local. Pasta de rede não funciona.</p>
 </section>
 
 <section>
   <h2>A primeira abertura demora</h2>
-  <p>Na primeira vez, o editor baixa o pacote e prepara as bibliotecas. Isso leva alguns minutos e é normal. Cada biblioteca é conferida por assinatura SHA-256 antes de ser usada, e o pacote inteiro também.</p>
+  <p>Na primeira vez o editor baixa o pacote e prepara as bibliotecas. Leva alguns minutos e é normal. Cada biblioteca é conferida por assinatura antes de ser usada, e o pacote inteiro também.</p>
   <p><strong>Nenhum modelo de IA é baixado nessa etapa.</strong> Da segunda vez em diante, o editor sobe em segundos.</p>
 </section>
 
@@ -115,37 +179,56 @@ claude plugin install me-ensina-ai-video-editor@me-ensina-ai-claude</code></pre>
   <h2>Dicas de quem já usou</h2>
 
   <h3>Não vejo o editor, só a conversa</h3>
-  <p>O editor abre no painel de navegador do Claude, e esse painel pode estar recolhido na sua janela. Abra o painel e ele está lá. Não peça para abrir de novo, isso não resolve.</p>
+  <p>O editor abre no painel lateral, e esse painel pode estar recolhido na sua janela. Abra o painel e ele está lá. Pedir para abrir de novo não resolve.</p>
 
   <h3>Fechei a janela e ele continua rodando</h3>
-  <p>Fechar a aba ou a janela do navegador <strong>não desliga o editor</strong>. Ele é um programa rodando no seu computador, e a página é só a tela dele. Se quiser trocar de versão ou reiniciar, peça isso ao assistente.</p>
+  <p>Fechar a aba <strong>não desliga o editor</strong>. Ele é um programa rodando no seu computador, e a página é só a tela dele. Para reiniciar, peça ao assistente.</p>
 
   <h3>Não consigo editar o texto da legenda</h3>
-  <p>Consegue. O campo <strong>Texto da legenda</strong> fica num painel que rola, e às vezes ele nasce acima da área visível. Role o painel para cima que o campo aparece. Ou simplesmente peça: "role até o campo de texto da legenda".</p>
+  <p>Consegue. O campo <strong>Texto da legenda</strong> fica num painel que rola e às vezes nasce acima da área visível. Role para cima, ou peça: "role até o campo de texto da legenda".</p>
 
   <h3>Meu projeto sumiu quando reabri</h3>
   <p>Ele fica salvo no navegador. Ao reabrir, o editor pergunta <strong>"Recuperar o projeto anterior?"</strong>. Clique em recuperar. Cuidado: a outra opção começa um projeto novo e descarta o anterior.</p>
 
   <h3>Alguns botões de IA não funcionam</h3>
-  <p>Os botões de sugerir palavras, imagens de apoio e restauração dependem de uma ferramenta externa instalada na sua máquina, com a sua própria conta. Sem ela, esses botões ficam indisponíveis. <strong>Todo o resto funciona</strong>: importar, cortar, legendar, estilizar e exportar.</p>
+  <p>Sugerir palavras, imagens de apoio e restauração dependem de uma ferramenta externa instalada na sua máquina, com a sua conta. Sem ela esses botões ficam indisponíveis. <strong>Todo o resto funciona</strong>: importar, cortar, legendar, estilizar e exportar.</p>
 
-  <h3>Antes de publicar, assista</h3>
-  <p>O assistente enxerga a estrutura do vídeo, não escuta o áudio. Ele acerta o corte e o tempo, mas quem julga se a fala ficou boa é você. Assista antes de postar.</p>
+  <h3>Assista antes de publicar</h3>
+  <p>O assistente enxerga a estrutura do vídeo, não escuta o áudio. Ele acerta corte e tempo, mas quem julga se a fala ficou boa é você.</p>
 </section>
 
 <section>
   <h2>Seus dados</h2>
   <p>Tudo fica na sua máquina. O projeto é salvo no seu navegador e os arquivos ficam em <code>Library/Application Support/Me Ensina AI</code> no Mac ou <code>%LOCALAPPDATA%\Me Ensina AI</code> no Windows. Nenhuma credencial vem dentro do pacote.</p>
-  <div class="note warn">
-    <p>Este é um piloto. Se algo quebrar, mande a <strong>mensagem de erro exata</strong> que aparecer. "Não funcionou" não dá para consertar.</p>
+  <div class="note">
+    <p>Este é um piloto. Se algo quebrar, mande a <strong>mensagem de erro exata</strong> que apareceu. "Não funcionou" não dá para consertar.</p>
   </div>
 </section>
 
 <footer>
-  <div>Fonte, releases e licenças: <a href="https://github.com/contatomeensinaai-ai/me-ensina-ai-editor">me-ensina-ai-editor</a></div>
-  <div>Adaptado pela Me Ensina AI da base Timeline Studio de MartinDelophy. Licença MIT original preservada.</div>
+  <div>Me Ensina AI · Editor de Vídeo</div>
+  <div>Adaptado da base Timeline Studio de MartinDelophy. Licença MIT original preservada.</div>
 </footer>
 
 </div>
+
+<script>
+function flash(el,txt){const o=el.textContent;el.textContent=txt;el.classList.add('ok');
+  setTimeout(()=>{el.textContent=o;el.classList.remove('ok')},1600);}
+async function copy(text,el,txt){
+  try{await navigator.clipboard.writeText(text);}
+  catch(e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);
+    t.select();try{document.execCommand('copy')}catch(_){}t.remove();}
+  flash(el,txt);
+}
+document.querySelectorAll('.cp').forEach(b=>b.addEventListener('click',()=>{
+  const box=document.getElementById(b.dataset.t);
+  const txt=box.childNodes[0].textContent.trim();
+  copy(txt,b,'Copiado');
+}));
+document.querySelectorAll('.btn[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+  copy(b.dataset.copy,b,'Link copiado');
+}));
+</script>
 </body>
 </html>
