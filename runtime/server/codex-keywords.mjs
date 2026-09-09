@@ -1,11 +1,11 @@
 import {resolveCodexBinary, codexEnvironment, createRuntimeJob} from '../runtime-config.mjs';
-import {keywordAIError, normalizeKeywordLanguage} from '../src/lib/captionKeywordAICopy.js';
+import {keywordAIError, normalizeKeywordLanguage} from '../../editor-source/src/lib/captionKeywordAICopy.js';
 import {createLoopbackOriginPolicy} from './loopback-origins.mjs';
 import {spawn} from 'node:child_process';
 import {writeFile, readFile, rm} from 'node:fs/promises';
 import {join} from 'node:path';
 import {randomBytes, timingSafeEqual} from 'node:crypto';
-import {parseKeywordSuggestions, validateCaptionTexts} from '../src/lib/captionKeywordAIContract.js';
+import {parseKeywordSuggestions, validateCaptionTexts} from '../../editor-source/src/lib/captionKeywordAIContract.js';
 
 export const keywordSchema = {type:'object',properties:{keywords:{type:'array',items:{type:'string'}}},required:['keywords'],additionalProperties:false};
 export function codexArguments(directory) {

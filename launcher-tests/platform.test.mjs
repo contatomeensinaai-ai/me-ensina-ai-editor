@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {runtimeDataDirectory,samePath,codexEnvironment} from '../runtime/runtime-config.mjs';
 import {launcherDataDirectory,codexCandidates,browserCommand} from '../launcher/platform.mjs';
 import {setupEnvironment,isMainModule} from '../setup-editor.mjs';
-import {isAbsoluteArtifactPath} from '../runtime/src/lib/localArtifactSave.js';
+import {isAbsoluteArtifactPath} from '../editor-source/src/lib/localArtifactSave.js';
 test('Windows paths preserve drives, spaces and use LocalAppData',()=>{
  const env={LOCALAPPDATA:'C:\\Users\\Example User\\AppData\\Local'};
  const expected='C:\\Users\\Example User\\AppData\\Local\\Me Ensina AI';

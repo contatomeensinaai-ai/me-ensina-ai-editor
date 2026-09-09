@@ -3,7 +3,7 @@ import {randomBytes, randomUUID, timingSafeEqual, createHash} from 'node:crypto'
 import {createLoopbackOriginPolicy} from './loopback-origins.mjs';
 import {mkdir, realpath, open, link, unlink} from 'node:fs/promises';
 import {resolve, join, extname} from 'node:path';
-import {ARTIFACT_MIME_TYPES, artifactSaveError} from '../src/lib/localArtifactSave.js';
+import {ARTIFACT_MIME_TYPES, artifactSaveError} from '../../editor-source/src/lib/localArtifactSave.js';
 
 export const ARTIFACT_DIRECTORY=join(runtimeDataDirectory(),'exports');
 const DEFAULT_MAX_BYTES=2*1024*1024*1024;

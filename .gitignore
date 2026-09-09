@@ -2,7 +2,7 @@ node_modules/
 dist/
 editor/
 bin/
-lib/
+/lib/
 *.zip
 *.tar.gz
 *.log
@@ -15,3 +15,5 @@ editor-source/src/vendor/**/*.mjs
 
 .qa/
 test-output/
+
+/runtime/src/

@@ -49,3 +49,11 @@ Manifesto adjacente ao launcher: `releases.json`, com `version: "0.2.0"` e `plat
 Release uniforme: `bin/node` ou `bin/node.exe`, `lib/node_modules/npm/bin/npm-cli.js`, `runtime/`, `editor-source/`, `setup-editor.mjs`, vendor manifesto e metadados controlados pelo empacotador. Nenhum Codex adicional é instalado. IA exige CLI nativa compatível e login do próprio usuário; descoberta de arquivo não prova login. Instalações Codex em pastas incomuns podem precisar de `MEAI_CODEX_BIN` absoluto apontando para executável de CLI real. Não há suporte Windows ARM nesta entrega.
 
 Exportação Windows pressupõe volume local que suporte hard links, como NTFS. Se o volume não suportar, o salvamento falha explicitamente; não relaxa atomicidade para aparentar sucesso. UNC/rede não é destino suportado. Um preparo encerrado abruptamente pode deixar lock e exige conferir processo antes de limpar; não removemos locks cegamente. Não há mudança global de ExecutionPolicy, serviço de login, privilégio administrador ou fechamento automático do editor.
+
+## Correção após primeira execução CI nativa
+
+O run 34295158471 falhou antes dos testes funcionais porque os imports usavam `runtime/src/lib`, uma cópia apenas local. Além disso, `.gitignore` com regra `lib/` excluía também `editor-source/src/lib` inteiro. Trocar ordem de setup/testes não resolveria: setup não copiava aqueles helpers.
+
+Correção de engenharia: todos os imports do runtime e teste de caminhos agora usam diretamente `editor-source/src/lib` canônico. O helper canônico contém a correção Windows e seu teste. Novo `launcher-tests/source-contract.test.mjs` cria uma árvore isolada sem runtime/src e sem npm, copia somente os três helpers canônicos necessários e importa o módulo HTTP real com outro processo Node: passou. Os 6 testes HTTP passaram novamente após essa troca. O diretório runtime/src antigo não é mais dependência e pode ser excluído do pacote pelo integrador.
+
+Ação do integrador: restringir `.gitignore` a `/lib/`, revisar e versionar os arquivos fonte revelados; atualizar plugin/cópias e rodar novamente a CI. Ordem suficiente: preparar bundle Node/npm do runner; testes Node e PowerShell sintéticos sem rede; setup-editor (vendor/npm/build); testes de smoke/browser quando autorizados. Os testes básicos não precisam do setup depois que a fonte canônica está versionada.

@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {cp,mkdtemp,mkdir,copyFile,rm,readFile} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join,resolve,sep} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {execFileSync} from 'node:child_process';
+const project=resolve(import.meta.dirname,'..');
+test('runtime imports canonical tracked editor helpers without generated runtime/src or npm setup',async t=>{
+ const root=await mkdtemp(join(tmpdir(),'meai-source-contract-'));
+ t.after(()=>rm(root,{recursive:true,force:true}));
+ await cp(join(project,'runtime'),join(root,'runtime'),{recursive:true,filter:path=>path!==join(project,'runtime','src')&&!path.includes(sep+'node_modules')});
+ const source=join(root,'editor-source');await mkdir(join(source,'src','lib'),{recursive:true});
+ await copyFile(join(project,'editor-source','package.json'),join(source,'package.json'));
+ for(const file of ['captionKeywordAICopy.js','captionKeywordAIContract.js','localArtifactSave.js'])await copyFile(join(project,'editor-source','src','lib',file),join(source,'src','lib',file));
+ const url=pathToFileURL(join(root,'runtime','server.mjs')).href;
+ const output=execFileSync(process.execPath,['--input-type=module','-e',`const module = await import(${JSON.stringify(url)}); console.log(typeof module.createRuntimeServer);`],{encoding:'utf8'});
+ assert.equal(output.trim(),'function');
+ const canonical=await readFile(join(source,'src','lib','localArtifactSave.js'),'utf8');
+ assert.match(canonical,/export function isAbsoluteArtifactPath/);
+});

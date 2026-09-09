@@ -33,6 +33,7 @@ for platform,(name,expected) in specs.items():
     if not f.is_file():continue
     rel=f.relative_to(root)
     if any(x in rel.parts for x in ['node_modules','dist','.git']):continue
+    if rel.parts[:2]==('runtime','src'):continue
     if f.suffix in ['.wasm','.tflite','.onnx','.mp3','.mp4']:raise RuntimeError('Non-source asset '+str(rel))
     if f.is_symlink():raise RuntimeError('Symlink '+str(rel))
     add(str(rel),f.read_bytes(),f.stat().st_mode & 0o777)

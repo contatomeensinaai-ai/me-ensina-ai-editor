@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{keywordAIError,keywordAICopy}from'./captionKeywordAICopy.js';
+test('keyword errors retain stable code and interpolation data so a changed UI language can translate them',()=>{const error=keywordAIError('literal','pt',{word:'Claude Code'});assert.equal(error.code,'literal');assert.equal(keywordAICopy(error.code,'en',error.values),'The suggestion “Claude Code” does not appear literally in the captions. Nothing was applied.');});
