@@ -1,0 +1,49 @@
+name: Windows and Mac verification
+on:
+  workflow_dispatch:
+    inputs:
+      browser_tests:
+        description: 'Run browser installer and end-to-end tests only after explicit approval'
+        type: boolean
+        default: false
+  push:
+    branches: [main, compatibility/windows-mac]
+permissions:
+  contents: read
+jobs:
+  platform:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-14]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.2'
+      - name: Prepare portable runtime
+        run: node tests/prepare-ci.mjs
+      - name: Runtime and launcher tests
+        run: node --test tests/runtime.test.mjs launcher-tests/*.test.mjs
+      - name: Build editor from pinned sources
+        run: node setup-editor.mjs
+      - name: Windows PowerShell launcher tests
+        if: runner.os == 'Windows'
+        run: powershell -NoProfile -File launcher-tests/windows-launcher.test.ps1
+      - name: Install browser test dependency
+        if: inputs.browser_tests == true
+        run: npm install --prefix .qa --ignore-scripts --no-audit --no-fund playwright@1.55.0
+      - name: Install test browser
+        if: inputs.browser_tests == true
+        run: node .qa/node_modules/playwright/cli.js install chromium
+      - name: Import save reopen and export in browser
+        if: inputs.browser_tests == true
+        run: node tests/browser-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-${{ matrix.os }}
+          path: test-output/
+          if-no-files-found: ignore

@@ -1,11 +1,27 @@
 import {readFile,writeFile,mkdir,rename,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {dirname,join,resolve} from 'node:path';
+import {dirname,join,resolve,win32,posix} from 'node:path';
 import {spawn} from 'node:child_process';
+export function setupEnvironment(env,executable,platform=process.platform){
+ const path=platform==='win32'?win32:posix;const result={...env};
+ const current=Object.entries(env).find(([key])=>key.toUpperCase()==='PATH')?.[1]||'';
+ for(const key of Object.keys(result))if(key.toUpperCase()==='PATH')delete result[key];
+ result.PATH=path.dirname(executable)+(platform==='win32'?';':':')+current;
+ return result;
+}
+export function isMainModule(url,argument,platform=process.platform){
+ if(!argument)return false;
+ if(platform==='win32'){
+  const parsed=new URL(url);if(parsed.protocol!=='file:')return false;
+  const fromUrl=decodeURIComponent(parsed.pathname).replace(/^\/(?=[a-z]:)/i,'').replace(/\//g,'\\');
+  return win32.resolve(argument).toLowerCase()===win32.resolve(fromUrl).toLowerCase();
+ }
+ return resolve(argument)===fileURLToPath(url);
+}
 const root=dirname(fileURLToPath(import.meta.url));
 const source=join(root,'editor-source');
-async function run(args){await new Promise((ok,fail)=>{const p=spawn(process.execPath,args,{cwd:source,stdio:'inherit',shell:false,env:{...process.env,PATH:dirname(process.execPath)+':'+(process.env.PATH||'/usr/bin:/bin')}});p.once('error',fail);p.once('exit',code=>code===0?ok():fail(Error('A preparação não terminou. Verifique a conexão e tente abrir novamente.')));});}
+async function run(args){await new Promise((ok,fail)=>{const p=spawn(process.execPath,args,{cwd:source,stdio:'inherit',shell:false,env:setupEnvironment(process.env,process.execPath)});p.once('error',fail);p.once('exit',code=>code===0?ok():fail(Error('A preparação não terminou. Verifique a conexão e tente abrir novamente.')));});}
 export function validateVendor(e){
  const prefix='https://raw.githubusercontent.com/MartinDelophy/ai-video-editor/064677063ec618d6bd27e1adcfa6be078615dda2/';
  if(!/^(public|src)\/vendor\/[a-zA-Z0-9_./-]+$/.test(e.path)||e.path.split('/').includes('..')||!e.url.startsWith(prefix)||e.url!==prefix+e.path||!/^[a-f0-9]{64}$/.test(e.sha256)||!(/\.(js|mjs|wasm)$/).test(e.path))throw Error('Dependência fora da lista aprovada.');
@@ -27,4 +43,4 @@ async function main(){
  await run([join(source,'node_modules/vite/bin/vite.js'),'build','--outDir',join(root,'editor/dist')]);
  console.log('Editor preparado. Nas próximas aberturas esta etapa será reutilizada.');
 }
-if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url))main().catch(e=>{console.error(e.message);process.exitCode=1;});
+if(isMainModule(import.meta.url,process.argv[1]))main().catch(e=>{console.error(e.message);process.exitCode=1;});

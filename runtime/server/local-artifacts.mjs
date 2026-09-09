@@ -1,4 +1,4 @@
-import {runtimeDataDirectory} from '../runtime-config.mjs';
+import {runtimeDataDirectory,samePath} from '../runtime-config.mjs';
 import {randomBytes, randomUUID, timingSafeEqual, createHash} from 'node:crypto';
 import {createLoopbackOriginPolicy} from './loopback-origins.mjs';
 import {mkdir, realpath, open, link, unlink} from 'node:fs/promises';
@@ -47,7 +47,7 @@ export function createLocalArtifactMiddleware({origin='http://127.0.0.1:5201',di
       req.setTimeout(120000,()=>req.destroy());res.on('close',cancel);
       const root=resolve(directory);
       await mkdir(root,{recursive:true,mode:0o700});
-      if(await realpath(root)!==root) throw fail('failed',500);
+      if(!samePath(await realpath(root),root)) throw fail('failed',500);
       const stem=name.slice(0,-extname(name).length).replace(/[^\p{L}\p{N}_ -]/gu,'_').slice(0,100) || 'timeline';
       const unique=`${new Date().toISOString().replace(/[:.]/g,'-')}-${randomUUID()}`;
       const fileName=`${stem}-${unique}.${extension}`;
@@ -76,7 +76,9 @@ export function createLocalArtifactMiddleware({origin='http://127.0.0.1:5201',di
       // Hard-link publication is atomic and fails if a destination already exists.
       await link(partialPath,finalPath);published=true;
       await unlink(partialPath);partialPath=null;
-      const folder=await open(root,'r');try{await folder.sync();}finally{await folder.close();}
+      // Windows does not support opening directories for fsync. The file was
+      // already synced and reread; publication remains exclusive via NTFS hard link.
+      if(process.platform!=='win32'){const folder=await open(root,'r');try{await folder.sync();}finally{await folder.close();}}
       if(req.aborted || res.destroyed) throw fail('cancel');
       send(201,{path:finalPath,fileName,bytes,sha256,verified:true});
     } catch(error) {

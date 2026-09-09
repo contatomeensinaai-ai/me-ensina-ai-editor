@@ -12,3 +12,6 @@ lib/
 editor-source/public/vendor/
 editor-source/src/vendor/**/*.wasm
 editor-source/src/vendor/**/*.mjs
+
+.qa/
+test-output/

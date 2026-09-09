@@ -1,9 +1,10 @@
 import {createServer} from 'node:http';
 import {constants} from 'node:fs';
 import {lstat,realpath,open,mkdir} from 'node:fs/promises';
-import {fileURLToPath,pathToFileURL} from 'node:url';
+import {fileURLToPath} from 'node:url';
 import {resolve,join,sep,extname} from 'node:path';
-import {runtimeDataDirectory,resolveCodexBinary} from './runtime-config.mjs';
+import {isMainModule} from './platform.mjs';
+import {runtimeDataDirectory,resolveCodexBinary,samePath} from './runtime-config.mjs';
 import {createKeywordMiddleware} from './server/codex-keywords.mjs';
 import {createLocalArtifactMiddleware} from './server/local-artifacts.mjs';
 import {createSupportingImageMiddleware} from './server/supporting-image-generation.mjs';
@@ -24,7 +25,7 @@ export function byteRange(value,size){
 export async function safeStaticFile(root,requestUrl){
  const raw=(requestUrl||'/').split('?')[0];let decoded;
  try{decoded=decodeURIComponent(raw);}catch{throw new Error('path');}
- if(!decoded.startsWith('/')||/[\\\x00-\x1f]/.test(decoded)||decoded.split('/').some(part=>part==='.'||part==='..'||part.startsWith('.')))throw new Error('path');
+ if(!decoded.startsWith('/')||/[\\\x00-\x1f]/.test(decoded)||decoded.split('/').some(part=>part==='.'||part==='..'||part.startsWith('.')||/[<>:"|?*]/.test(part)||(process.platform==='win32'&&(/[. ]$/.test(part)||/^(con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(part)))))throw new Error('path');
  const parts=(decoded==='/'?'/index.html':decoded).slice(1).split('/').filter(Boolean);
  let target=root;
  for(let index=0;index<parts.length;index++){
@@ -33,15 +34,15 @@ export async function safeStaticFile(root,requestUrl){
  }
  if(target===root||!target.startsWith(root+sep))throw new Error('path');
  // Defense against a directory symlink being swapped after the lstat walk.
- if(await realpath(target)!==target)throw new Error('path');
+ if(!samePath(await realpath(target),target))throw new Error('path');
  return target;
 }
 export async function createRuntimeServer({port=5201,distDirectory=fileURLToPath(new URL('../editor/dist/',import.meta.url)),dataDirectory=runtimeDataDirectory(),keywordRun,imageRun,planRun}={}){
  if(!Number.isInteger(port)||port<0||port>65535)throw new Error('Invalid local port.');
  const root=resolve(distDirectory),dataRoot=resolve(dataDirectory);
- if(await realpath(root)!==root)throw new Error('Editor directory must not be a symlink.');
+ if(!samePath(await realpath(root),root))throw new Error('Editor directory must not be a symlink.');
  if(!(await lstat(join(root,'index.html'))).isFile())throw new Error('Editor files unavailable.');
- await mkdir(dataRoot,{recursive:true,mode:0o700});if(await realpath(dataRoot)!==dataRoot)throw new Error('Data directory must not be a symlink.');
+ await mkdir(dataRoot,{recursive:true,mode:0o700});if(!samePath(await realpath(dataRoot),dataRoot))throw new Error('Data directory must not be a symlink.');
  let handlers=[],actualPort;
  const server=createServer((req,res)=>{
   const fail=(status,message)=>{if(res.headersSent){res.destroy();return;}res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({error:message}));};
@@ -62,7 +63,7 @@ export async function createRuntimeServer({port=5201,distDirectory=fileURLToPath
   async function serveStatic(){
    if(req.url?.startsWith('/api/')){fail(404,'Route not found');return;}
    if(!['GET','HEAD'].includes(req.method)){fail(405,'Method not allowed');return;}
-   const file=await safeStaticFile(root,req.url);const handle=await open(file,constants.O_RDONLY|constants.O_NOFOLLOW);
+   const file=await safeStaticFile(root,req.url);const handle=await open(file,constants.O_RDONLY|(constants.O_NOFOLLOW||0));
    try{
     const info=await handle.stat();if(!info.isFile())throw new Error('path');
     let range;try{range=byteRange(req.headers.range,info.size);}catch{res.writeHead(416,{'Content-Range':`bytes */${info.size}`});res.end();return;}
@@ -82,6 +83,6 @@ export async function createRuntimeServer({port=5201,distDirectory=fileURLToPath
  handlers=[createKeywordMiddleware({origin,...(keywordRun?{run:keywordRun}:{})}),createLocalArtifactMiddleware({origin,directory:join(dataRoot,'exports')}),createSupportingImageMiddleware({origin,...(imageRun?{run:imageRun}:{})}),createSupportingPlanMiddleware({origin,...(planRun?{run:planRun}:{})})];
  return{server,port:actualPort,close:()=>new Promise(resolve=>{server.closeAllConnections();server.close(resolve);})};
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
+if(isMainModule(import.meta.url,process.argv[1])){
  createRuntimeServer({port:parsePort(process.argv.slice(2))}).then(({port,close})=>{console.log(`Me Ensina AI: http://127.0.0.1:${port}/`);for(const signal of ['SIGINT','SIGTERM'])process.once(signal,()=>close().then(()=>process.exit(0)));}).catch(()=>{console.error('Não foi possível iniciar o Me Ensina AI. Verifique a pasta do editor, as permissões e se a porta está livre.');process.exitCode=1;});
 }

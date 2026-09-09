@@ -1,9 +1,9 @@
-import {resolveCodexBinary, codexEnvironment, createRuntimeJob} from '../runtime-config.mjs';
+import {resolveCodexBinary, codexEnvironment, createRuntimeJob, samePath} from '../runtime-config.mjs';
 import {spawn} from 'node:child_process';
 import {createLoopbackOriginPolicy} from './loopback-origins.mjs';
 import {readFile, readdir, rm, realpath, stat} from 'node:fs/promises';
 import {homedir} from 'node:os';
-import {join, sep, isAbsolute} from 'node:path';
+import {join, dirname, isAbsolute} from 'node:path';
 import {randomBytes, timingSafeEqual} from 'node:crypto';
 
 const fail = (code) => Object.assign(new Error(code), {code});
@@ -21,7 +21,7 @@ export async function readGeneratedImage(file,{threadId,generatedRoot=join(proce
   const root = await realpath(generatedRoot);
   const session = await realpath(join(root,threadId));
   const actual = await realpath(file);
-  if (session !== join(root,threadId) || !actual.startsWith(session + sep)) throw fail('invalidImage');
+  if (!samePath(session,join(root,threadId)) || !samePath(dirname(actual),session)) throw fail('invalidImage');
   const info = await stat(actual);
   if (!info.isFile() || info.size < 24 || info.size > 25*1024*1024 || info.mtimeMs < startedAt - 2000) throw fail('invalidImage');
   const bytes = await readFile(actual);

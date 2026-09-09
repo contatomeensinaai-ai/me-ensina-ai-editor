@@ -1,27 +1,34 @@
 import {homedir} from 'node:os';
-import {join,resolve,isAbsolute,delimiter} from 'node:path';
+import {join} from 'node:path';
 import {accessSync,constants,statSync,realpathSync} from 'node:fs';
 import {mkdir,mkdtemp,realpath} from 'node:fs/promises';
 
-export function runtimeDataDirectory(env=process.env,home=homedir()) {
-  const target=env.MEAI_DATA_DIR || join(home,'Library','Application Support','Me Ensina AI');
-  if(!isAbsolute(target))throw new Error('MEAI_DATA_DIR must be an absolute path.');
-  return resolve(target);
+import {launcherDataDirectory,codexCandidates,pathApi} from './platform.mjs';
+export function runtimeDataDirectory(env=process.env,home=homedir(),platform=process.platform) {
+ return launcherDataDirectory(env,home,platform);
 }
-export function resolveCodexBinary({env=process.env,appBinary='/Applications/Codex.app/Contents/Resources/codex'}={}) {
-  const explicit=env.MEAI_CODEX_BIN;
-  if(explicit&&!isAbsolute(explicit))throw new Error('MEAI_CODEX_BIN must be an absolute executable path.');
-  const candidates=explicit?[explicit]:[...(env.PATH||'').split(delimiter).filter(isAbsolute).map(directory=>join(directory,'codex')),appBinary];
-  for(const candidate of candidates){try{accessSync(candidate,constants.X_OK);if(statSync(candidate).isFile())return realpathSync(candidate);}catch{/* Try next installed executable; never install or sign in. */}}
-  throw Object.assign(new Error('Codex is not available. Install Codex or configure MEAI_CODEX_BIN.'),{code:'CODEX_UNAVAILABLE'});
+export function samePath(a,b,platform=process.platform){
+ const normalize=value=>{const clean=platform==='win32'?value.replace(/^\\\\\?\\/,''):value;const result=pathApi(platform).resolve(clean);return platform==='win32'?result.toLowerCase():result;};
+ return normalize(a)===normalize(b);
 }
-export function codexEnvironment(env=process.env) {
-  return {PATH:env.PATH||'/usr/bin:/bin:/usr/sbin:/sbin',HOME:env.HOME||homedir(),...(env.CODEX_HOME?{CODEX_HOME:env.CODEX_HOME}:{})};
+export function resolveCodexBinary({env=process.env,appBinary,platform=process.platform,home=homedir()}={}) {
+ const candidates=codexCandidates({env,platform,home});
+ if(appBinary&&!env.MEAI_CODEX_BIN)candidates.push(appBinary);
+ for(const candidate of candidates){try{accessSync(candidate,platform==='win32'?constants.F_OK:constants.X_OK);if(statSync(candidate).isFile())return realpathSync(candidate);}catch{/* Never install or sign in. */}}
+ throw Object.assign(new Error('Codex CLI is unavailable. Configure an existing native executable with MEAI_CODEX_BIN; the editor can run without it.'),{code:'CODEX_UNAVAILABLE'});
+}
+export function codexEnvironment(env=process.env,platform=process.platform) {
+ const result={};const allowed=['PATH','HOME','CODEX_HOME'];
+ if(platform==='win32')allowed.push('SYSTEMROOT','WINDIR','USERPROFILE','LOCALAPPDATA','APPDATA','TEMP','TMP','PATHEXT');
+ for(const [key,value] of Object.entries(env))if(allowed.includes(key.toUpperCase()))result[key.toUpperCase()==='PATH'?'PATH':key]=value;
+ if(!result.HOME)result.HOME=env.USERPROFILE||homedir();
+ if(!result.PATH)result.PATH=platform==='win32'?'':'/usr/bin:/bin:/usr/sbin:/sbin';
+ return result;
 }
 export async function createRuntimeJob(prefix) {
   const root=runtimeDataDirectory();await mkdir(root,{recursive:true,mode:0o700});
-  if(await realpath(root)!==root)throw new Error('Runtime data directory must not be a symlink.');
+  if(!samePath(await realpath(root),root))throw new Error('Runtime data directory must not be a symlink.');
   const jobs=join(root,'jobs');await mkdir(jobs,{recursive:true,mode:0o700});
-  if(await realpath(jobs)!==jobs)throw new Error('Runtime job directory must not be a symlink.');
+  if(!samePath(await realpath(jobs),jobs))throw new Error('Runtime job directory must not be a symlink.');
   return mkdtemp(join(jobs,prefix));
 }
