@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot '../launcher/open-editor.ps1')
-Add-Type -AssemblyName System.IO.Compression.FileSystem
+Add-Type -AssemblyName System.IO.Compression
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
 $root = Join-Path ([IO.Path]::GetTempPath()) ('meai-ps-tests-' + [Guid]::NewGuid().ToString())
 [IO.Directory]::CreateDirectory($root) | Out-Null
 $tests = 0

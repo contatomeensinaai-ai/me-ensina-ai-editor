@@ -43,6 +43,7 @@ function Get-MeaiHttpsFile([string]$Url, [string]$Destination) {
 }
 
 function Expand-MeaiVerifiedZip([string]$Archive, [string]$Destination) {
+    Add-Type -AssemblyName System.IO.Compression
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $zip = [IO.Compression.ZipFile]::OpenRead($Archive)
     try {
