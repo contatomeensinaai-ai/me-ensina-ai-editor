@@ -1,20 +1,20 @@
 import {accessSync,constants,statSync,realpathSync,openSync,closeSync} from 'node:fs';
 import {mkdir,readdir,rmdir} from 'node:fs/promises';
 import {homedir} from 'node:os';
-import {resolve,join,isAbsolute,delimiter} from 'node:path';
-import {pathToFileURL} from 'node:url';
+import {join,isAbsolute} from 'node:path';
 import {spawn} from 'node:child_process';
 import {createConnection} from 'node:net';
+import {launcherDataDirectory,codexCandidates,nodeFileName,browserCommand,isMainModule} from './platform.mjs';
 
-function executable(path){try{accessSync(path,constants.X_OK);return statSync(path).isFile()?realpathSync(path):null;}catch{return null;}}
-export async function discoverCodex({env=process.env,home=homedir(),applications=['/Applications',join(home,'Applications')]}={}){
- if(env.MEAI_CODEX_BIN){if(!isAbsolute(env.MEAI_CODEX_BIN))return null;return executable(env.MEAI_CODEX_BIN);}
- for(const folder of (env.PATH||'').split(delimiter).filter(isAbsolute)){const found=executable(join(folder,'codex'));if(found)return found;}
+function executable(path){try{accessSync(path,process.platform==='win32'?constants.F_OK:constants.X_OK);return statSync(path).isFile()?realpathSync(path):null;}catch{return null;}}
+export async function discoverCodex({env=process.env,home=homedir(),platform=process.platform,applications=platform==='darwin'?['/Applications',join(home,'Applications')]:[]}={}){
+ for(const candidate of codexCandidates({env,home,platform})){const found=executable(candidate);if(found)return found;}
+ if(env.MEAI_CODEX_BIN)return null;
  for(const folder of applications){
   let names;try{names=await readdir(folder);}catch{continue;}
   for(const name of names.filter(name=>/^codex(?:[ ._-].*)?\.app$/i.test(name)).sort()){
    const resources=join(folder,name,'Contents','Resources');
-   for(const nested of ['', 'bin', 'app.asar.unpacked', 'app.asar.unpacked/bin'])for(const binary of ['codex','codex-aarch64-apple-darwin','codex-arm64-apple-darwin']){
+   for(const nested of ['', 'bin', 'app.asar.unpacked', 'app.asar.unpacked/bin'])for(const binary of ['codex','codex-aarch64-apple-darwin','codex-arm64-apple-darwin','codex-x86_64-apple-darwin']){
     const found=executable(join(resources,nested,binary));if(found)return found;
    }
   }
@@ -46,23 +46,23 @@ export async function launchEditor({packageDirectory,env=process.env,home=homedi
  if(existing)return{url,reused:true,codexAvailable:Boolean(existing.codexAvailable)};
  if(await occupied(port))throw new Error(`A porta ${port} está ocupada. Nenhum processo foi encerrado.`);
  if(!isAbsolute(packageDirectory||''))throw new Error('A pasta da release precisa ser absoluta.');
- const root=realpathSync(packageDirectory),node=join(root,'bin','node'),server=join(root,'runtime','server.mjs');
+ const root=realpathSync(packageDirectory),node=join(root,'bin',nodeFileName(process.platform)),server=join(root,'runtime','server.mjs');
  if(!executable(node)||!statSync(server).isFile())throw new Error('Release incompleta.');
  await prepare({root,node,spawnProcess,env});
- const data=env.MEAI_DATA_DIR||join(home,'Library','Application Support','Me Ensina AI');
+ const data=launcherDataDirectory(env,home);
  if(!isAbsolute(data))throw new Error('MEAI_DATA_DIR precisa ser absoluto.');
  await mkdir(join(data,'logs'),{recursive:true,mode:0o700});
  const codex=await discover({env,home});
  const childEnv={...env,MEAI_DATA_DIR:data};if(codex)childEnv.MEAI_CODEX_BIN=codex;else delete childEnv.MEAI_CODEX_BIN;
  const output=openSync(join(data,'logs','launcher-runtime.log'),'a',0o600);
- try{const child=spawnProcess(node,[server,'--port',String(port)],{cwd:root,env:childEnv,detached:true,stdio:['ignore',output,output],shell:false});child.on?.('error',()=>{});child.unref?.();}finally{closeSync(output);}
+ try{const child=spawnProcess(node,[server,'--port',String(port)],{cwd:root,env:childEnv,detached:true,stdio:['ignore',output,output],shell:false,windowsHide:true});child.on?.('error',()=>{});child.unref?.();}finally{closeSync(output);}
  for(let count=0;count<40;count++){
   await wait(250);const health=await probe({port});
-  if(health){if(openBrowser){const browser=spawnProcess('/usr/bin/open',[url],{stdio:'ignore',detached:true,shell:false});browser.on?.('error',()=>{});browser.unref?.();}return{url,reused:false,codexAvailable:Boolean(health.codexAvailable)};}
+  if(health){if(openBrowser){const command=browserCommand(url,env);const browser=spawnProcess(command.command,command.args,{stdio:'ignore',detached:true,shell:false});browser.on?.('error',()=>{});browser.unref?.();}return{url,reused:false,codexAvailable:Boolean(health.codexAvailable)};}
  }
  throw new Error('O editor não respondeu. A edição existente não foi alterada; consulte o log local do launcher.');
 }
-if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
+if(isMainModule(import.meta.url,process.argv[1])){
  const args=process.argv.slice(2);const valid=args[0]==='--package-dir'&&args[1]&&((args.length===2)||(args.length===3&&args[2]==='--no-open'));
  if(!valid){console.error('Use --package-dir CAMINHO [--no-open]');process.exitCode=1;}
  else launchEditor({packageDirectory:args[1],openBrowser:!args.includes('--no-open')}).then(result=>{console.log(`Editor disponível: ${result.url}`);console.log(result.codexAvailable?'Codex CLI localizado; funções de IA ainda dependem da sua conta.':'Editor funciona sem Codex CLI. Funções de IA ficam indisponíveis até localizar uma CLI compatível.');}).catch(error=>{console.error(error.message);process.exitCode=1;});

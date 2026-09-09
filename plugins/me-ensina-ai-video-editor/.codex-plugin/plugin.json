@@ -1,7 +1,7 @@
 {
   "name": "me-ensina-ai-video-editor",
-  "version": "2.0.0",
-  "description": "Me Ensina AI — Editor de Vídeo 2.0. Piloto local para Mac Apple Silicon.",
+  "version": "2.1.0",
+  "description": "Editor local Me Ensina AI para Mac Apple Silicon, Mac Intel e Windows x64.",
   "author": {
     "name": "Me Ensina AI"
   },
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "Me Ensina AI — Editor de Vídeo 2.0",
     "shortDescription": "Edite vídeos locais com o Codex.",
-    "longDescription": "Importe vídeos, corte, adicione legendas e imagens e exporte. No primeiro uso, o Codex prepara o editor local. Piloto para Mac Apple Silicon.",
+    "longDescription": "Importe vídeos, corte, adicione legendas e imagens e exporte. Preparação local para Mac Apple Silicon, Mac Intel e Windows x64. Recursos de IA dependem da própria conta e do hardware.",
     "developerName": "Me Ensina AI",
     "category": "Productivity",
     "capabilities": [],
