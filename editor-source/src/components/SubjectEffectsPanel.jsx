@@ -72,10 +72,10 @@ function AnalysisStatus({ t, analysis, running, progress, phase, compact = false
                 ? t("effectAnalysisPartial")
                 : isObject ? t("effectObjectAnalysisNeeded") : t("effectAnalysisNeeded")}</strong>
           <span>{running
-            ? phase || t("effectAnalysisRunning")
+            ? (t.message?.(phase) ?? phase) || t("effectAnalysisRunning")
             : complete
               ? isObject ? t("effectObjectAnalysisReusable") : t("effectAnalysisReusable")
-              : phase || t("effectAnalysisHint")}</span>
+              : (t.message?.(phase) ?? phase) || t("effectAnalysisHint")}</span>
         </div>
         <b>{percent}%</b>
       </header>

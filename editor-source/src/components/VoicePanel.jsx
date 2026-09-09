@@ -1,3 +1,4 @@
+import { getVoiceDisplayName } from "../config/editor.js";
 import {
   Armchair,
   ArrowCounterClockwise,
@@ -121,7 +122,7 @@ function AutoEditReviewDialog({ t, autoEdit }) {
         <header className="auto-edit-review-header">
           <div className="auto-edit-review-mark"><Sparkle size={19} weight="fill" /></div>
           <div><span>{t("smartAutoEdit")}</span><h2>{t("autoEditReviewTitle")}</h2></div>
-          <div className={`auto-edit-review-status ${complete ? "is-complete" : review.error ? "is-error" : ""}`}><i />{review.error ? t("autoEditReviewFailed") : complete ? t("autoEditReviewReady") : job.phase}</div>
+          <div className={`auto-edit-review-status ${complete ? "is-complete" : review.error ? "is-error" : ""}`}><i />{review.error ? t("autoEditReviewFailed") : complete ? t("autoEditReviewReady") : (t.message?.(job.phase) ?? job.phase)}</div>
           <button type="button" className="auto-edit-review-close" aria-label={t("close")} onClick={autoEdit.closeReview}><X size={18} /></button>
         </header>
 
@@ -141,16 +142,16 @@ function AutoEditReviewDialog({ t, autoEdit }) {
           <section className="auto-edit-review-section auto-edit-model-results">
             <div className="auto-edit-review-section-title"><div><span>02</span><strong>{t("autoEditModelResultTitle")}</strong></div><em>{review.captions.length} {t("captionSegmentsUnit")}</em></div>
             <p>{t("autoEditModelResultHint")}</p>
-            {review.error ? <div className="auto-edit-review-error"><strong>{t("autoEditReviewFailed")}</strong><span>{review.error}</span></div> : review.segments.length ? <div className="auto-edit-clip-results">{review.segments.map((segment) => {
+            {review.error ? <div className="auto-edit-review-error"><strong>{t("autoEditReviewFailed")}</strong><span>{t.message?.(review.error) ?? review.error}</span></div> : review.segments.length ? <div className="auto-edit-clip-results">{review.segments.map((segment) => {
               const segmentCaptions = review.captions.filter((caption) => caption.visualSegmentId === segment.id);
               const preview = review.candidates.find((candidate) => candidate.segmentId === segment.id);
               return <article className={`auto-edit-clip-result is-${segment.status}`} key={segment.id}>
                 <header>{preview ? <img src={preview.url} alt="" /> : null}<div><strong>{segment.name || `${t("autoEditClip")} ${(segment.index ?? 0) + 1}`}</strong><span>{review.candidates.filter((candidate) => candidate.segmentId === segment.id).length} {t("autoEditFramesUnit")}</span></div><em>{t(`autoEditSegmentStatus_${segment.status}`)}</em></header>
-                {segment.error ? <p className="auto-edit-clip-error">{segment.error}</p> : segmentCaptions.length ? <><div className="auto-edit-result-list">{segmentCaptions.map((caption, index) => (
+                {segment.error ? <p className="auto-edit-clip-error">{t.message?.(segment.error) ?? segment.error}</p> : segmentCaptions.length ? <><div className="auto-edit-result-list">{segmentCaptions.map((caption, index) => (
                   <article key={caption.id}><span>{String(index + 1).padStart(2, "0")}</span><div><p>{caption.text}</p><time>{formatTime(caption.start)} → {formatTime(caption.end)}</time></div></article>
                 ))}</div>{segment.status === "running" ? <div className="auto-edit-clip-pending"><i /><span>{t("autoEditWindowProgress").replace("{current}", segment.windowIndex || 0).replace("{total}", segment.totalWindows || 0)}</span></div> : null}</> : <div className="auto-edit-clip-pending">{segment.status === "running" ? <i /> : null}<span>{segment.status === "running" && segment.totalWindows ? t("autoEditWindowProgress").replace("{current}", segment.windowIndex || 0).replace("{total}", segment.totalWindows) : t(`autoEditSegmentHint_${segment.status}`)}</span></div>}
               </article>;
-            })}</div> : <div className="auto-edit-review-loading"><i /><span>{job.running ? job.phase : t("autoEditWaitingForModel")}</span></div>}
+            })}</div> : <div className="auto-edit-review-loading"><i /><span>{job.running ? (t.message?.(job.phase) ?? job.phase) : t("autoEditWaitingForModel")}</span></div>}
           </section>
         </div>
         <footer className="auto-edit-review-actions">
@@ -199,7 +200,7 @@ function AutoEditPanel({ t, hasVisual, autoEdit }) {
         </div> : null}
       </section>
       <div className="auto-edit-flow"><span>1</span><p><strong>{t("autoEditStepScenes")}</strong><small>{t("autoEditStepScenesHint")}</small></p><span>2</span><p><strong>{t("autoEditStepCaptions")}</strong><small>{t("autoEditStepCaptionsHint")}</small></p><span>3</span><p><strong>{t("autoEditStepTimeline")}</strong><small>{t("autoEditStepTimelineHint")}</small></p></div>
-      {autoEdit?.job?.running ? <div className="auto-edit-progress"><div><span>{autoEdit.job.phase}</span><strong>{autoEdit.job.progress}%</strong></div><progress max="100" value={autoEdit.job.progress} /><button className="panel-secondary" type="button" onClick={autoEdit.cancel}>{t("cancel")}</button></div> : null}
+      {autoEdit?.job?.running ? <div className="auto-edit-progress"><div><span>{t.message?.(autoEdit.job.phase) ?? autoEdit.job.phase}</span><strong>{autoEdit.job.progress}%</strong></div><progress max="100" value={autoEdit.job.progress} /><button className="panel-secondary" type="button" onClick={autoEdit.cancel}>{t("cancel")}</button></div> : null}
       <button className="auto-edit-generate" type="button" disabled={!hasVisual || !ready || autoEdit?.job?.running} onClick={autoEdit?.run}>
         <span className="auto-edit-generate-icon"><Sparkle size={17} weight="fill" /></span>
         <span><strong>{hasVisual ? t("autoEditGenerate") : t("autoEditNeedsVisual")}</strong><small>{hasVisual ? t("autoEditGenerateHint") : t("autoEditNeedsVisualHint")}</small></span>
@@ -668,7 +669,7 @@ function CaptionContextPanel({
       if (captionSegments.length) setPendingSrt(result);
       else importCaptionSegments(result.captions, "replace", result.skipped);
     } catch (error) {
-      window.alert(error instanceof Error ? error.message : t("srtImportFailed"));
+      window.alert(error instanceof Error ? (t.message?.(error.message) ?? error.message) : t("srtImportFailed"));
     }
   }
 
@@ -946,8 +947,8 @@ function AudioVoiceColorSection({ t, segment, voiceProfiles = [], onAssetReady, 
       {reference ? <div className="voice-color-reference"><strong>{reference.name}</strong><span>{t("voiceColorTemporaryReference", "仅用于本次音色迁移")}</span></div> : null}
       {reference ? <label className="clone-consent"><input type="checkbox" checked={authorized} onChange={(event) => setAuthorized(event.target.checked)} /><span>{t("cloneConsent")}</span></label> : null}
     </div>
-    {job.state === "running" ? <div className="voice-generation-loading voice-color-progress" role="status"><i className="voice-generation-spinner" /><div><strong>{job.phase}</strong><span>{t("cloneLocalHint", "声音只在当前浏览器中处理")}</span></div><em>{job.progress}%</em><div className="progress-track"><span style={{ width: `${job.progress}%` }} /></div></div> : null}
-    {job.error ? <div className="clone-inline-error">{job.error}</div> : null}
+    {job.state === "running" ? <div className="voice-generation-loading voice-color-progress" role="status"><i className="voice-generation-spinner" /><div><strong>{t.message?.(job.phase) ?? job.phase}</strong><span>{t("cloneLocalHint", "声音只在当前浏览器中处理")}</span></div><em>{job.progress}%</em><div className="progress-track"><span style={{ width: `${job.progress}%` }} /></div></div> : null}
+    {job.error ? <div className="clone-inline-error">{t.message?.(job.error) ?? job.error}</div> : null}
     {resultUrl ? <div className="voice-color-result"><span><CheckCircle size={17} weight="fill" /><strong>{t("voiceColorSavedToAssets", "结果已保存到我的素材")}</strong></span><audio controls preload="metadata" src={resultUrl} /></div> : null}
     <div className="voice-color-actions">
       {job.state === "running" ? <button type="button" onClick={cancel}>{t("cancel")}</button> : <button type="button" disabled={!selectedProfile?.embedding && (!reference?.blob || !authorized)} onClick={runConversion}>{result ? t("voiceColorRetry", "重新转换") : t("voiceColorPreview", "试听迁移")}</button>}
@@ -1093,7 +1094,7 @@ function DigitalHumanContextPanel({ t, hasVisual, visualType, audioBlob, audioDu
       </div>
       <div className="avatar-input-list">
         <div className={hasPortrait ? "is-ready" : ""}><CheckCircle size={17} weight="fill" /><span><strong>{t("avatarPortrait")}</strong><em>{hasPortrait ? t("avatarCurrentPortrait") : t("avatarNeedsPortrait")}</em></span></div>
-        <div className={audioBlob ? "is-ready" : ""}><Waveform size={17} weight="duotone" /><span><strong>{t("avatarAudio")}</strong><em>{audioBlob ? `${selectedVoice?.name ?? "AI"} · ${audioDuration.toFixed(1)}s` : t("avatarNeedsAudio")}</em></span></div>
+        <div className={audioBlob ? "is-ready" : ""}><Waveform size={17} weight="duotone" /><span><strong>{t("avatarAudio")}</strong><em>{audioBlob ? `${getVoiceDisplayName(selectedVoice) || "AI"} · ${audioDuration.toFixed(1)}s` : t("avatarNeedsAudio")}</em></span></div>
         <div className={captionSegments.length ? "is-ready" : ""}><ClosedCaptioning size={17} weight="duotone" /><span><strong>{t("avatarLipSyncSource")}</strong><em>{captionSegments.length ? `${captionSegments.length} ${t("captionSegmentsUnit")} · ${t("avatarCaptionSync")}` : t("avatarNeedsCaptions")}</em></span></div>
       </div>
       <div className="avatar-sync-mode"><span>{t("avatarModelSource")}</span><strong>{LIVE_PORTRAIT_WEB_MODEL.id}</strong></div>
@@ -1113,7 +1114,7 @@ function DigitalHumanContextPanel({ t, hasVisual, visualType, audioBlob, audioDu
       </div>
       {probeResult ? (
         <div className="avatar-probe-results">
-          {probeResult.checks.map((check) => <div className={`is-${check.state}`} key={check.id}><span />{check.detail}</div>)}
+          {probeResult.checks.map((check) => <div className={`is-${check.state}`} key={check.id}><span />{t.message?.(check.detail) ?? check.detail}</div>)}
         </div>
       ) : null}
       <button className="panel-secondary avatar-probe-button" type="button" disabled={probeState === "running"} onClick={runProbe}>
@@ -1121,7 +1122,7 @@ function DigitalHumanContextPanel({ t, hasVisual, visualType, audioBlob, audioDu
       </button>
       {avatarJob?.running || avatarJob?.progress > 0 || avatarJob?.phase ? (
         <div className="avatar-generation-progress" aria-live="polite">
-          <div><span>{avatarJob.phase || t("avatarGenerating")}</span><strong>{avatarJob.progress}%</strong></div>
+          <div><span>{(t.message?.(avatarJob.phase) ?? avatarJob.phase) || t("avatarGenerating")}</span><strong>{avatarJob.progress}%</strong></div>
           <i><b style={{ width: `${avatarJob.progress}%` }} /></i>
         </div>
       ) : null}
@@ -1206,13 +1207,13 @@ function FaceSwapContextPanel({ t, hasVisual, visualType, faceSwap }) {
             <strong>{faceSwap.job.progress}%</strong>
           </div>
           <i><b style={{ width: `${faceSwap.job.progress}%` }} /></i>
-          <small>{faceSwap.job.phase}</small>
+          <small>{t.message?.(faceSwap.job.phase) ?? faceSwap.job.phase}</small>
         </div>
       ) : null}
       {faceSwap?.job?.error ? (
         <div className="face-swap-error" role="alert">
           <strong>{t("faceSwapFailed")}</strong>
-          <span>{faceSwap.job.error}</span>
+          <span>{t.message?.(faceSwap.job.error) ?? faceSwap.job.error}</span>
         </div>
       ) : null}
       {faceSwap?.lastResult ? (
@@ -1553,7 +1554,7 @@ export function VoicePanel({
     currentTime - (selectedVisualOverlay?.start ?? 0),
   ));
   const selectedCaptionAudioSegment = getCaptionVoiceSegment(audioSegments, selectedCaptionSegment);
-  const localizedStatusText = statusText?.startsWith?.("tts") ? t(statusText) : statusText;
+  const localizedStatusText = statusText?.startsWith?.("tts") ? t(statusText) : (t.message?.(statusText) ?? statusText);
   const focusedSectionTitle = {
     transform: t("visualTabTransform"),
     mask: t("visualTabMask"),

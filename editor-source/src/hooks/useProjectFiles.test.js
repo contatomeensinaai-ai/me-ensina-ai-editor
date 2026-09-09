@@ -1,3 +1,5 @@
+import * as runtimeMessages from '../i18nMessageRuntime.js';
+import { createTranslator } from '../i18n.js';
 import * as archiveModule from '../lib/projectArchive.js';
 import * as restorationModule from '../lib/restorationMedia.js';
 import test from'node:test';import assert from'node:assert/strict';import vm from'node:vm';import{readFileSync}from'node:fs';import{transformSync}from'esbuild';
@@ -5,7 +7,7 @@ const code=transformSync(readFileSync(new URL('./useProjectFiles.js',import.meta
 function host({archive,urlApi=URL,decode=async()=>({duration:2,peaks:[]}),save=async()=>({path:'/verified/project.timeline',bytes:3,sha256:'abc'})}={}){
  const mutations=[];const notices=[];const jsxDeps={visualSegments:[],visualOverlaySegments:[],audioSegments:[],captionSegments:[],captionStyle:{fontId:'poppins'},captionStylePresets:[{id:'mine',name:'Meu estilo'}],captionStylePresetId:'mine',projectFileInputRef:{current:{}},imageUrlRefs:{current:new Set()},t:key=>key,language:'pt',notify:m=>notices.push(m)};
  const deps=new Proxy(jsxDeps,{get(target,key){return key in target?target[key]:(...args)=>{if(String(key).startsWith('set')||String(key).startsWith('replace')||String(key).startsWith('clear'))mutations.push([key,...args]);};}});
- let saved=false;const context={module:{exports:{}},crypto,Blob,URL:urlApi,Map,console,window:{},require(id){if(id.includes('restorationMedia'))return restorationModule;if(id==='react')return{useRef:value=>({current:value}),useCallback:fn=>fn,useState:value=>[value,()=>{}]};if(id.includes('config/editor'))return{DEFAULT_SCRIPT:'',DEFAULT_TIMELINE_DURATION_SECONDS:60,normalizeVoiceId:v=>v,VOICES:[{id:'voice'}],RATIO_OPTIONS:[{id:'9:16'}]};if(id.includes('localArtifactSave'))return{saveLocalArtifact:async(...args)=>{const result=await save(...args);saved=true;return result;}};if(id.includes('media.js'))return{decodeWaveform:decode,downloadBlob(){}};if(id.includes('projectArchive'))return{...archiveModule,readProjectArchive:async()=>archive,createProjectArchive:async()=>new Blob(['zip']),resolveProjectVisualMedia:(media,segment)=>media.get(segment.id)};return new Proxy({},{get:(_target,key)=>key==='createCaptionSegments'?()=>[]:key==='normalizeTimelineMarkers'?v=>v||[]:key.startsWith('normalize')?v=>v:key.startsWith('get')?()=>0:()=>null});}};
+ let saved=false;const context={module:{exports:{}},crypto,Blob,URL:urlApi,Map,console,window:{},require(id){if(id.includes('i18nMessageRuntime'))return runtimeMessages;if(id.includes('restorationMedia'))return restorationModule;if(id==='react')return{useRef:value=>({current:value}),useCallback:fn=>fn,useState:value=>[value,()=>{}]};if(id.includes('config/editor'))return{DEFAULT_SCRIPT:'',DEFAULT_TIMELINE_DURATION_SECONDS:60,normalizeVoiceId:v=>v,VOICES:[{id:'voice'}],RATIO_OPTIONS:[{id:'9:16'}]};if(id.includes('localArtifactSave'))return{saveLocalArtifact:async(...args)=>{const result=await save(...args);saved=true;return result;}};if(id.includes('media.js'))return{decodeWaveform:decode,downloadBlob(){}};if(id.includes('projectArchive'))return{...archiveModule,readProjectArchive:async()=>archive,createProjectArchive:async()=>new Blob(['zip']),resolveProjectVisualMedia:(media,segment)=>media.get(segment.id)};return new Proxy({},{get:(_target,key)=>key==='createCaptionSegments'?()=>[]:key==='normalizeTimelineMarkers'?v=>v||[]:key.startsWith('normalize')?v=>v:key.startsWith('get')?()=>0:()=>null});}};
  vm.runInNewContext(code,context);return{api:context.module.exports.useProjectFiles(deps),mutations,notices,deps:jsxDeps,get saved(){return saved;}};
 }
 test('media decode failure leaves the current project untouched',async()=>{
@@ -107,4 +109,11 @@ test('invalid import uses the localized project error', async () => {
  const ui = host({archive:emptyArchive({captionSegments:[null]})});
  await ui.api.handleImportProject(new Blob(['archive']));
  assert.deepEqual(ui.mutations,[]); assert.deepEqual(ui.notices,['projectInvalid']);
+});
+
+for (const language of ['pt','en','es']) test(`${language}: failed archive save reports its real localized diagnostic without success`, async () => {
+ const ui=host({save:async()=>{throw new Error('音频读取失败');}});ui.deps.t=createTranslator(language);
+ assert.equal(await ui.api.handleExportProject(),null);assert.equal(ui.saved,false);
+ assert.equal(ui.notices.at(-1),runtimeMessages.formatUiFailure(ui.deps.t,'projectSaveFailed',new Error('音频读取失败')));
+ assert.doesNotMatch(ui.notices.at(-1), /[\p{Script=Han}]/u);
 });

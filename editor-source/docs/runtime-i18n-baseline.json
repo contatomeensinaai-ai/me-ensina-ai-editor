@@ -1,0 +1,457 @@
+[
+  {
+    "path": "hooks/useFaceSwapGeneration.js",
+    "line": 81,
+    "text": "读取目标素材失败（HTTP {0}）"
+  },
+  {
+    "path": "hooks/useSourceAudioExtraction.js",
+    "line": 20,
+    "text": "画中画片段没有可分离的音频区间"
+  },
+  {
+    "path": "hooks/useVideoExport.js",
+    "line": 145,
+    "text": "配音片段的音频媒体已丢失，请重新生成或重新添加后再导出。"
+  },
+  {
+    "path": "hooks/useVideoExport.js",
+    "line": 203,
+    "text": "导出器未能创建配音音轨，已停止保存无声视频，请重试或切换导出管线。"
+  },
+  {
+    "path": "lib/asr.js",
+    "line": 67,
+    "text": "当前浏览器不支持 AudioContext，无法识别音频。"
+  },
+  {
+    "path": "lib/asr.js",
+    "line": 654,
+    "text": "本轮已停用自动字幕 Worker。"
+  },
+  {
+    "path": "lib/asr.js",
+    "line": 659,
+    "text": "当前浏览器不支持 Worker 自动字幕。"
+  },
+  {
+    "path": "lib/asr.js",
+    "line": 761,
+    "text": "没有检测到可识别的音频。"
+  },
+  {
+    "path": "lib/asr.js",
+    "line": 783,
+    "text": "自动字幕结果像是识别错语言了，请刷新后重新生成一次。"
+  },
+  {
+    "path": "lib/asr.js",
+    "line": 803,
+    "text": "没有识别到可用字幕。"
+  },
+  {
+    "path": "lib/editorRuntime.js",
+    "line": 107,
+    "text": "无法创建视频编码画布"
+  },
+  {
+    "path": "lib/editorRuntime.js",
+    "line": 108,
+    "text": "当前浏览器不支持 WebCodecs 视频编码"
+  },
+  {
+    "path": "lib/editorRuntime.js",
+    "line": 125,
+    "text": "视频编码已取消"
+  },
+  {
+    "path": "lib/faceSwap.js",
+    "line": 30,
+    "text": "换脸生成已取消。"
+  },
+  {
+    "path": "lib/faceSwap.js",
+    "line": 427,
+    "text": "换脸帧编码失败。"
+  },
+  {
+    "path": "lib/faceSwap.js",
+    "line": 491,
+    "text": "源图片中没有检测到清晰完整的人脸。"
+  },
+  {
+    "path": "lib/faceSwap.js",
+    "line": 632,
+    "text": "无法读取换脸目标视频。"
+  },
+  {
+    "path": "lib/faceSwap.js",
+    "line": 673,
+    "text": "当前图片中没有检测到可换脸的人脸。"
+  },
+  {
+    "path": "lib/faceSwap.js",
+    "line": 793,
+    "text": "目标视频中没有稳定锁定到可换脸的人脸。"
+  },
+  {
+    "path": "lib/faceSwap.js",
+    "line": 817,
+    "text": "人脸光流运行时已关闭。"
+  },
+  {
+    "path": "lib/mediapipePersonSegmentation.js",
+    "line": 14,
+    "text": "MediaPipe 返回了无效的人物蒙版尺寸。"
+  },
+  {
+    "path": "lib/mediapipePersonSegmentation.js",
+    "line": 283,
+    "text": "MediaPipe 没有返回人物置信度蒙版。"
+  },
+  {
+    "path": "lib/mediapipePersonSegmentation.js",
+    "line": 307,
+    "text": "MediaPipe ROI 分割缺少图像尺寸或人物目标框。"
+  },
+  {
+    "path": "lib/objectSegmentation.js",
+    "line": 23,
+    "text": "实物描边分析已取消。"
+  },
+  {
+    "path": "lib/objectSegmentation.js",
+    "line": 198,
+    "text": "MagicTouch 没有返回实物蒙版。"
+  },
+  {
+    "path": "lib/openVoiceRuntime.js",
+    "line": 24,
+    "text": "当前浏览器不支持本地音频解码"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 44,
+    "text": "人物描边分析已取消。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 84,
+    "text": "当前浏览器不支持 SlimSAM Worker。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 118,
+    "text": "当前浏览器不支持光流 Worker。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 196,
+    "text": "无法读取人物描边视频。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 226,
+    "text": "视频读取失败 ({0})"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 236,
+    "text": "当前视频编码不支持 WebCodecs 硬件解码"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 264,
+    "text": "人物帧编码失败。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 717,
+    "text": "无法创建人物描边分析画布。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 1125,
+    "text": "未找到完整且可稳定锁定的人物，请更换人物更清晰的片段。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 1342,
+    "text": "没有找到边界清晰的实物，请选择实物更突出、遮挡更少的画面。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 1601,
+    "text": "没有找到可稳定锁定的实物，请选择主体更明显的片段。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 1659,
+    "text": "SlimSAM Worker 已释放。"
+  },
+  {
+    "path": "lib/personOutlineAnalysis.js",
+    "line": 1660,
+    "text": "人物光流 Worker 已释放。"
+  },
+  {
+    "path": "lib/remasterClipEnhancement.js",
+    "line": 69,
+    "text": "无法读取视频源（HTTP {0}）"
+  },
+  {
+    "path": "lib/remasterClipEnhancement.js",
+    "line": 111,
+    "text": "当前浏览器不支持 WebCodecs"
+  },
+  {
+    "path": "lib/remasterClipEnhancement.js",
+    "line": 122,
+    "text": "WebCodecs 无法解码该视频格式"
+  },
+  {
+    "path": "lib/remasterClipEnhancement.js",
+    "line": 180,
+    "text": "无法解码第 {0} 帧"
+  },
+  {
+    "path": "lib/remasterClipEnhancement.js",
+    "line": 221,
+    "text": "WebCodecs 没有生成视频数据"
+  },
+  {
+    "path": "lib/smartFrame.js",
+    "line": 273,
+    "text": "没有可用于智能构图的主体轨迹"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 13,
+    "text": "智能构图分析已取消"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 38,
+    "text": "当前浏览器不支持光流 Worker"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 89,
+    "text": "无法读取当前视频片段"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 110,
+    "text": "无法编码视觉分析帧"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 201,
+    "text": "没有识别到可用于构图的主体"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 215,
+    "text": "当前片段缺少视频源"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 225,
+    "text": "视频尺寸无效"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 234,
+    "text": "无法创建 Smart Frame 分析画布"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 312,
+    "text": "没有识别到稳定主体"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 328,
+    "text": "请先选择当前图片或视频片段"
+  },
+  {
+    "path": "lib/smartFrameAnalysis.js",
+    "line": 334,
+    "text": "Smart Frame 光流已释放"
+  },
+  {
+    "path": "workers/asr.worker.js",
+    "line": 246,
+    "text": "自动字幕模型版本已更新，请刷新后重新生成。"
+  },
+  {
+    "path": "workers/asr.worker.js",
+    "line": 251,
+    "text": "没有检测到可识别的音频。"
+  },
+  {
+    "path": "workers/hojoTts.worker.js",
+    "line": 131,
+    "text": "分词器缺少 Hojo 结束标记"
+  },
+  {
+    "path": "workers/hojoTts.worker.js",
+    "line": 289,
+    "text": "语言模型没有生成有效语音 Token"
+  },
+  {
+    "path": "workers/hojoTts.worker.js",
+    "line": 312,
+    "text": "未知音色：{0}"
+  },
+  {
+    "path": "workers/joyvasa.worker.js",
+    "line": 23,
+    "text": "JoyVASA 浏览器模型包尚未配置托管地址"
+  },
+  {
+    "path": "workers/joyvasa.worker.js",
+    "line": 37,
+    "text": "{0} 下载失败（{1}）"
+  },
+  {
+    "path": "workers/joyvasa.worker.js",
+    "line": 83,
+    "text": "当前浏览器没有可用的 WebGPU，无法运行 JoyVASA {0}"
+  },
+  {
+    "path": "workers/liveportrait.worker.js",
+    "line": 41,
+    "text": "{0} 下载失败（{1}）"
+  },
+  {
+    "path": "workers/liveportrait.worker.js",
+    "line": 82,
+    "text": "当前浏览器没有可用的 WebGPU，无法运行全 GPU LivePortrait"
+  },
+  {
+    "path": "workers/liveportrait.worker.js",
+    "line": 449,
+    "text": "WebGPU 首帧连续异常，已阻止损坏画面写入视频；请释放其他 GPU 页面后重试"
+  },
+  {
+    "path": "workers/person-flow.worker.js",
+    "line": 156,
+    "text": "光流状态尚未初始化"
+  },
+  {
+    "path": "workers/person-flow.worker.js",
+    "line": 189,
+    "text": "未知光流指令：{0}"
+  },
+  {
+    "path": "workers/person-flow.worker.js",
+    "line": 212,
+    "text": "当前 OpenCV.js 构建不包含 Farneback 光流"
+  },
+  {
+    "path": "workers/remaster.worker.js",
+    "line": 39,
+    "text": "Remaster DRUNet 下载失败（HTTP {0}）"
+  },
+  {
+    "path": "workers/remaster.worker.js",
+    "line": 64,
+    "text": "当前环境不支持 WebGPU"
+  },
+  {
+    "path": "workers/smart-frame-flow.worker.js",
+    "line": 118,
+    "text": "光流尚未初始化"
+  },
+  {
+    "path": "workers/smart-frame-flow.worker.js",
+    "line": 131,
+    "text": "未知光流指令：{0}"
+  },
+  {
+    "path": "workers/smart-frame-flow.worker.js",
+    "line": 149,
+    "text": "当前 OpenCV.js 不支持 Farneback 光流"
+  },
+  {
+    "path": "workers/vision.worker.js",
+    "line": 268,
+    "text": "没有可分析的图片数据。"
+  },
+  {
+    "path": "workers/vision.worker.js",
+    "line": 355,
+    "text": "{0} 没有返回有效抠图。"
+  },
+  {
+    "path": "workers/vision.worker.js",
+    "line": 364,
+    "text": "{0} 透明 PNG 生成失败。"
+  },
+  {
+    "path": "plugins/generation/providers/comfyui/adapter.js",
+    "line": 19,
+    "text": "工作流 JSON 无法解析。请从 ComfyUI 导出 API Format 工作流后再粘贴。"
+  },
+  {
+    "path": "plugins/generation/providers/comfyui/adapter.js",
+    "line": 21,
+    "text": "工作流必须是 ComfyUI API Format 的对象。"
+  },
+  {
+    "path": "plugins/generation/providers/comfyui/adapter.js",
+    "line": 65,
+    "text": "ComfyUI 没有返回 prompt_id。"
+  },
+  {
+    "path": "plugins/generation/providers/comfyui/adapter.js",
+    "line": 70,
+    "text": "ComfyUI 任务等待超过 15 分钟。"
+  },
+  {
+    "path": "plugins/generation/providers/comfyui/adapter.js",
+    "line": 76,
+    "text": "ComfyUI 工作流执行失败，请在 ComfyUI 控制台查看出错节点。"
+  },
+  {
+    "path": "plugins/generation/providers/comfyui/adapter.js",
+    "line": 80,
+    "text": "工作流已完成，但没有找到可导入的图片或视频输出。"
+  },
+  {
+    "path": "plugins/generation/providers/comfyui/adapter.js",
+    "line": 85,
+    "text": "无法读取 ComfyUI 输出：HTTP {0}"
+  },
+  {
+    "path": "plugins/generation/providers/shared/loopback.js",
+    "line": 9,
+    "text": "请输入有效的本地服务地址。"
+  },
+  {
+    "path": "plugins/generation/providers/shared/loopback.js",
+    "line": 13,
+    "text": "为保护本地生成服务，只允许连接 localhost、127.0.0.1 或 ::1。"
+  },
+  {
+    "path": "plugins/generation/providers/shared/loopback.js",
+    "line": 27,
+    "text": "无法访问本地服务。请确认服务已启动，并允许当前编辑器地址跨域访问（CORS）。"
+  },
+  {
+    "path": "plugins/generation/providers/shared/loopback.js",
+    "line": 37,
+    "text": "本地服务返回 HTTP {0}{1}"
+  },
+  {
+    "path": "plugins/generation/providers/webui/adapter.js",
+    "line": 23,
+    "text": "图生图需要先选择一张参考图片。"
+  },
+  {
+    "path": "plugins/generation/providers/webui/adapter.js",
+    "line": 32,
+    "text": "WebUI 没有返回图片。"
+  }
+]

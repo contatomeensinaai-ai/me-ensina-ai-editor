@@ -484,7 +484,7 @@ export function OpticalFlowTrackingPanel({ t, segment, localTime = 0, onAssetRea
       </section>
 
       {!isVideo ? <div className="optical-flow-note"><BezierCurve size={18} /><span><strong>{t("effectFlowVideoOnly")}</strong>{t("effectFlowVideoOnlyHint")}</span></div> : null}
-      {error ? <div className="optical-flow-error" role="alert"><X size={16} /><span>{error}</span></div> : null}
+      {error ? <div className="optical-flow-error" role="alert"><X size={16} /><span>{t.message?.(error) ?? error}</span></div> : null}
 
       <div className="optical-flow-actions">
         {status === "running" ? (

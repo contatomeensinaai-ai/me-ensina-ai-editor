@@ -20,7 +20,7 @@ function Get-MeaiHttpsFile([string]$Url, [string]$Destination) {
     $handler.AllowAutoRedirect = $false
     $client = [Net.Http.HttpClient]::new($handler)
     $client.Timeout = [TimeSpan]::FromMinutes(20)
-    $client.DefaultRequestHeaders.UserAgent.ParseAdd('Me-Ensina-AI-Launcher/0.2.0')
+    $client.DefaultRequestHeaders.UserAgent.ParseAdd('Me-Ensina-AI-Launcher/0.2.1')
     try {
         $uri = [Uri]$Url
         for ($hop = 0; $hop -lt 8; $hop++) {

@@ -77,6 +77,7 @@ export const VOICES = [
   {
     id: "zh_f_qinglan",
     name: "晴岚",
+    displayName: "Qinglan",
     language: "中文",
     detail: "Hojo TTS Light 80M · 自然中英双语",
     gender: "自然女声",
@@ -88,6 +89,7 @@ export const VOICES = [
   {
     id: "zh_f_ruoxi",
     name: "若溪",
+    displayName: "Ruoxi",
     language: "中文",
     detail: "Hojo TTS Light 80M · 自然中英双语",
     gender: "自然女声",
@@ -332,3 +334,31 @@ export const STICKERS = [
   { id: "none", name: "无贴纸", text: "" },
   ...STICKER_LIBRARY,
 ];
+
+// Translate only controlled descriptive fields. IDs, names and source data stay intact.
+const VOICE_METADATA_KEYS = {
+  "中文": "voiceMetadataChinese", "日本語": "voiceMetadataJapanese",
+  "English": "voiceMetadataEnglish", "Deutsch": "voiceMetadataGerman",
+  "Español": "voiceMetadataSpanish", "Français": "voiceMetadataFrench",
+  "Italiano": "voiceMetadataItalian", "Português": "voiceMetadataPortuguese",
+  "Português (Brasil)": "voiceMetadataBrazilianPortuguese", "한국어": "voiceMetadataKorean",
+  "Tiếng Việt": "voiceMetadataVietnamese", "Русский": "voiceMetadataRussian",
+  "ไทย": "voiceMetadataThai", "ภาษาไทย": "voiceMetadataThai",
+  "自然女声": "voiceMetadataNaturalFemale", "Natural female": "voiceMetadataNaturalFemale",
+  "Natural male": "voiceMetadataNaturalMale", "Natural voice": "voiceMetadataNaturalVoice",
+  "Warm female": "voiceMetadataWarmFemale", "Steady male": "voiceMetadataSteadyMale",
+  "自然中英双语": "voiceMetadataChineseEnglish",
+};
+
+export function translateVoiceMetadata(value, t) {
+  return String(value ?? "").split(" · ").map((part) => {
+    const key = VOICE_METADATA_KEYS[part];
+    return key ? t(key, part) : part;
+  }).join(" · ");
+}
+
+/** Display aliases are catalog-only; customized records keep their own names. */
+export function getVoiceDisplayName(voice) {
+  const catalog = VOICES.find((item) => item.id === voice?.id && item.name === voice?.name);
+  return catalog?.displayName || voice?.name || "";
+}

@@ -106,7 +106,7 @@ export function SmartFramePanel({ t, smartFrame }) {
                 <strong>{Math.round(job.progress || 0)}%</strong>
               </div>
               <i><b style={{ width: `${Math.max(0, Math.min(100, job.progress || 0))}%` }} /></i>
-              <p>{job.phase}</p>
+              <p>{t.message?.(job.phase) ?? job.phase}</p>
             </div>
           ) : null}
 

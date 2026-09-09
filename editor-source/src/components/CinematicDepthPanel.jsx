@@ -38,7 +38,7 @@ export function CinematicDepthPanel({ t, segment, analysis, job, onAnalyze, onCa
         <div className="cinematic-depth-analysis-copy">
           <span>{analyzed ? <CheckCircle size={17} weight="fill" /> : <CircleNotch size={17} className={running ? "is-spinning" : ""} />}</span>
           <div>
-            <strong>{analyzed ? t("depthAnalysisComplete") : running ? job.phase : t("depthAnalysisNeeded")}</strong>
+            <strong>{analyzed ? t("depthAnalysisComplete") : running ? (t.message?.(job.phase) ?? job.phase) : t("depthAnalysisNeeded")}</strong>
             <em>{analyzed
               ? `${analysis.samples?.length || 1} ${t("depthFramesUnit")} · ${analysis.fps || 1} fps`
               : t("depthAnalysisHint")}</em>
@@ -50,7 +50,7 @@ export function CinematicDepthPanel({ t, segment, analysis, job, onAnalyze, onCa
         <div className={`cinematic-depth-progress ${job.error ? "is-error" : ""}`} aria-live="polite">
           <div><span>{job.stage === "setup" ? t("depthModelSetup") : t("depthAnalyzing")}</span><strong>{Math.round(job.progress || 0)}%</strong></div>
           <i><b style={{ width: `${Math.round(job.progress || 0)}%` }} /></i>
-          <small>{job.error || job.phase}</small>
+          <small>{t.message?.(job.error || job.phase) ?? (job.error || job.phase)}</small>
         </div>
       ) : null}
 

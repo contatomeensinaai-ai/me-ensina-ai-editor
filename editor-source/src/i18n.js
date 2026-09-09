@@ -1,3 +1,4 @@
+import { localizeUiMessage } from "./i18nMessageRuntime.js";
 import { FINAL_COPY } from "./i18nFinalCopy.js";
 import { SUPPORTING_IMAGES_COPY } from "./i18nSupportingImages.js";
 import { I18N_REVIEWED_COPY } from "./i18nReviewedCopy.js";
@@ -300,16 +301,6 @@ export const APP_LANGUAGES = [
   { id: "pt", name: "Portuguese", nativeName: "Português", hint: "Portuguese" },
   { id: "en", name: "English", nativeName: "English", hint: "English" },
   { id: "es", name: "Spanish", nativeName: "Español", hint: "Spanish" },
-  { id: "zh", name: "中文", nativeName: "中文", hint: "简体中文" },
-  { id: "ja", name: "Japanese", nativeName: "日本語", hint: "Japanese" },
-  { id: "ko", name: "Korean", nativeName: "한국어", hint: "Korean" },
-  { id: "fr", name: "French", nativeName: "Français", hint: "French" },
-  { id: "de", name: "German", nativeName: "Deutsch", hint: "German" },
-  { id: "th", name: "Thai", nativeName: "ไทย", hint: "Thai" },
-  { id: "vi", name: "Vietnamese", nativeName: "Tiếng Việt", hint: "Vietnamese" },
-  { id: "ru", name: "Russian", nativeName: "Русский", hint: "Russian" },
-  { id: "it", name: "Italian", nativeName: "Italiano", hint: "Italiano" },
-  { id: "id", name: "Indonesian", nativeName: "Bahasa Indonesia", hint: "Bahasa Indonesia" },
 ];
 
 const CLICK_RIPPLE_COPY = {
@@ -3615,13 +3606,15 @@ export function createTranslator(languageId) {
     AUTO_EDIT_RESULT_COPY, IMAGE_AI_CAPTION_COPY, PICTURE_IN_PICTURE_COPY, EFFECTS_WORKSPACE_COPY, VECTOR_STATE_COPY, VECTOR_DOCUMENT_COPY, VECTOR_ADVANCED_COPY,
     SRT_IMPORT_COPY, CLICK_RIPPLE_COPY,
   ].map((source) => ({ ...(source.en ?? {}), ...(source[languageId] ?? {}) })));
-  return (key, fallbackText) => {
+  const translate = (key, fallbackText) => {
     const value = FINAL_COPY[languageId]?.[key] ?? SUPPORTING_IMAGES_COPY[languageId]?.[key] ?? I18N_REVIEWED_COPY[languageId]?.[key] ?? FEATURE_COPY[languageId]?.[key] ?? CORE_REVIEW_COPY[languageId]?.[key] ?? markerCopy[key] ?? reviewedCopy[key] ?? completionCopy[key] ?? coreLabelCopy[key] ?? repairCopy[key] ?? specializedCopy[key] ?? exportOptionsCopy[key] ?? EXPORT_OPTIONS_COPY.en[key] ?? exportExtraStatusCopy[key] ?? EXPORT_EXTRA_STATUS_COPY.en[key] ?? projectChromeCopy[key] ?? PROJECT_CHROME_COPY.en[key] ?? captionAudioLinkCopy[key] ?? CAPTION_AUDIO_LINK_COPY.en[key] ?? ttsBackendCopy[key] ?? TTS_BACKEND_COPY.en[key] ?? mobileStickerCopy[key] ?? MOBILE_STICKER_COPY.en[key] ?? mobileClipActionCopy[key] ?? MOBILE_CLIP_ACTION_COPY.en[key] ?? mobileDrawerCopy[key] ?? MOBILE_DRAWER_COPY.en[key] ?? srtImportCopy[key] ?? exportCopy[key] ?? EXPORT_RENDER_COPY.en[key] ?? assetPreviewCopy[key] ?? ASSET_PREVIEW_COPY.en[key] ?? assetDropCopy[key] ?? ASSET_DROP_COPY.en[key] ?? autoCaptionStatusCopy[key] ?? AUTO_CAPTION_STATUS_COPY.en[key] ?? copy[key] ?? fallback[key] ?? (copyLanguage === "zh" ? UI_COPY.zh[key] : undefined) ?? fallbackText ?? key;
     if (["pt", "en", "es"].includes(languageId) && /\p{Script=Han}/u.test(value)) {
       return fallback[key] ?? (fallbackText && !/\p{Script=Han}/u.test(fallbackText) ? fallbackText : key);
     }
     return value;
   };
+  translate.message = (message) => localizeUiMessage(message, languageId);
+  return translate;
 }
 
 export function translateOptionName(languageId, name) {
@@ -3630,6 +3623,7 @@ export function translateOptionName(languageId, name) {
 }
 
 export function saveLanguagePreference(languageId) {
+  if (!APP_LANGUAGES.some(({ id }) => id === languageId)) return;
   try {
     window.localStorage.setItem(LANGUAGE_STORAGE_KEY, languageId);
   } catch {

@@ -1,3 +1,4 @@
+import { getVoiceDisplayName } from "../config/editor.js";
 import { useCallback } from "react";
 import { isModelDownloadError } from "../lib/modelSources.js";
 import {
@@ -82,10 +83,10 @@ export function useVoiceGeneration(d) {
         cloneVoiceProfileName: d.selectedVoiceProfile?.name || "",
       };
       if (generatedItems.length > 1) {
-        await d.commitAudioBatch(generatedItems, `${d.selectedVoice.name} · ${d.t("ttsGenerated")}`, commitOptions);
+        await d.commitAudioBatch(generatedItems, `${getVoiceDisplayName(d.selectedVoice)} · ${d.t("ttsGenerated")}`, commitOptions);
         d.notify(d.t("ttsNoticeSegmentedGenerated").replace("{count}", generatedItems.length));
       } else {
-        await d.commitAudio(generatedItems[0].blob, `${d.selectedVoice.name} · ${d.t("ttsGenerated")}`, commitOptions);
+        await d.commitAudio(generatedItems[0].blob, `${getVoiceDisplayName(d.selectedVoice)} · ${d.t("ttsGenerated")}`, commitOptions);
         d.notify(d.t("ttsNoticeGenerated"));
       }
     } catch (error) {

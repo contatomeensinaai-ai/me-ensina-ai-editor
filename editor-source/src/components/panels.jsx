@@ -1,3 +1,5 @@
+import { localizeUiMessage } from "../i18nMessageRuntime.js";
+import { translateVoiceMetadata, getVoiceDisplayName } from "../config/editor.js";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal, flushSync } from "react-dom";
 
@@ -578,14 +580,14 @@ function AiVectorDesignDialog({ language, onClose, onGenerated }) {
           <label>{copy.prompt}<textarea autoFocus rows="5" value={request} disabled={running || phase === "unsupported"} placeholder={copy.placeholder} onChange={(event) => setRequest(event.target.value)} /></label>
           <div className={`ai-vector-runtime is-${phase}`}>
             <span>{phase === "idle" && availability === "available" ? <Check size={16} weight="bold" /> : <MagicWand size={16} />}</span>
-            <div><strong>{statusText}</strong><small>{phase === "unsupported" && !translationUnavailable ? copy.unsupportedHint : copy.localNote}</small></div>
+            <div><strong>{localizeUiMessage(statusText, language)}</strong><small>{phase === "unsupported" && !translationUnavailable ? copy.unsupportedHint : copy.localNote}</small></div>
           </div>
           {running ? (
-            <div className="ai-vector-progress" aria-label={statusText}>
+            <div className="ai-vector-progress" aria-label={localizeUiMessage(statusText, language)}>
               <span style={{ width: phase === "detectingLanguage" ? `${Math.max(4, progress || 8)}%` : phase === "translationDownloading" ? `${Math.max(4, progress)}%` : phase === "translating" ? "18%" : phase === "downloading" ? `${Math.max(4, progress)}%` : phase === "model" ? "32%" : phase === "generating" ? "72%" : "92%" }} />
             </div>
           ) : null}
-          {error ? <p className="ai-vector-error" role="alert">{error}</p> : null}
+          {error ? <p className="ai-vector-error" role="alert">{localizeUiMessage(error, language)}</p> : null}
         </div>
         <footer>
           <button type="button" className="is-secondary" onClick={() => {
@@ -784,7 +786,7 @@ export function AiMusicGenerator({ language, music, embedded = false }) {
               </div>
             </div>
           ) : null}
-          {music?.job?.error ? <p className="ai-music-error">{music.job.error}</p> : null}
+          {music?.job?.error ? <p className="ai-music-error">{localizeUiMessage(music.job.error, language)}</p> : null}
           {music?.job?.state === "complete" ? <p className="ai-music-success">{copy.complete}</p> : null}
           <div className="ai-music-actions">
             {running ? <button type="button" className="secondary" onClick={music.cancel}>{copy.cancel}</button> : <button type="button" className="primary" onClick={() => music.generate(selection)}><MusicNote size={17} />{copy.generate}</button>}
@@ -798,7 +800,7 @@ export function AiMusicGenerator({ language, music, embedded = false }) {
 function AssetPreviewDialog({ asset, t, onClose }) {
   const mediaSrc = asset.type === "image" ? (asset.originalSrc || asset.src) : (asset.previewSrc || asset.src);
   const assetDisplayName = asset.nameKey ? t(asset.nameKey, asset.name) : asset.name;
-  const assetMeta = asset.metaKey ? t(asset.metaKey, asset.meta) : asset.meta;
+  const assetMeta = asset.metaKey ? t(asset.metaKey, asset.meta) : (t.message?.(asset.meta) ?? asset.meta);
   const [videoDimensions, setVideoDimensions] = useState(() => ({
     width: Math.max(0, Number(asset.width) || 0),
     height: Math.max(0, Number(asset.height) || 0),
@@ -1009,7 +1011,7 @@ function AssetRow({ asset, selected, t, downloadState }) {
       </div>
       <div>
         <strong>{asset.nameKey ? t(asset.nameKey, asset.name) : asset.name}</strong>
-        <span>{asset.metaKey ? t(asset.metaKey, asset.meta) : asset.meta}</span>
+        <span>{asset.metaKey ? t(asset.metaKey, asset.meta) : (t.message?.(asset.meta) ?? asset.meta)}</span>
       </div>
     </div>
   );
@@ -1484,7 +1486,7 @@ export function ToolPanel(props) {
         <div className="metric-list">
           <div>
             <span>{t("currentVoice")}</span>
-            <strong>{selectedVoice.name}</strong>
+            <strong>{getVoiceDisplayName(selectedVoice)}</strong>
           </div>
           <div>
             <span>{t("voiceDuration")}</span>
@@ -2556,7 +2558,7 @@ export function VoiceSynthesisPanel({
         <label className="field-label">{t("chooseVoice")}</label>
         <div className="menu-anchor">
           <button className="voice-filter" type="button" onClick={() => setShowVoiceFilter((open) => !open)}>
-            {voiceFilter === "all" ? t("allVoices") : voiceFilter} <CaretDown size={14} />
+            {voiceFilter === "all" ? t("allVoices") : translateVoiceMetadata(voiceFilter, t)} <CaretDown size={14} />
           </button>
           {showVoiceFilter ? (
             <Popover closeLabel={t("close")} onClose={() => setShowVoiceFilter(false)}>
@@ -2575,7 +2577,7 @@ export function VoiceSynthesisPanel({
                       setShowVoiceFilter(false);
                     }}
                   >
-                    {filter === "all" ? t("allVoices") : filter}
+                    {filter === "all" ? t("allVoices") : translateVoiceMetadata(filter, t)}
                   </button>
                 ))}
               </div>
@@ -2610,9 +2612,9 @@ export function VoiceSynthesisPanel({
               <img src={voice.avatarUrl} alt="" loading="lazy" />
             </span>
             <span>
-              <strong>{voice.name}</strong>
+              <strong>{getVoiceDisplayName(voice)}</strong>
               <em>
-                {voice.language} · {voice.gender}
+                {translateVoiceMetadata(voice.language, t)} · {translateVoiceMetadata(voice.gender, t)}
               </em>
             </span>
           </button>
@@ -2620,7 +2622,7 @@ export function VoiceSynthesisPanel({
       </div>
 
       <div className="model-row">
-        <span title={selectedVoice.detail}>{selectedVoiceProfile ? `${t("cloneBaseVoice", "基础语言声音")} · ${selectedVoice.name}` : selectedVoice.detail}</span>
+        <span title={translateVoiceMetadata(selectedVoice.detail, t)}>{selectedVoiceProfile ? `${t("cloneBaseVoice", "基础语言声音")} · ${getVoiceDisplayName(selectedVoice)}` : translateVoiceMetadata(selectedVoice.detail, t)}</span>
         <button
           type="button"
           onClick={() => selectedVoiceProfile
@@ -2638,7 +2640,7 @@ export function VoiceSynthesisPanel({
           <strong>{t("voiceSampleTitle", "音色样音")}</strong>
           <span>{selectedVoiceProfile
             ? `${selectedVoiceProfile.name} · ${t("cloneLanguageFlow", "先合成所选语言，再转换为此音色")}`
-            : `${selectedVoice.name} · ${t("voiceSampleHint", "切换音色后试听对应的预生成样音")}`}</span>
+            : `${getVoiceDisplayName(selectedVoice)} · ${t("voiceSampleHint", "切换音色后试听对应的预生成样音")}`}</span>
         </div>
         <audio
           ref={voiceSampleRef}
@@ -2672,7 +2674,7 @@ export function VoiceSynthesisPanel({
         <div className="voice-generation-loading" role="status" aria-live="polite">
           <i className="voice-generation-spinner" aria-hidden="true" />
           <div>
-            <strong>{statusText || t("generating")}</strong>
+            <strong>{(t.message?.(statusText) ?? statusText) || t("generating")}</strong>
             <span>{t("ttsFirstRunHint")}</span>
           </div>
           <em>{Math.round(progressPercent)}%</em>
@@ -2805,11 +2807,11 @@ export function MyVoicesPanel({
       {draft ? (
         <section className="clone-enrollment-card">
           <header><div><strong>{t("cloneTestTitle", "克隆试听")}</strong><span>{draft.name}</span></div><button type="button" onClick={() => setDraft(null)}><X size={15} /></button></header>
-          <div className="clone-test-language"><span>{t("cloneTestLanguage", "测试语言")}</span><strong>{selectedVoice.language}</strong><em>{getVoiceCloneTestSentence(selectedVoice)}</em></div>
+          <div className="clone-test-language"><span>{t("cloneTestLanguage", "测试语言")}</span><strong>{translateVoiceMetadata(selectedVoice.language, t)}</strong><em>{getVoiceCloneTestSentence(selectedVoice)}</em></div>
           <audio controls preload="metadata" src={referenceUrl} />
           <label className="clone-consent"><input type="checkbox" checked={authorized} onChange={(event) => setAuthorized(event.target.checked)} /><span>{t("cloneConsent", "我确认已获得该声音的授权，并仅用于合法、非误导用途。")}</span></label>
-          {cloneState === "running" ? <div className="voice-generation-loading clone-generation-loading" role="status" aria-live="polite"><i className="voice-generation-spinner" aria-hidden="true" /><div><strong>{clonePhase}</strong><span>{t("cloneLocalHint", "声音只在当前浏览器中处理")}</span></div><em>{cloneProgress}%</em><div className="progress-track"><span style={{ width: `${cloneProgress}%` }} /></div></div> : null}
-          {cloneState === "error" ? <div className="clone-inline-error">{clonePhase}</div> : null}
+          {cloneState === "running" ? <div className="voice-generation-loading clone-generation-loading" role="status" aria-live="polite"><i className="voice-generation-spinner" aria-hidden="true" /><div><strong>{t.message?.(clonePhase) ?? clonePhase}</strong><span>{t("cloneLocalHint", "声音只在当前浏览器中处理")}</span></div><em>{cloneProgress}%</em><div className="progress-track"><span style={{ width: `${cloneProgress}%` }} /></div></div> : null}
+          {cloneState === "error" ? <div className="clone-inline-error">{t.message?.(clonePhase) ?? clonePhase}</div> : null}
           {testUrl ? <div className="clone-ab-preview"><span>{t("cloneListenBeforeSave", "请先试听克隆结果，确认满意后再保存")}</span><audio controls preload="metadata" src={testUrl} /></div> : null}
           <div className="clone-actions"><button type="button" disabled={!authorized || cloneState === "running"} onClick={runCloneTest}>{testBlob ? t("cloneRetest", "重新测试") : t("cloneTest", "测试克隆")}</button><button type="button" className="is-primary" disabled={!testBlob || cloneState !== "ready"} onClick={saveClone}>{t("saveToMyVoices", "保存到我的声音")}</button></div>
         </section>
@@ -2863,7 +2865,7 @@ export function FavoriteVoicesPanel({ favoriteVoiceIds, setFavoriteVoiceIds, sel
   const clones = voiceProfiles.filter((profile) => profile.favorite);
   return <div className="history-panel">
     <div className="panel-subtitle">{t("builtInVoices", "内置声音")}</div>
-    {builtIns.map((voice) => <div className={`history-item ${selectedVoiceId === voice.id && !selectedVoiceProfileId ? "is-selected" : ""}`} key={voice.id}><div><strong>{voice.name}</strong><span>{voice.language} · {voice.detail}</span></div><button type="button" onClick={() => { setSelectedVoiceId(voice.id); setSelectedVoiceProfileId(""); notify(t("voiceSelected", "已切换声音")); }}>{t("use")}</button><button type="button" onClick={() => setFavoriteVoiceIds((ids) => ids.filter((id) => id !== voice.id))}>{t("remove")}</button></div>)}
+    {builtIns.map((voice) => <div className={`history-item ${selectedVoiceId === voice.id && !selectedVoiceProfileId ? "is-selected" : ""}`} key={voice.id}><div><strong>{getVoiceDisplayName(voice)}</strong><span>{translateVoiceMetadata(voice.language, t)} · {translateVoiceMetadata(voice.detail, t)}</span></div><button type="button" onClick={() => { setSelectedVoiceId(voice.id); setSelectedVoiceProfileId(""); notify(t("voiceSelected", "已切换声音")); }}>{t("use")}</button><button type="button" onClick={() => setFavoriteVoiceIds((ids) => ids.filter((id) => id !== voice.id))}>{t("remove")}</button></div>)}
     <div className="panel-subtitle">{t("cloneVoices", "克隆声音")}</div>
     {clones.map((profile) => <div className={`history-item ${selectedVoiceProfileId === profile.id ? "is-selected" : ""}`} key={profile.id}><div><strong>{profile.name}</strong><span>{t("browserLocalVoice", "保存在当前浏览器")}</span></div><button type="button" onClick={() => setSelectedVoiceProfileId(profile.id)}>{t("use")}</button><button type="button" onClick={() => toggleVoiceProfileFavorite(profile.id)}>{t("remove")}</button></div>)}
     {!builtIns.length && !clones.length ? <div className="empty-state">{t("noFavoriteVoices")}</div> : null}
@@ -2877,7 +2879,7 @@ export function HistoryPanel({ historyItems, useHistoryItem: onUseHistoryItem, s
         historyItems.map((item) => (
           <div className="history-item" key={item.id}>
             <div>
-              <strong>{item.voiceName}</strong>
+              <strong>{getVoiceDisplayName({ id: item.voiceId, name: item.voiceName })}</strong>
               <span>
                 {item.createdAt} · {formatTime(item.duration)} · {item.script.slice(0, 18)}
               </span>

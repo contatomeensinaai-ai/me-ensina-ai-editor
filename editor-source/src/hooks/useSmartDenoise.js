@@ -1,3 +1,4 @@
+import { formatUiFailure } from "../i18nMessageRuntime.js";
 import { useEffect, useRef, useState } from "react";
 
 import { enhanceRemasterClip } from "../lib/remasterClipEnhancement.js";
@@ -104,7 +105,7 @@ export function useSmartDenoise({ selectedSegment, imageUrlRefs, setVisualSegmen
       setJob({ ...EMPTY_JOB, progress: 100, phaseKey: "denoiseFrameReady", backend: enhanced.backend });
       notify(t("denoiseFrameReady")); return true;
     } catch (error) {
-      if (error?.name !== "AbortError") notify(`${t("denoiseFailed")}：${error.message || error}`);
+      if (error?.name !== "AbortError") notify(formatUiFailure(t, "denoiseFailed", error));
       setJob(EMPTY_JOB); return false;
     } finally { if (controllerRef.current === controller) controllerRef.current = null; }
   };
@@ -124,7 +125,7 @@ export function useSmartDenoise({ selectedSegment, imageUrlRefs, setVisualSegmen
       notify(t("denoiseClipReady")); return true;
     } catch (error) {
       if (error?.name === "AbortError") notify(t("denoiseCanceled"));
-      else notify(`${t("denoiseFailed")}：${error.message || error}`);
+      else notify(formatUiFailure(t, "denoiseFailed", error));
       setJob(EMPTY_JOB); return false;
     } finally { if (controllerRef.current === controller) controllerRef.current = null; }
   };

@@ -7,7 +7,7 @@ on:
         type: boolean
         default: false
   push:
-    branches: [main, compatibility/windows-mac]
+    branches: [main, compatibility/windows-mac, fix/interface-localization]
 permissions:
   contents: read
 jobs:
@@ -29,6 +29,8 @@ jobs:
         run: node --test tests/runtime.test.mjs launcher-tests/*.test.mjs
       - name: Build editor from pinned sources
         run: node setup-editor.mjs
+      - name: Portuguese English and Spanish interface checks
+        run: node --test editor-source/src/i18n*.test.js editor-source/src/components/*Localization.test.js editor-source/src/components/i18nVisibleLabels.test.js editor-source/src/hooks/*Localization.test.js editor-source/src/hooks/useProjectFiles.test.js
       - name: Windows PowerShell launcher tests
         if: runner.os == 'Windows'
         run: powershell -NoProfile -File launcher-tests/windows-launcher.test.ps1

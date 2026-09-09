@@ -1,0 +1,4414 @@
+[
+  {
+    "text": "请先选择未锁定的 Visuals 片段",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 414
+      }
+    ]
+  },
+  {
+    "text": "已删除贴纸片段",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 863
+      }
+    ]
+  },
+  {
+    "text": "音色迁移结果已保存到我的素材",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 901
+      }
+    ]
+  },
+  {
+    "text": "已替换当前片段，可随时恢复原始声音",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 934
+      }
+    ]
+  },
+  {
+    "text": "已恢复原始声音",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 959
+      }
+    ]
+  },
+  {
+    "text": "已添加为画中画，可在预览中拖动、缩放和旋转",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 1164
+      }
+    ]
+  },
+  {
+    "text": "音乐已安全加入时间线",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 1344
+      }
+    ]
+  },
+  {
+    "text": "无法读取该音频：{0}",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 1346
+      }
+    ]
+  },
+  {
+    "text": "无法读取该音频文件",
+    "sites": [
+      {
+        "path": "src/App.jsx",
+        "line": 1346
+      }
+    ]
+  },
+  {
+    "text": "主画面轨已锁定，无法选择编辑点",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 379
+      }
+    ]
+  },
+  {
+    "text": "至少需要两个主画面片段",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 380
+      }
+    ]
+  },
+  {
+    "text": "主画面轨已锁定，无法精剪",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 394
+      }
+    ]
+  },
+  {
+    "text": "滑移仅支持视频片段",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 398
+      }
+    ]
+  },
+  {
+    "text": "滑动需要左右各有一个相邻片段",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 399
+      }
+    ]
+  },
+  {
+    "text": "视频源区间已滑移",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 434
+      }
+    ]
+  },
+  {
+    "text": "片段已滑动，左右编辑点已同步调整",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 434
+      }
+    ]
+  },
+  {
+    "text": "锁定轨道中的片段不能加入多选",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 539
+      }
+    ]
+  },
+  {
+    "text": "已移动 {count} 个片段",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 714
+      }
+    ]
+  },
+  {
+    "text": "主画面轨已锁定，无法调整编辑点",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 1220
+      }
+    ]
+  },
+  {
+    "text": "已到达片段或源素材边界",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 1224
+      }
+    ]
+  },
+  {
+    "text": "画中画轨已锁定，无法切换静音",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 2782
+      }
+    ]
+  },
+  {
+    "text": "精剪工具仅作用于主画面轨",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 2839
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法切换静音",
+    "sites": [
+      {
+        "path": "src/components/Timeline.jsx",
+        "line": 3337
+      }
+    ]
+  },
+  {
+    "text": "准备音色",
+    "sites": [
+      {
+        "path": "src/components/VoicePanel.jsx",
+        "line": 910
+      }
+    ]
+  },
+  {
+    "text": "提取音色",
+    "sites": [
+      {
+        "path": "src/components/VoicePanel.jsx",
+        "line": 912
+      }
+    ]
+  },
+  {
+    "text": "迁移音色",
+    "sites": [
+      {
+        "path": "src/components/VoicePanel.jsx",
+        "line": 914
+      }
+    ]
+  },
+  {
+    "text": "音色迁移完成",
+    "sites": [
+      {
+        "path": "src/components/VoicePanel.jsx",
+        "line": 920
+      }
+    ]
+  },
+  {
+    "text": "音色迁移失败",
+    "sites": [
+      {
+        "path": "src/components/VoicePanel.jsx",
+        "line": 923
+      }
+    ]
+  },
+  {
+    "text": "已打开 AI 配音",
+    "sites": [
+      {
+        "path": "src/components/panels.jsx",
+        "line": 1439
+      }
+    ]
+  },
+  {
+    "text": "克隆声音已保存到“克隆声音”",
+    "sites": [
+      {
+        "path": "src/components/panels.jsx",
+        "line": 2775
+      }
+    ]
+  },
+  {
+    "text": "已选择克隆音色",
+    "sites": [
+      {
+        "path": "src/components/panels.jsx",
+        "line": 2850
+      }
+    ]
+  },
+  {
+    "text": "已切换声音",
+    "sites": [
+      {
+        "path": "src/components/panels.jsx",
+        "line": 2866
+      }
+    ]
+  },
+  {
+    "text": "模型下载或本地缓存失败（{0}），请重试。",
+    "sites": [
+      {
+        "path": "src/hooks/useAiMusicGeneration.js",
+        "line": 55
+      }
+    ]
+  },
+  {
+    "text": "读取肖像失败（HTTP {0}）",
+    "sites": [
+      {
+        "path": "src/hooks/useAvatarGeneration.js",
+        "line": 25
+      }
+    ]
+  },
+  {
+    "text": "没有可撤销的编辑操作",
+    "sites": [
+      {
+        "path": "src/hooks/useEditorHistory.js",
+        "line": 262
+      }
+    ]
+  },
+  {
+    "text": "已撤销上一步编辑",
+    "sites": [
+      {
+        "path": "src/hooks/useEditorHistory.js",
+        "line": 266
+      }
+    ]
+  },
+  {
+    "text": "没有可重做的编辑操作",
+    "sites": [
+      {
+        "path": "src/hooks/useEditorHistory.js",
+        "line": 272
+      }
+    ]
+  },
+  {
+    "text": "已重做编辑",
+    "sites": [
+      {
+        "path": "src/hooks/useEditorHistory.js",
+        "line": 276
+      }
+    ]
+  },
+  {
+    "text": "已根据素材自动切换为 {0}",
+    "sites": [
+      {
+        "path": "src/hooks/useEditorLifecycle.js",
+        "line": 40
+      }
+    ]
+  },
+  {
+    "text": "读取目标素材失败（HTTP {0}）",
+    "sites": [
+      {
+        "path": "src/hooks/useFaceSwapGeneration.js",
+        "line": 81
+      }
+    ]
+  },
+  {
+    "text": "请选择图片、视频或音频素材",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 17
+      }
+    ]
+  },
+  {
+    "text": "已上传 {0} 个素材{1}",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 137
+      }
+    ]
+  },
+  {
+    "text": "，项目首个画面已加入时间线",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 137
+      }
+    ]
+  },
+  {
+    "text": "，请拖到目标轨道使用",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 137
+      }
+    ]
+  },
+  {
+    "text": "{0}已加入画布和时间线",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 139
+      }
+    ]
+  },
+  {
+    "text": "视频",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 139
+      },
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 140
+      },
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 22
+      },
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 123
+      }
+    ]
+  },
+  {
+    "text": "图片",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 139
+      },
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 140
+      },
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 22
+      },
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 123
+      }
+    ]
+  },
+  {
+    "text": "{0}已加入素材库，请拖到 Visuals 或画中画轨道",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 140
+      }
+    ]
+  },
+  {
+    "text": "音频已上传到素材库，可拖到音乐或配音轨",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 141
+      }
+    ]
+  },
+  {
+    "text": "当前视频素材缺少原文件，无法分离原声",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "text": "加载 FFmpeg WASM 分离视频原声",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "text": "解析视频原声波形",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "text": "视频没有可识别的音频轨",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "text": "画中画片段没有可分离的音频区间",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 20
+      }
+    ]
+  },
+  {
+    "text": "画中画原声已分离",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 22
+      }
+    ]
+  },
+  {
+    "text": "画中画原声已分离到音频轨",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "text": "视频原声已追加到时间线",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "text": "视频原声已分离到时间线",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "text": "视频未检测到可分离原声",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 47
+      }
+    ]
+  },
+  {
+    "text": "视频画面已添加，但没有可分离的原声音轨",
+    "sites": [
+      {
+        "path": "src/hooks/useSourceAudioExtraction.js",
+        "line": 48
+      }
+    ]
+  },
+  {
+    "text": "配音片段的音频媒体已丢失，请重新生成或重新添加后再导出。",
+    "sites": [
+      {
+        "path": "src/hooks/useVideoExport.js",
+        "line": 151
+      }
+    ]
+  },
+  {
+    "text": "导出器未能创建配音音轨，已停止保存无声视频，请重试或切换导出管线。",
+    "sites": [
+      {
+        "path": "src/hooks/useVideoExport.js",
+        "line": 209
+      }
+    ]
+  },
+  {
+    "text": "重新提取音色",
+    "sites": [
+      {
+        "path": "src/hooks/useVoiceGeneration.js",
+        "line": 29
+      }
+    ]
+  },
+  {
+    "text": "第 2 步：转换为克隆音色",
+    "sites": [
+      {
+        "path": "src/hooks/useVoiceGeneration.js",
+        "line": 61
+      }
+    ]
+  },
+  {
+    "text": "声音档案已删除",
+    "sites": [
+      {
+        "path": "src/hooks/useVoiceProfiles.js",
+        "line": 38
+      }
+    ]
+  },
+  {
+    "text": "录音已就绪，请完成克隆试听",
+    "sites": [
+      {
+        "path": "src/hooks/useVoiceRecorder.js",
+        "line": 14
+      },
+      {
+        "path": "src/hooks/useVoiceRecorder.js",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 AudioContext，无法识别音频。",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 68
+      }
+    ]
+  },
+  {
+    "text": "下载或读取 {0} ONNX",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 519
+      }
+    ]
+  },
+  {
+    "text": "识别音频语言",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 542
+      }
+    ]
+  },
+  {
+    "text": "自动字幕生成失败",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 639
+      },
+      {
+        "path": "src/workers/asr.worker.js",
+        "line": 295
+      }
+    ]
+  },
+  {
+    "text": "自动字幕 Worker 运行失败",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 644
+      }
+    ]
+  },
+  {
+    "text": "本轮已停用自动字幕 Worker。",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 655
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 Worker 自动字幕。",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 660
+      }
+    ]
+  },
+  {
+    "text": "{0} {1} 转写字幕",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 692
+      },
+      {
+        "path": "src/lib/asr.js",
+        "line": 702
+      }
+    ]
+  },
+  {
+    "text": "检测为",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 692
+      },
+      {
+        "path": "src/lib/asr.js",
+        "line": 702
+      }
+    ]
+  },
+  {
+    "text": "按",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 692
+      },
+      {
+        "path": "src/lib/asr.js",
+        "line": 702
+      }
+    ]
+  },
+  {
+    "text": "解码原声音频",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 756
+      }
+    ]
+  },
+  {
+    "text": "没有检测到可识别的音频。",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 759
+      },
+      {
+        "path": "src/workers/asr.worker.js",
+        "line": 252
+      }
+    ]
+  },
+  {
+    "text": "Worker 不可用，切换主线程自动字幕",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 768
+      }
+    ]
+  },
+  {
+    "text": "Worker 结果异常，切换稳定 WASM 重新识别",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 776
+      }
+    ]
+  },
+  {
+    "text": "自动字幕结果像是识别错语言了，请刷新后重新生成一次。",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 781
+      }
+    ]
+  },
+  {
+    "text": "没有识别到可用字幕。",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 801
+      }
+    ]
+  },
+  {
+    "text": "写入字幕轨道",
+    "sites": [
+      {
+        "path": "src/lib/asr.js",
+        "line": 804
+      }
+    ]
+  },
+  {
+    "text": "素材已选中，请选择添加位置",
+    "sites": [
+      {
+        "path": "src/lib/assetDragControls.js",
+        "line": 110
+      }
+    ]
+  },
+  {
+    "text": "素材已选中，请拖到对应轨道使用",
+    "sites": [
+      {
+        "path": "src/lib/assetDragControls.js",
+        "line": 111
+      }
+    ]
+  },
+  {
+    "text": "正在下载在线素材…",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 16
+      },
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 48
+      }
+    ]
+  },
+  {
+    "text": "在线素材下载失败，请稍后重试或打开来源页下载",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 27
+      }
+    ]
+  },
+  {
+    "text": "请把素材拖到匹配的轨道",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 35
+      }
+    ]
+  },
+  {
+    "text": "在线素材正在准备",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 78
+      }
+    ]
+  },
+  {
+    "text": "当前音频素材不可用，请重新上传",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 129
+      },
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "text": "音频已写入配音轨",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 141
+      }
+    ]
+  },
+  {
+    "text": "音频已拖入配音音频轨",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 148
+      }
+    ]
+  },
+  {
+    "text": "请将效果或转场拖到具体的画面片段上",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 199
+      }
+    ]
+  },
+  {
+    "text": "效果已应用到该画面片段",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 213
+      }
+    ]
+  },
+  {
+    "text": "转场已绑定到该片段的结尾",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 213
+      }
+    ]
+  },
+  {
+    "text": "{0}素材已应用到预览和时间线",
+    "sites": [
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 22
+      }
+    ]
+  },
+  {
+    "text": "背景音乐素材已删除，时间线已同步清空",
+    "sites": [
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "text": "素材已删除",
+    "sites": [
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 39
+      }
+    ]
+  },
+  {
+    "text": "素材已删除，对应视觉片段已移除",
+    "sites": [
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 42
+      }
+    ]
+  },
+  {
+    "text": "视觉素材已删除，时间线已同步清空",
+    "sites": [
+      {
+        "path": "src/lib/assetLibraryActions.js",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "text": "音频轨已清空",
+    "sites": [
+      {
+        "path": "src/lib/audioTrackActions.js",
+        "line": 83
+      }
+    ]
+  },
+  {
+    "text": "视频原声已分离",
+    "sites": [
+      {
+        "path": "src/lib/audioTrackActions.js",
+        "line": 143
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法编辑",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 50
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法隐藏",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 64
+      }
+    ]
+  },
+  {
+    "text": "字幕显示状态已更新",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 72
+      }
+    ]
+  },
+  {
+    "text": "已切回手动字幕位置，智能避让已关闭",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 219
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法拖动",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 249
+      }
+    ]
+  },
+  {
+    "text": "字幕位置已手动调整，智能避让已关闭",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 291
+      }
+    ]
+  },
+  {
+    "text": "字幕位置已调整",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 292
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法修改片段",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 300
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法删除",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 321
+      }
+    ]
+  },
+  {
+    "text": "当前没有字幕片段可删除",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 325
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 98
+      }
+    ]
+  },
+  {
+    "text": "已删除当前字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/captionEditingActions.js",
+        "line": 332
+      }
+    ]
+  },
+  {
+    "text": "{0} 已恢复",
+    "sites": [
+      {
+        "path": "src/lib/editorCommandActions.js",
+        "line": 76
+      }
+    ]
+  },
+  {
+    "text": "历史配音已恢复到时间线",
+    "sites": [
+      {
+        "path": "src/lib/editorCommandActions.js",
+        "line": 87
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持音频解码",
+    "sites": [
+      {
+        "path": "src/lib/editorRuntime.js",
+        "line": 64
+      }
+    ]
+  },
+  {
+    "text": "无法创建视频编码画布",
+    "sites": [
+      {
+        "path": "src/lib/editorRuntime.js",
+        "line": 107
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 WebCodecs 视频编码",
+    "sites": [
+      {
+        "path": "src/lib/editorRuntime.js",
+        "line": 108
+      }
+    ]
+  },
+  {
+    "text": "视频编码已取消",
+    "sites": [
+      {
+        "path": "src/lib/editorRuntime.js",
+        "line": 125
+      }
+    ]
+  },
+  {
+    "text": "数字人视频编码结果为空",
+    "sites": [
+      {
+        "path": "src/lib/editorRuntime.js",
+        "line": 149
+      }
+    ]
+  },
+  {
+    "text": "无法读取视频素材：{0}",
+    "sites": [
+      {
+        "path": "src/lib/embeddedVideoAudioExport.js",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "text": "换脸生成已取消。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 30
+      }
+    ]
+  },
+  {
+    "text": "换脸帧编码失败。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 427
+      }
+    ]
+  },
+  {
+    "text": "换脸 Worker 失败。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 444
+      }
+    ]
+  },
+  {
+    "text": "换脸 Worker 运行失败。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 455
+      }
+    ]
+  },
+  {
+    "text": "源图片中没有检测到清晰完整的人脸。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 491
+      }
+    ]
+  },
+  {
+    "text": "人脸光流初始化失败。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 571
+      }
+    ]
+  },
+  {
+    "text": "人脸光流失败。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 583
+      }
+    ]
+  },
+  {
+    "text": "无法读取换脸目标视频。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 632
+      }
+    ]
+  },
+  {
+    "text": "当前图片中没有检测到可换脸的人脸。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 673
+      }
+    ]
+  },
+  {
+    "text": "目标视频中没有稳定锁定到可换脸的人脸。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 793
+      }
+    ]
+  },
+  {
+    "text": "人脸光流运行时已关闭。",
+    "sites": [
+      {
+        "path": "src/lib/faceSwap.js",
+        "line": 817
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法拉长片段",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 18
+      }
+    ]
+  },
+  {
+    "text": "请先上传或选择图片/视频素材",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 19
+      },
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 51
+      },
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 18
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 38
+      }
+    ]
+  },
+  {
+    "text": "画面片段起点已调整",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 143
+      },
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 143
+      }
+    ]
+  },
+  {
+    "text": "配音结尾",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "图片已吸附到配音结尾",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "原声结尾",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "图片已吸附到视频原声结尾",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "音乐结尾",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "图片已吸附到音乐结尾",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "图片片段时长已调整",
+    "sites": [
+      {
+        "path": "src/lib/imageResizeControl.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 AudioContext，无法裁剪音频。",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 574
+      }
+    ]
+  },
+  {
+    "text": "没有可合并的音频",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 595
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持音频合并",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 599
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 AudioContext，无法反转音频。",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 623
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 MediaRecorder，无法导出视频。",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 1629
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 AudioContext，无法混入音频。",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 1802
+      }
+    ]
+  },
+  {
+    "text": "整段增强已取消",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 2251
+      },
+      {
+        "path": "src/lib/media.js",
+        "line": 2257
+      },
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "text": "MediaPipe 返回了无效的人物蒙版尺寸。",
+    "sites": [
+      {
+        "path": "src/lib/mediapipePersonSegmentation.js",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "text": "MediaPipe 没有返回人物置信度蒙版。",
+    "sites": [
+      {
+        "path": "src/lib/mediapipePersonSegmentation.js",
+        "line": 283
+      }
+    ]
+  },
+  {
+    "text": "MediaPipe ROI 分割缺少图像尺寸或人物目标框。",
+    "sites": [
+      {
+        "path": "src/lib/mediapipePersonSegmentation.js",
+        "line": 307
+      }
+    ]
+  },
+  {
+    "text": "实物描边分析已取消。",
+    "sites": [
+      {
+        "path": "src/lib/objectSegmentation.js",
+        "line": 23
+      }
+    ]
+  },
+  {
+    "text": "NanoDet-Plus 实物检测失败。",
+    "sites": [
+      {
+        "path": "src/lib/objectSegmentation.js",
+        "line": 42
+      }
+    ]
+  },
+  {
+    "text": "NanoDet-Plus Worker 运行失败。",
+    "sites": [
+      {
+        "path": "src/lib/objectSegmentation.js",
+        "line": 45
+      }
+    ]
+  },
+  {
+    "text": "MagicTouch 没有返回实物蒙版。",
+    "sites": [
+      {
+        "path": "src/lib/objectSegmentation.js",
+        "line": 198
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持音频解码。",
+    "sites": [
+      {
+        "path": "src/lib/offlineVideoExport.js",
+        "line": 79
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持离线音频混合。",
+    "sites": [
+      {
+        "path": "src/lib/offlineVideoExport.js",
+        "line": 133
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 WebCodecs 离线编码。",
+    "sites": [
+      {
+        "path": "src/lib/offlineVideoExport.js",
+        "line": 370
+      }
+    ]
+  },
+  {
+    "text": "无法创建离线导出画布。",
+    "sites": [
+      {
+        "path": "src/lib/offlineVideoExport.js",
+        "line": 382
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持本地音频解码",
+    "sites": [
+      {
+        "path": "src/lib/openVoiceRuntime.js",
+        "line": 24
+      }
+    ]
+  },
+  {
+    "text": "已取消声音转换",
+    "sites": [
+      {
+        "path": "src/lib/openVoiceRuntime.js",
+        "line": 84
+      }
+    ]
+  },
+  {
+    "text": "人物描边分析已取消。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 SlimSAM Worker。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 84
+      }
+    ]
+  },
+  {
+    "text": "SlimSAM 人物分割失败。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 106
+      }
+    ]
+  },
+  {
+    "text": "SlimSAM Worker 运行失败。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 111
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持光流 Worker。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 118
+      }
+    ]
+  },
+  {
+    "text": "OpenCV 光流初始化失败。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 123
+      }
+    ]
+  },
+  {
+    "text": "人物光流传播失败。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 139
+      }
+    ]
+  },
+  {
+    "text": "人物光流 Worker 运行失败。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 144
+      }
+    ]
+  },
+  {
+    "text": "无法读取人物描边视频。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 196
+      }
+    ]
+  },
+  {
+    "text": "视频读取失败 ({0})",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 226
+      }
+    ]
+  },
+  {
+    "text": "当前视频编码不支持 WebCodecs 硬件解码",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 236
+      }
+    ]
+  },
+  {
+    "text": "人物帧编码失败。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 264
+      }
+    ]
+  },
+  {
+    "text": "无法创建人物描边分析画布。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 717
+      }
+    ]
+  },
+  {
+    "text": "初始化人物抠像与 ROI 光流",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 747
+      }
+    ]
+  },
+  {
+    "text": "完整人像锚点 {0}",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 824
+      }
+    ]
+  },
+  {
+    "text": "帧 {0}/{1} · MediaPipe 快速刷新主体",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 845
+      }
+    ]
+  },
+  {
+    "text": "帧 {0}/{1} · {2}",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 910
+      },
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 923
+      },
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1019
+      },
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1516
+      }
+    ]
+  },
+  {
+    "text": "帧 {0}/{1} · MediaPipe 清理主体外溢",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 942
+      }
+    ]
+  },
+  {
+    "text": "帧 {0}/{1} · MODNet 不完整，尝试 SlimSAM",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1002
+      }
+    ]
+  },
+  {
+    "text": "逐帧描边 {0}/{1} · {2}",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1120
+      },
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1595
+      }
+    ]
+  },
+  {
+    "text": "人物稳定",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1120
+      }
+    ]
+  },
+  {
+    "text": "跳过不可靠帧",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1120
+      },
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1595
+      }
+    ]
+  },
+  {
+    "text": "未找到完整且可稳定锁定的人物，请更换人物更清晰的片段。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1125
+      }
+    ]
+  },
+  {
+    "text": "MagicTouch 快速分割实物",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1241
+      }
+    ]
+  },
+  {
+    "text": "跟踪框刷新失败，NanoDet 重新识别实物",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1262
+      }
+    ]
+  },
+  {
+    "text": "MagicTouch 质量不足，SlimSAM 精修实物",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1277
+      }
+    ]
+  },
+  {
+    "text": "没有找到边界清晰的实物，请选择实物更突出、遮挡更少的画面。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1342
+      }
+    ]
+  },
+  {
+    "text": "实物 Alpha 已生成",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1361
+      }
+    ]
+  },
+  {
+    "text": "准备 NanoDet、MagicTouch 与实物光流",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1449
+      }
+    ]
+  },
+  {
+    "text": "实物稳定",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1595
+      }
+    ]
+  },
+  {
+    "text": "没有找到可稳定锁定的实物，请选择主体更明显的片段。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1601
+      }
+    ]
+  },
+  {
+    "text": "SlimSAM Worker 已释放。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1659
+      }
+    ]
+  },
+  {
+    "text": "人物光流 Worker 已释放。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1660
+      }
+    ]
+  },
+  {
+    "text": "小雅不支持音素：{0}",
+    "sites": [
+      {
+        "path": "src/lib/piperVoiceRuntime.js",
+        "line": 87
+      }
+    ]
+  },
+  {
+    "text": "小雅生成了无效音频",
+    "sites": [
+      {
+        "path": "src/lib/piperVoiceRuntime.js",
+        "line": 211
+      }
+    ]
+  },
+  {
+    "text": "请先上传图片/视频素材、生成配音或上传背景音乐",
+    "sites": [
+      {
+        "path": "src/lib/playbackControls.js",
+        "line": 127
+      }
+    ]
+  },
+  {
+    "text": "无法读取工程文件",
+    "sites": [
+      {
+        "path": "src/lib/projectArchive.js",
+        "line": 125
+      }
+    ]
+  },
+  {
+    "text": "无法读取媒体素材",
+    "sites": [
+      {
+        "path": "src/lib/projectArchive.js",
+        "line": 158
+      }
+    ]
+  },
+  {
+    "text": "缺少 project.json",
+    "sites": [
+      {
+        "path": "src/lib/projectArchive.js",
+        "line": 217
+      }
+    ]
+  },
+  {
+    "text": "无法读取待增强视频",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 26
+      }
+    ]
+  },
+  {
+    "text": "读取视频帧超时，请重新选择片段后重试",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 33
+      }
+    ]
+  },
+  {
+    "text": "无法读取视频源（HTTP {0}）",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 69
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 WebCodecs",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 111
+      }
+    ]
+  },
+  {
+    "text": "WebCodecs 无法解码该视频格式",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 122
+      }
+    ]
+  },
+  {
+    "text": "无法解码第 {0} 帧",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 180
+      }
+    ]
+  },
+  {
+    "text": "WebCodecs 没有生成视频数据",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 221
+      }
+    ]
+  },
+  {
+    "text": "请选择一个视频片段",
+    "sites": [
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 240
+      },
+      {
+        "path": "src/lib/remasterClipEnhancement.js",
+        "line": 327
+      }
+    ]
+  },
+  {
+    "text": "视频增强失败",
+    "sites": [
+      {
+        "path": "src/lib/remasterEnhancement.js",
+        "line": 20
+      },
+      {
+        "path": "src/workers/remaster.worker.js",
+        "line": 279
+      }
+    ]
+  },
+  {
+    "text": "视频增强 Worker 运行失败",
+    "sites": [
+      {
+        "path": "src/lib/remasterEnhancement.js",
+        "line": 23
+      }
+    ]
+  },
+  {
+    "text": "没有可增强的画面",
+    "sites": [
+      {
+        "path": "src/lib/remasterEnhancement.js",
+        "line": 31
+      }
+    ]
+  },
+  {
+    "text": "视频增强已取消",
+    "sites": [
+      {
+        "path": "src/lib/remasterEnhancement.js",
+        "line": 39
+      }
+    ]
+  },
+  {
+    "text": "当前视频帧尚未准备好，请稍后重试",
+    "sites": [
+      {
+        "path": "src/lib/remasterEnhancement.js",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "text": "读取画面失败（HTTP {0}）",
+    "sites": [
+      {
+        "path": "src/lib/remasterEnhancement.js",
+        "line": 56
+      }
+    ]
+  },
+  {
+    "text": "视频增强 Worker 已关闭",
+    "sites": [
+      {
+        "path": "src/lib/remasterEnhancement.js",
+        "line": 62
+      }
+    ]
+  },
+  {
+    "text": "没有可用于智能构图的主体轨迹",
+    "sites": [
+      {
+        "path": "src/lib/smartFrame.js",
+        "line": 273
+      }
+    ]
+  },
+  {
+    "text": "智能构图分析已取消",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持光流 Worker",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 38
+      }
+    ]
+  },
+  {
+    "text": "光流初始化失败",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "text": "光流跟踪失败",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 54
+      }
+    ]
+  },
+  {
+    "text": "光流 Worker 运行失败",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 56
+      }
+    ]
+  },
+  {
+    "text": "无法读取当前视频片段",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 89
+      }
+    ]
+  },
+  {
+    "text": "无法编码视觉分析帧",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 110
+      }
+    ]
+  },
+  {
+    "text": "准备主体检测模型",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 190
+      }
+    ]
+  },
+  {
+    "text": "没有识别到可用于构图的主体",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 201
+      }
+    ]
+  },
+  {
+    "text": "当前图片构图轨迹已生成",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 204
+      }
+    ]
+  },
+  {
+    "text": "当前片段缺少视频源",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 215
+      }
+    ]
+  },
+  {
+    "text": "视频尺寸无效",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 225
+      }
+    ]
+  },
+  {
+    "text": "无法创建 Smart Frame 分析画布",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 234
+      }
+    ]
+  },
+  {
+    "text": "稀疏检测 {0} · {1}",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 278
+      }
+    ]
+  },
+  {
+    "text": "稀疏检测",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 308
+      }
+    ]
+  },
+  {
+    "text": "光流跟踪",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 308
+      }
+    ]
+  },
+  {
+    "text": "主体丢失 {0}/{1}",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 309
+      }
+    ]
+  },
+  {
+    "text": "没有识别到稳定主体",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 312
+      }
+    ]
+  },
+  {
+    "text": "请先选择当前图片或视频片段",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 328
+      }
+    ]
+  },
+  {
+    "text": "Smart Frame 光流已释放",
+    "sites": [
+      {
+        "path": "src/lib/smartFrameAnalysis.js",
+        "line": 334
+      }
+    ]
+  },
+  {
+    "text": "贴纸轨已锁定，无法添加贴纸",
+    "sites": [
+      {
+        "path": "src/lib/stickerTimelineActions.js",
+        "line": 49
+      }
+    ]
+  },
+  {
+    "text": "当前贴纸素材不可用",
+    "sites": [
+      {
+        "path": "src/lib/stickerTimelineActions.js",
+        "line": 53
+      }
+    ]
+  },
+  {
+    "text": "贴纸已添加到贴纸轨",
+    "sites": [
+      {
+        "path": "src/lib/stickerTimelineActions.js",
+        "line": 70
+      }
+    ]
+  },
+  {
+    "text": "贴纸轨已锁定，无法删除",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "text": "当前没有贴纸片段可删除",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 13
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 10
+      }
+    ]
+  },
+  {
+    "text": "已删除当前贴纸片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 15
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "text": "已删除最后一个贴纸片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 15
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "text": "当前轨道已锁定，无法删除",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 21
+      }
+    ]
+  },
+  {
+    "text": "请先选择一个画中画片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 24
+      },
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 98
+      },
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 171
+      }
+    ]
+  },
+  {
+    "text": "已删除画中画片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 28
+      }
+    ]
+  },
+  {
+    "text": "当前没有视觉片段可删除",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 32
+      }
+    ]
+  },
+  {
+    "text": "已删除当前视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 42
+      },
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 42
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 88
+      }
+    ]
+  },
+  {
+    "text": "当前没有选中的配音片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 46
+      }
+    ]
+  },
+  {
+    "text": "当前没有选中的原声音频片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 51
+      },
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 66
+      }
+    ]
+  },
+  {
+    "text": "已删除当前原声音频片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 61
+      },
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 68
+      }
+    ]
+  },
+  {
+    "text": "请先选择一个音乐片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 81
+      },
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 156
+      }
+    ]
+  },
+  {
+    "text": "已删除当前音乐片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 83
+      },
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 87
+      }
+    ]
+  },
+  {
+    "text": "当前轨道已锁定，无法复制",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 95
+      }
+    ]
+  },
+  {
+    "text": "已复制画中画片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 102
+      }
+    ]
+  },
+  {
+    "text": "请先选择一个贴纸片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 105
+      },
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 216
+      },
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 10
+      }
+    ]
+  },
+  {
+    "text": "已复制当前贴纸片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 107
+      }
+    ]
+  },
+  {
+    "text": "当前没有可复制的字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 110
+      }
+    ]
+  },
+  {
+    "text": "已复制当前字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 114
+      }
+    ]
+  },
+  {
+    "text": "当前没有可复制的视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 117
+      },
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 123
+      }
+    ]
+  },
+  {
+    "text": "视觉轨道已经达到 30 分钟上限",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 125
+      },
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 25
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 41
+      },
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 107
+      }
+    ]
+  },
+  {
+    "text": "已复制当前视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 133
+      }
+    ]
+  },
+  {
+    "text": "已复制当前音乐片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 166
+      }
+    ]
+  },
+  {
+    "text": "当前音频副本已下载",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 170
+      }
+    ]
+  },
+  {
+    "text": "当前没有可复制的音频",
+    "sites": [
+      {
+        "path": "src/lib/timelineClipboardActions.js",
+        "line": 170
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 50
+      }
+    ]
+  },
+  {
+    "text": "当前视觉片段太短，不适合继续剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 54
+      }
+    ]
+  },
+  {
+    "text": "请把播放头放在视觉片段中间再剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 56
+      }
+    ]
+  },
+  {
+    "text": "请先选中要剪切的视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 60
+      }
+    ]
+  },
+  {
+    "text": "切点离片段边缘太近，先把播放头移到片段中间",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 62
+      },
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 178
+      }
+    ]
+  },
+  {
+    "text": "已在播放头位置切开视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 65
+      },
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 204
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 68
+      }
+    ]
+  },
+  {
+    "text": "请先选择一个字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 72
+      }
+    ]
+  },
+  {
+    "text": "请把播放头放在字幕片段中间再剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 78
+      }
+    ]
+  },
+  {
+    "text": "已在播放头位置切开字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 84
+      }
+    ]
+  },
+  {
+    "text": "请先选择一个配音片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 89
+      }
+    ]
+  },
+  {
+    "text": "配音轨已锁定，无法剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 90
+      }
+    ]
+  },
+  {
+    "text": "请把播放头放在配音片段中间再剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 93
+      }
+    ]
+  },
+  {
+    "text": "已在播放头位置切开配音片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 133
+      }
+    ]
+  },
+  {
+    "text": "音乐轨已锁定，无法剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 136
+      }
+    ]
+  },
+  {
+    "text": "请先添加背景音乐",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 137
+      }
+    ]
+  },
+  {
+    "text": "请把播放头放在音乐片段中间再剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 148
+      }
+    ]
+  },
+  {
+    "text": "已在播放头位置切开音乐片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 165
+      }
+    ]
+  },
+  {
+    "text": "贴纸轨已锁定，无法剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 213
+      }
+    ]
+  },
+  {
+    "text": "请把播放头放在贴纸片段中间再剪切",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 218
+      }
+    ]
+  },
+  {
+    "text": "已在播放头位置切开贴纸片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineCutActions.js",
+        "line": 222
+      }
+    ]
+  },
+  {
+    "text": "贴纸轨已锁定，无法调整片段长度",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "text": "当前贴纸片段已到最大长度",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "text": "当前贴纸片段已到最短时长",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "text": "当前贴纸片段已加长",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "text": "当前贴纸片段已缩短",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法调整片段长度",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 17
+      }
+    ]
+  },
+  {
+    "text": "当前视觉片段已到最短时长",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 25
+      }
+    ]
+  },
+  {
+    "text": "当前视觉片段已加长",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 32
+      }
+    ]
+  },
+  {
+    "text": "当前视觉片段已缩短",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 32
+      }
+    ]
+  },
+  {
+    "text": "背景音乐长度由素材决定，下一版会支持裁剪和淡入淡出",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "text": "视频原声长度由视频决定，下一版会支持分段裁剪",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 35
+      }
+    ]
+  },
+  {
+    "text": "请先选择字幕片段，再调整片段长短",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 36
+      }
+    ]
+  },
+  {
+    "text": "当前没有字幕片段可调整",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 37
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法调整片段长度",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 38
+      }
+    ]
+  },
+  {
+    "text": "当前字幕已贴近下一段",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 45
+      }
+    ]
+  },
+  {
+    "text": "当前字幕已到最短时长",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 45
+      }
+    ]
+  },
+  {
+    "text": "当前字幕片段已加长",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 47
+      },
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "text": "当前字幕片段已缩短",
+    "sites": [
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 47
+      },
+      {
+        "path": "src/lib/timelineDurationActions.js",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "text": "{0}轨已锁定，无法移动",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 25
+      }
+    ]
+  },
+  {
+    "text": "视频原声",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 25
+      },
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 88
+      }
+    ]
+  },
+  {
+    "text": "音乐",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 25
+      },
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 88
+      }
+    ]
+  },
+  {
+    "text": "{0}片段位置已调整",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 88
+      }
+    ]
+  },
+  {
+    "text": "视频原声轨已锁定，无法移动",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 100
+      }
+    ]
+  },
+  {
+    "text": "视频原声片段位置已调整",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 217
+      }
+    ]
+  },
+  {
+    "text": "关联字幕轨已锁定，无法移动这个配音片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 229
+      }
+    ]
+  },
+  {
+    "text": "贴纸轨已锁定，无法移动贴纸",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 324
+      }
+    ]
+  },
+  {
+    "text": "已调整贴纸片段位置",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 382
+      }
+    ]
+  },
+  {
+    "text": "贴纸片段位置已调整",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 387
+      }
+    ]
+  },
+  {
+    "text": "贴纸轨已锁定，无法调整片段时长",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 394
+      }
+    ]
+  },
+  {
+    "text": "已调整贴纸片段时长",
+    "sites": [
+      {
+        "path": "src/lib/timelineMoveControls.js",
+        "line": 449
+      }
+    ]
+  },
+  {
+    "text": "已调整视觉片段顺序",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 40
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法拖动片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 45
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法拖动片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 45
+      }
+    ]
+  },
+  {
+    "text": "已移动字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 111
+      }
+    ]
+  },
+  {
+    "text": "目标画中画轨的这个时间段已有片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 264
+      }
+    ]
+  },
+  {
+    "text": "至少保留一个主画面后才能转为画中画",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 266
+      }
+    ]
+  },
+  {
+    "text": "画面片段已移至画中画轨道",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 273
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法调整片段时长",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 289
+      }
+    ]
+  },
+  {
+    "text": "已调整字幕片段时长",
+    "sites": [
+      {
+        "path": "src/lib/timelineReorderControls.js",
+        "line": 358
+      }
+    ]
+  },
+  {
+    "text": "字幕轨已锁定，无法新增字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "text": "已在点击位置新增字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 26
+      }
+    ]
+  },
+  {
+    "text": "已在播放头位置新增字幕片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 26
+      }
+    ]
+  },
+  {
+    "text": "贴纸轨已锁定，无法新增贴纸片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 30
+      }
+    ]
+  },
+  {
+    "text": "请先选择一个贴纸",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 32
+      }
+    ]
+  },
+  {
+    "text": "已新增贴纸片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法新增片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 37
+      }
+    ]
+  },
+  {
+    "text": "已在播放头位置新增视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 54
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 70
+      },
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 73
+      }
+    ]
+  },
+  {
+    "text": "播放头离片段边缘太近，请稍微移开后新增",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 60
+      }
+    ]
+  },
+  {
+    "text": "背景音乐暂不支持切片，请删除后重新上传",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 75
+      }
+    ]
+  },
+  {
+    "text": "视频原声暂不支持切片，可删除后重新上传视频",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 75
+      }
+    ]
+  },
+  {
+    "text": "音频片段由生成结果决定，请重新生成或复制 WAV",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 75
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法减少片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 81
+      }
+    ]
+  },
+  {
+    "text": "当前没有视觉片段可减少",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 82
+      }
+    ]
+  },
+  {
+    "text": "已删除最后一个视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 92
+      }
+    ]
+  },
+  {
+    "text": "已缩短当前视觉片段",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 95
+      }
+    ]
+  },
+  {
+    "text": "背景音乐可整轨删除，暂不支持局部减少",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 97
+      }
+    ]
+  },
+  {
+    "text": "视频原声可整轨删除，暂不支持局部减少",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 97
+      }
+    ]
+  },
+  {
+    "text": "音频片段不能单独减少；可以删除音频轨或重新生成",
+    "sites": [
+      {
+        "path": "src/lib/timelineSegmentCountActions.js",
+        "line": 97
+      }
+    ]
+  },
+  {
+    "text": "视觉分析已取消。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "text": "视觉主体分析失败",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 98
+      }
+    ]
+  },
+  {
+    "text": "视觉分析 Worker 运行失败",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 104
+      }
+    ]
+  },
+  {
+    "text": "视觉分析 Worker 返回了无法读取的数据",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 108
+      }
+    ]
+  },
+  {
+    "text": "analyzeVisualSubject 需要非空图片 Blob。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 159
+      }
+    ]
+  },
+  {
+    "text": "请先用 captureVisualFrame 把视频转换成图片 Blob。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 162
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器不支持 Worker 视觉分析。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 173
+      },
+      {
+        "path": "src/lib/vision.js",
+        "line": 234
+      }
+    ]
+  },
+  {
+    "text": "准备视觉分析 Worker",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 196
+      }
+    ]
+  },
+  {
+    "text": "无法读取视觉素材。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 294
+      }
+    ]
+  },
+  {
+    "text": "当前环境不支持 Canvas，无法截取视觉帧。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 378
+      }
+    ]
+  },
+  {
+    "text": "视觉帧编码失败。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 392
+      }
+    ]
+  },
+  {
+    "text": "当前环境无法解码图片。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 419
+      }
+    ]
+  },
+  {
+    "text": "当前环境无法解码视频。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 472
+      }
+    ]
+  },
+  {
+    "text": "视觉素材尺寸无效。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 538
+      }
+    ]
+  },
+  {
+    "text": "无法创建视觉帧画布。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 545
+      }
+    ]
+  },
+  {
+    "text": "读取全视频元数据",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 745
+      }
+    ]
+  },
+  {
+    "text": "视频尺寸无效，无法进行全片视觉分析。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 752
+      }
+    ]
+  },
+  {
+    "text": "无法创建全视频视觉分析画布。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 775
+      }
+    ]
+  },
+  {
+    "text": "截取全视频帧 {0}/{1}",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 787
+      }
+    ]
+  },
+  {
+    "text": "全视频 {0}/{1} · {2}",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 807
+      }
+    ]
+  },
+  {
+    "text": "全视频视觉轨道已生成",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 827
+      }
+    ]
+  },
+  {
+    "text": "视觉分析 Worker 已释放",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 863
+      }
+    ]
+  },
+  {
+    "text": "图片轨已锁定，无法添加素材",
+    "sites": [
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 96
+      }
+    ]
+  },
+  {
+    "text": "{0}素材已{1}到图片轨",
+    "sites": [
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 123
+      }
+    ]
+  },
+  {
+    "text": "插入",
+    "sites": [
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 123
+      }
+    ]
+  },
+  {
+    "text": "追加",
+    "sites": [
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 123
+      }
+    ]
+  },
+  {
+    "text": "工作流 JSON 无法解析。请从 ComfyUI 导出 API Format 工作流后再粘贴。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/comfyui/adapter.js",
+        "line": 19
+      }
+    ]
+  },
+  {
+    "text": "工作流必须是 ComfyUI API Format 的对象。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/comfyui/adapter.js",
+        "line": 21
+      }
+    ]
+  },
+  {
+    "text": "ComfyUI 没有返回 prompt_id。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/comfyui/adapter.js",
+        "line": 65
+      }
+    ]
+  },
+  {
+    "text": "ComfyUI 任务等待超过 15 分钟。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/comfyui/adapter.js",
+        "line": 70
+      }
+    ]
+  },
+  {
+    "text": "ComfyUI 工作流执行失败，请在 ComfyUI 控制台查看出错节点。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/comfyui/adapter.js",
+        "line": 76
+      }
+    ]
+  },
+  {
+    "text": "工作流已完成，但没有找到可导入的图片或视频输出。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/comfyui/adapter.js",
+        "line": 80
+      }
+    ]
+  },
+  {
+    "text": "无法读取 ComfyUI 输出：HTTP {0}",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/comfyui/adapter.js",
+        "line": 85
+      }
+    ]
+  },
+  {
+    "text": "请输入有效的本地服务地址。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/shared/loopback.js",
+        "line": 9
+      }
+    ]
+  },
+  {
+    "text": "为保护本地生成服务，只允许连接 localhost、127.0.0.1 或 ::1。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/shared/loopback.js",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "text": "无法访问本地服务。请确认服务已启动，并允许当前编辑器地址跨域访问（CORS）。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/shared/loopback.js",
+        "line": 27
+      }
+    ]
+  },
+  {
+    "text": "本地服务返回 HTTP {0}{1}",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/shared/loopback.js",
+        "line": 37
+      }
+    ]
+  },
+  {
+    "text": "图生图需要先选择一张参考图片。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/webui/adapter.js",
+        "line": 23
+      }
+    ]
+  },
+  {
+    "text": "WebUI 没有返回图片。",
+    "sites": [
+      {
+        "path": "src/plugins/generation/providers/webui/adapter.js",
+        "line": 32
+      }
+    ]
+  },
+  {
+    "text": "自动字幕模型版本已更新，请刷新后重新生成。",
+    "sites": [
+      {
+        "path": "src/workers/asr.worker.js",
+        "line": 247
+      }
+    ]
+  },
+  {
+    "text": "分词器缺少 Hojo 结束标记",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 131
+      }
+    ]
+  },
+  {
+    "text": "语言模型没有生成有效语音 Token",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 289
+      }
+    ]
+  },
+  {
+    "text": "未知音色：{0}",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 312
+      }
+    ]
+  },
+  {
+    "text": "JoyVASA 浏览器模型包尚未配置托管地址",
+    "sites": [
+      {
+        "path": "src/workers/joyvasa.worker.js",
+        "line": 23
+      }
+    ]
+  },
+  {
+    "text": "{0} 下载失败（{1}）",
+    "sites": [
+      {
+        "path": "src/workers/joyvasa.worker.js",
+        "line": 37
+      },
+      {
+        "path": "src/workers/liveportrait.worker.js",
+        "line": 41
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器没有可用的 WebGPU，无法运行 JoyVASA {0}",
+    "sites": [
+      {
+        "path": "src/workers/joyvasa.worker.js",
+        "line": 83
+      }
+    ]
+  },
+  {
+    "text": "当前浏览器没有可用的 WebGPU，无法运行全 GPU LivePortrait",
+    "sites": [
+      {
+        "path": "src/workers/liveportrait.worker.js",
+        "line": 82
+      }
+    ]
+  },
+  {
+    "text": "WebGPU 首帧连续异常，已阻止损坏画面写入视频；请释放其他 GPU 页面后重试",
+    "sites": [
+      {
+        "path": "src/workers/liveportrait.worker.js",
+        "line": 449
+      }
+    ]
+  },
+  {
+    "text": "正在读取 OpenCV 光流运行时",
+    "sites": [
+      {
+        "path": "src/workers/person-flow.worker.js",
+        "line": 3
+      }
+    ]
+  },
+  {
+    "text": "光流状态尚未初始化",
+    "sites": [
+      {
+        "path": "src/workers/person-flow.worker.js",
+        "line": 156
+      }
+    ]
+  },
+  {
+    "text": "未知光流指令：{0}",
+    "sites": [
+      {
+        "path": "src/workers/person-flow.worker.js",
+        "line": 189
+      },
+      {
+        "path": "src/workers/smart-frame-flow.worker.js",
+        "line": 131
+      }
+    ]
+  },
+  {
+    "text": "当前 OpenCV.js 构建不包含 Farneback 光流",
+    "sites": [
+      {
+        "path": "src/workers/person-flow.worker.js",
+        "line": 212
+      }
+    ]
+  },
+  {
+    "text": "Remaster DRUNet 下载失败（HTTP {0}）",
+    "sites": [
+      {
+        "path": "src/workers/remaster.worker.js",
+        "line": 39
+      }
+    ]
+  },
+  {
+    "text": "当前环境不支持 WebGPU",
+    "sites": [
+      {
+        "path": "src/workers/remaster.worker.js",
+        "line": 64
+      }
+    ]
+  },
+  {
+    "text": "正在读取光流运行时",
+    "sites": [
+      {
+        "path": "src/workers/smart-frame-flow.worker.js",
+        "line": 3
+      }
+    ]
+  },
+  {
+    "text": "光流尚未初始化",
+    "sites": [
+      {
+        "path": "src/workers/smart-frame-flow.worker.js",
+        "line": 118
+      }
+    ]
+  },
+  {
+    "text": "当前 OpenCV.js 不支持 Farneback 光流",
+    "sites": [
+      {
+        "path": "src/workers/smart-frame-flow.worker.js",
+        "line": 149
+      }
+    ]
+  },
+  {
+    "text": "没有可分析的图片数据。",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 268
+      }
+    ]
+  },
+  {
+    "text": "{0} 没有返回有效抠图。",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 355
+      }
+    ]
+  },
+  {
+    "text": "{0} 透明 PNG 生成失败。",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 364
+      }
+    ]
+  },
+  {
+    "text": "在线素材下载失败，已移除临时片段",
+    "sites": [
+      {
+        "path": "src/lib/assetDropActions.js",
+        "line": 60
+      }
+    ]
+  },
+  {
+    "text": "配音音频已从时间线移除",
+    "sites": [
+      {
+        "path": "src/lib/audioTrackActions.js",
+        "line": 68
+      }
+    ]
+  },
+  {
+    "text": "背景音乐已添加到时间线",
+    "sites": [
+      {
+        "path": "src/lib/audioTrackActions.js",
+        "line": 87
+      }
+    ]
+  },
+  {
+    "text": "视频原声已从时间线移除",
+    "sites": [
+      {
+        "path": "src/lib/audioTrackActions.js",
+        "line": 148
+      }
+    ]
+  },
+  {
+    "text": "背景音乐已从时间线移除",
+    "sites": [
+      {
+        "path": "src/lib/audioTrackActions.js",
+        "line": 176
+      }
+    ]
+  },
+  {
+    "text": "默认视频",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 1525
+      },
+      {
+        "path": "src/lib/media.js",
+        "line": 1536
+      },
+      {
+        "path": "src/lib/media.js",
+        "line": 1583
+      }
+    ]
+  },
+  {
+    "text": "任务已取消",
+    "sites": [
+      {
+        "path": "src/lib/media.js",
+        "line": 2242
+      }
+    ]
+  },
+  {
+    "text": "人物描边分析需要视频源。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 661
+      }
+    ]
+  },
+  {
+    "text": "实物描边需要有效图片。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1321
+      }
+    ]
+  },
+  {
+    "text": "实物描边分析需要视频源。",
+    "sites": [
+      {
+        "path": "src/lib/personOutlineAnalysis.js",
+        "line": 1398
+      }
+    ]
+  },
+  {
+    "text": "captureVisualFrame 需要 src 或 videoElement。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 520
+      }
+    ]
+  },
+  {
+    "text": "analyzeVideoVisualTrack 需要视频 src 或 Blob。",
+    "sites": [
+      {
+        "path": "src/lib/vision.js",
+        "line": 741
+      }
+    ]
+  },
+  {
+    "text": "图片素材已从时间线移除",
+    "sites": [
+      {
+        "path": "src/lib/visualTimelineActions.js",
+        "line": 180
+      }
+    ]
+  },
+  {
+    "text": "模型待命",
+    "sites": [
+      {
+        "path": "src/hooks/useEditorUiState.js",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "text": "读取中",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 21
+      }
+    ]
+  },
+  {
+    "text": "音频 · {0}",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 36
+      }
+    ]
+  },
+  {
+    "text": "音频读取失败",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 37
+      }
+    ]
+  },
+  {
+    "text": "读取失败",
+    "sites": [
+      {
+        "path": "src/hooks/useFileUpload.js",
+        "line": 135
+      }
+    ]
+  },
+  {
+    "text": "贴纸",
+    "sites": [
+      {
+        "path": "src/hooks/useTimelineModel.js",
+        "line": 64
+      }
+    ]
+  },
+  {
+    "text": "在 Worker 中初始化 WebGPU ONNX",
+    "sites": [
+      {
+        "path": "src/workers/asr.worker.js",
+        "line": 156
+      }
+    ]
+  },
+  {
+    "text": "在 Worker 中初始化 WASM ONNX",
+    "sites": [
+      {
+        "path": "src/workers/asr.worker.js",
+        "line": 156
+      }
+    ]
+  },
+  {
+    "text": "WebGPU 初始化失败，切换 WASM Worker",
+    "sites": [
+      {
+        "path": "src/workers/asr.worker.js",
+        "line": 164
+      }
+    ]
+  },
+  {
+    "text": "下载并校验模型分片",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 87
+      }
+    ]
+  },
+  {
+    "text": "创建语音语言模型 · WebGPU",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 152
+      }
+    ]
+  },
+  {
+    "text": "读取模型清单",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 165
+      }
+    ]
+  },
+  {
+    "text": "初始化高性能 WebGPU",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 169
+      }
+    ]
+  },
+  {
+    "text": "生成语音 Token · {0}",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 283
+      }
+    ]
+  },
+  {
+    "text": "解码 24 kHz 波形",
+    "sites": [
+      {
+        "path": "src/workers/hojoTts.worker.js",
+        "line": 319
+      }
+    ]
+  },
+  {
+    "text": "加载 NanoDet-Plus 实物检测模型",
+    "sites": [
+      {
+        "path": "src/workers/nanodet.worker.js",
+        "line": 46
+      }
+    ]
+  },
+  {
+    "text": "初始化 NanoDet-Plus ONNX",
+    "sites": [
+      {
+        "path": "src/workers/nanodet.worker.js",
+        "line": 56
+      }
+    ]
+  },
+  {
+    "text": "NanoDet-Plus 正在识别实物",
+    "sites": [
+      {
+        "path": "src/workers/nanodet.worker.js",
+        "line": 177
+      }
+    ]
+  },
+  {
+    "text": "从本地模型缓存加载",
+    "sites": [
+      {
+        "path": "src/workers/openvoice.worker.js",
+        "line": 29
+      }
+    ]
+  },
+  {
+    "text": "下载 OpenVoice 模型",
+    "sites": [
+      {
+        "path": "src/workers/openvoice.worker.js",
+        "line": 37
+      }
+    ]
+  },
+  {
+    "text": "初始化音色编码器",
+    "sites": [
+      {
+        "path": "src/workers/openvoice.worker.js",
+        "line": 46
+      }
+    ]
+  },
+  {
+    "text": "初始化变声模型 · WASM 稳定模式",
+    "sites": [
+      {
+        "path": "src/workers/openvoice.worker.js",
+        "line": 54
+      }
+    ]
+  },
+  {
+    "text": "提取音色特征",
+    "sites": [
+      {
+        "path": "src/workers/openvoice.worker.js",
+        "line": 250
+      }
+    ]
+  },
+  {
+    "text": "转换为克隆音色",
+    "sites": [
+      {
+        "path": "src/workers/openvoice.worker.js",
+        "line": 262
+      }
+    ]
+  },
+  {
+    "text": "清理尾部静音",
+    "sites": [
+      {
+        "path": "src/workers/openvoice.worker.js",
+        "line": 271
+      }
+    ]
+  },
+  {
+    "text": "未知错误",
+    "sites": [
+      {
+        "path": "src/workers/remaster.worker.js",
+        "line": 34
+      }
+    ]
+  },
+  {
+    "text": "SlimSAM 模型 · {0} · {1}%",
+    "sites": [
+      {
+        "path": "src/workers/slimsam.worker.js",
+        "line": 26
+      }
+    ]
+  },
+  {
+    "text": "下载",
+    "sites": [
+      {
+        "path": "src/workers/slimsam.worker.js",
+        "line": 26
+      }
+    ]
+  },
+  {
+    "text": "SlimSAM 解码人物帧",
+    "sites": [
+      {
+        "path": "src/workers/slimsam.worker.js",
+        "line": 150
+      }
+    ]
+  },
+  {
+    "text": "SlimSAM 生成人物蒙版",
+    "sites": [
+      {
+        "path": "src/workers/slimsam.worker.js",
+        "line": 168
+      }
+    ]
+  },
+  {
+    "text": "正在初始化 {0} WebGPU",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 98
+      }
+    ]
+  },
+  {
+    "text": "{0} WebGPU 已就绪",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 102
+      }
+    ]
+  },
+  {
+    "text": "{0} WebGPU 初始化失败，切换到 WASM。",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 106
+      }
+    ]
+  },
+  {
+    "text": "{0} WebGPU 不可用，切换到 WASM",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 107
+      }
+    ]
+  },
+  {
+    "text": "{0} WASM 已就绪",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 112
+      }
+    ]
+  },
+  {
+    "text": "{0} 已就绪",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 120
+      },
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 149
+      }
+    ]
+  },
+  {
+    "text": "解码视觉素材",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 271
+      }
+    ]
+  },
+  {
+    "text": "使用 {0} 识别主体",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 286
+      }
+    ]
+  },
+  {
+    "text": "复用已锁定人物区域",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 304
+      }
+    ]
+  },
+  {
+    "text": "已识别主体：{0}",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 339
+      }
+    ]
+  },
+  {
+    "text": "未识别到高置信度主体",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 339
+      }
+    ]
+  },
+  {
+    "text": "使用 {0} 生成透明抠图",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 350
+      }
+    ]
+  },
+  {
+    "text": "透明抠图已生成",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 366
+      }
+    ]
+  },
+  {
+    "text": "视觉主体分析完成",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 373
+      }
+    ]
+  },
+  {
+    "text": "并行准备人物识别模型",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 406
+      }
+    ]
+  },
+  {
+    "text": "人物识别模型已就绪",
+    "sites": [
+      {
+        "path": "src/workers/vision.worker.js",
+        "line": 412
+      }
+    ]
+  }
+]

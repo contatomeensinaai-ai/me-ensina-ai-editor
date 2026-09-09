@@ -53,7 +53,7 @@ export async function createRuntimeServer({port=5201,distDirectory=fileURLToPath
   if(['/api/health','/api/status'].includes(path)){
    if(req.method!=='GET'||(req.headers['sec-fetch-site']&&!['none','same-origin'].includes(req.headers['sec-fetch-site']))){fail(403,'Local session required');return;}
    let codexAvailable=false;try{resolveCodexBinary();codexAvailable=true;}catch{/* No account or filesystem details are exposed. */}
-   res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({ok:true,app:'me-ensina-ai-editor',runtimeVersion:'0.2.0',port:actualPort,editorAvailable:true,codexAvailable}));return;
+   res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({ok:true,app:'me-ensina-ai-editor',runtimeVersion:'0.2.1',port:actualPort,editorAvailable:true,codexAvailable}));return;
   }
   let index=0;
   const next=()=>{

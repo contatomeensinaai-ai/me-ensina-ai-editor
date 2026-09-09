@@ -21,3 +21,16 @@ test('language choice survives reload, settings changes persist and inaccessible
  const previous=globalThis.window;const values=new Map();globalThis.window={localStorage:{getItem:key=>values.get(key),setItem:(key,value)=>values.set(key,value)}};
  try{assert.equal(getStoredLanguage(),'');for(const lang of ['pt','en','es']){saveLanguagePreference(lang);assert.equal(values.get(LANGUAGE_STORAGE_KEY),lang);assert.equal(getStoredLanguage(),lang);}values.set(LANGUAGE_STORAGE_KEY,'unknown');assert.equal(getStoredLanguage(),'');globalThis.window.localStorage.getItem=()=>{throw Error('denied');};assert.equal(getStoredLanguage(),'');}finally{globalThis.window=previous;}
 });
+test('public interface offers only reviewed languages and legacy Chinese preference reopens choice without deleting data',async()=>{
+ const {APP_LANGUAGES}=await import('./i18n.js');
+ assert.deepEqual(APP_LANGUAGES.map(({id})=>id),['pt','en','es']);
+ const previous=globalThis.window;const values=new Map([[LANGUAGE_STORAGE_KEY,'zh'],['project-user-data','untouched']]);
+ globalThis.window={localStorage:{getItem:key=>values.get(key),setItem:(key,value)=>values.set(key,value)}};
+ try{assert.equal(getStoredLanguage(),'');assert.equal(values.get('project-user-data'),'untouched');saveLanguagePreference('zh');assert.equal(getStoredLanguage(),'');}finally{globalThis.window=previous;}
+});
+test('translator localizes runtime diagnostics while preserving user filenames and interpolated values',()=>{
+ for(const language of ['pt','en','es']){
+  const t=createTranslator(language);assert.doesNotMatch(t.message('光流 Worker 运行失败'),/\p{Script=Han}/u);
+  assert.ok(t.message('我的影片 $&{1}.mov 已恢复').includes('我的影片 $&{1}.mov'));
+ }
+});

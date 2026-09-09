@@ -21,7 +21,7 @@ export function ExportProgressOverlay({ exporting, percent, phase, elapsedSecond
     <div className="export-progress-bar" role="progressbar" aria-label={t("exportProgress")} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent}>
       <span style={{ width: `${percent}%` }} />
     </div>
-    <div className="export-progress-meta"><span>{phase || t("preparingExport")}</span><span>{formatClock(elapsedSeconds)}</span></div>
+    <div className="export-progress-meta"><span>{(t.message?.(phase) ?? phase) || t("preparingExport")}</span><span>{formatClock(elapsedSeconds)}</span></div>
     {percent < 100 ? (
       <button className="export-progress-cancel" type="button" disabled={canceling} onClick={onCancel}>
         {canceling ? t("exportCanceling") : t("exportCancel")}
@@ -44,7 +44,7 @@ export function RemasterProgressOverlay({ job, onCancel, t }) {
   const elapsedSeconds = Math.max(0, Math.floor((now - (job.startedAt || now)) / 1000));
   const frameText = job.totalFrames > 0
     ? t("remasterClipProgressFrames").replace("{current}", String(job.frameIndex || 0)).replace("{total}", String(job.totalFrames))
-    : job.phase || t("remasterClipPreparing");
+    : (t.message?.(job.phase) ?? job.phase) || t("remasterClipPreparing");
   const backendText = job.backend === "webgpu" ? t("remasterGpuActive") : job.backend === "wasm" ? t("remasterCpuFallback") : t("remasterGpuAuto");
   const phaseText = translateRemasterPhase(job, t);
   return <div className="remaster-progress-overlay" role="dialog" aria-modal="true" aria-labelledby="remaster-progress-title">
@@ -53,7 +53,7 @@ export function RemasterProgressOverlay({ job, onCancel, t }) {
       <div className="remaster-progress-copy">
         <div className="remaster-progress-header"><span id="remaster-progress-title">{t("remasterClipProgressTitle")}</span><strong>{percent}%</strong></div>
         <div className="remaster-progress-bar" role="progressbar" aria-label={t("remasterClipProgressTitle")} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent}><span style={{ width: `${percent}%` }} /></div>
-        <div className="remaster-progress-detail"><strong>{phaseText}</strong><span>{backendText} · {frameText} · {formatClock(elapsedSeconds)}</span></div>
+        <div className="remaster-progress-detail"><strong>{t.message?.(phaseText) ?? phaseText}</strong><span>{backendText} · {frameText} · {formatClock(elapsedSeconds)}</span></div>
         <p>{t("remasterClipProgressSafe")}</p>
         <button type="button" onClick={onCancel}>{job.phaseKey === "remasterCanceling" || job.phase === t("remasterCanceling") ? t("remasterCanceling") : t("remasterCancel")}</button>
       </div>

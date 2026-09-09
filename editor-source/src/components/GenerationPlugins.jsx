@@ -1,3 +1,4 @@
+import { localizeUiMessage } from "../i18nMessageRuntime.js";
 import {
   ArrowSquareOut,
   Check,
@@ -76,7 +77,7 @@ Object.assign(LOCAL_COPY, {
 
 function getCopy(language) {
   const key = String(language || "en").toLowerCase();
-  return { ...(COPY[key] || COPY.en), ...(AUTH_RECOVERY_COPY[key] || AUTH_RECOVERY_COPY.en), ...(LOCAL_COPY[key] || LOCAL_COPY.en) };
+  return { message: (value) => localizeUiMessage(value, key), ...(COPY[key] || COPY.en), ...(AUTH_RECOVERY_COPY[key] || AUTH_RECOVERY_COPY.en), ...(LOCAL_COPY[key] || LOCAL_COPY.en) };
 }
 
 function getPuterAuthError(copy, connection) {
@@ -84,7 +85,7 @@ function getPuterAuthError(copy, connection) {
   if (connection.errorCode === "auth_timeout") return copy.authTimeout;
   if (connection.errorCode === "popup_blocked") return copy.popupBlocked;
   if (connection.errorCode === "auth_window_closed") return copy.authClosed;
-  return connection.error;
+  return copy.message(connection.error);
 }
 
 function AuthDialog({ copy, busy, error, onCancel, onContinue }) {
@@ -103,7 +104,7 @@ function AuthDialog({ copy, busy, error, onCancel, onContinue }) {
           <span><Check size={15} weight="bold" /> {copy.userPays}</span>
         </div>
         <div className="plugin-secure-note"><ShieldCheck size={17} weight="duotone" /><span>{copy.secure}</span></div>
-        {error ? <p className="plugin-error">{copy.connectionError}: {error}</p> : null}
+        {error ? <p className="plugin-error">{copy.connectionError}: {copy.message(error)}</p> : null}
         <footer>
           <button type="button" className="plugin-button secondary" onClick={onCancel}>{copy.cancel}</button>
           <button type="button" className="plugin-button primary" disabled={busy} onClick={onContinue}>{busy ? <SpinnerGap className="spin" size={17} /> : <UserCircle size={17} />}{busy ? copy.waitingAuth : error ? copy.retryAuth : copy.continue}</button>
@@ -123,7 +124,7 @@ function JobStatus({ copy, plugins }) {
   return (
     <div className={`plugin-job ${complete ? "is-complete" : ""} ${cancelled ? "is-cancelled" : ""} ${error ? "is-error" : ""}`}>
       <div><span>{complete ? <CheckCircle size={17} weight="fill" /> : error || cancelled ? <X size={17} /> : <SpinnerGap className="spin" size={17} />}{complete ? copy.resultSaved : cancelled ? copy.cancelJob : error ? copy.jobError : copy.generating}</span><strong>{progress === null || error || cancelled ? "" : `${progress}%`}</strong></div>
-      {!error && !cancelled ? <i className={progress === null ? "is-indeterminate" : ""}><span style={progress === null ? undefined : { width: `${progress}%` }} /></i> : error ? <p>{plugins.job.message}</p> : null}
+      {!error && !cancelled ? <i className={progress === null ? "is-indeterminate" : ""}><span style={progress === null ? undefined : { width: `${progress}%` }} /></i> : error ? <p>{copy.message(plugins.job.message)}</p> : null}
       {complete ? <button type="button" onClick={plugins.openGeneratedAsset}>{copy.openAssets}<ArrowSquareOut size={15} /></button> : null}
     </div>
   );
@@ -218,7 +219,7 @@ function LocalConnectionView({ copy, name, tone, Icon, connection, endpoint, set
       <label className="plugin-field plugin-local-endpoint"><span>{copy.endpoint}</span><input value={endpoint} onChange={(event) => setEndpoint(event.target.value)} placeholder={defaultEndpoint} spellCheck={false} /></label>
       <button type="button" className="plugin-button primary wide" disabled={busy} onClick={() => onConnect(endpoint).catch(() => {})}>{busy ? <SpinnerGap className="spin" size={17} /> : <LinkSimple size={17} />}{busy ? copy.connecting : copy.connectLocal}</button>
       <div className="plugin-secure-note"><ShieldCheck size={17} weight="duotone" /><span>{copy.localOnly}</span></div>
-      {connection.error ? <p className="plugin-error">{copy.connectionError}: {connection.error}</p> : null}
+      {connection.error ? <p className="plugin-error">{copy.connectionError}: {copy.message(connection.error)}</p> : null}
     </div>
   );
 }

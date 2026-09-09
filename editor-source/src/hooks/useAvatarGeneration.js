@@ -1,3 +1,4 @@
+import { formatUiFailure } from "../i18nMessageRuntime.js";
 import { useCallback } from "react";
 import { MIN_VISUAL_SEGMENT_SECONDS } from "../config/editor.js";
 import { getJoyVasaProjectModelBaseUrls } from "../config/joyVasa.js";
@@ -59,7 +60,7 @@ export function useAvatarGeneration(d) {
       d.setUserAssets((assets) => [asset, ...assets]); d.replaceVisualTimeline(asset, duration); d.setCurrentTime(0);
       d.setAvatarJob({ running: false, progress: 100, phase: d.t("avatarAcceptanceDone") }); d.notify(d.t("avatarTrackReplaced"));
     } catch (error) {
-      d.setAvatarJob({ running: false, progress: 0, phase: "" }); d.notify(`${d.t("avatarGenerationFailed")}：${error instanceof Error ? error.message : String(error)}`);
+      d.setAvatarJob({ running: false, progress: 0, phase: "" }); d.notify(formatUiFailure(d.t, "avatarGenerationFailed", error));
     }
   }, [d]);
   return { generateAvatarAcceptanceFrame, openAvatarPanel };

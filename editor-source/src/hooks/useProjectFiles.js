@@ -1,3 +1,4 @@
+import { formatUiFailure } from "../i18nMessageRuntime.js";
 import { saveLocalArtifact } from "../lib/localArtifactSave.js";
 import { useCallback, useRef } from "react";
 import { DEFAULT_SCRIPT, DEFAULT_TIMELINE_DURATION_SECONDS, normalizeVoiceId, RATIO_OPTIONS, VOICES } from "../config/editor.js";
@@ -52,7 +53,7 @@ export function useProjectFiles(deps) {
       deps.notify(deps.t("artifactSaved").replace("{path}", receipt.path));
       return receipt;
     } catch (error) {
-      deps.notify(`${deps.t("projectSaveFailed")}: ${error.message || ""}`);
+      deps.notify(formatUiFailure(deps.t, "projectSaveFailed", error));
       return null;
     }
   }, [deps, getProjectArchiveInput]);

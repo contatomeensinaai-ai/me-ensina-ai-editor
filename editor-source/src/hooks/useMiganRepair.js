@@ -1,3 +1,4 @@
+import { formatUiFailure } from "../i18nMessageRuntime.js";
 import { useEffect, useRef, useState } from "react";
 
 import { repairMiganClip } from "../lib/miganClipRepair.js";
@@ -253,7 +254,7 @@ export function useMiganRepair({
         notify(t("repairCanceled"));
         setJob({ running: false, progress: 0, phaseKey: "", frameIndex: 0, totalFrames: 0, backend: "" });
       } else {
-        notify(`${t("repairFailed")}：${error.message}`);
+        notify(formatUiFailure(t, "repairFailed", error));
         setJob((current) => ({ ...current, running: false }));
       }
       return null;
@@ -360,7 +361,7 @@ export function useMiganRepair({
         notify(t("repairCanceled"));
         setJob({ running: false, progress: 0, phaseKey: "", frameIndex: 0, totalFrames: 0, backend: "" });
       } else {
-        notify(`${t("repairFailed")}：${error.message}`);
+        notify(formatUiFailure(t, "repairFailed", error));
         setJob((current) => ({ ...current, running: false }));
       }
       return false;

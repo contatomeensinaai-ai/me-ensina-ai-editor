@@ -1,3 +1,4 @@
+import { formatUiFailure } from "../i18nMessageRuntime.js";
 import { useEffect, useRef, useState } from "react";
 
 import { restoreNanoVsrImage, restoreNanoVsrVideo } from "../lib/nanovsr.js";
@@ -111,7 +112,7 @@ export function useNanoVsrRestoration({
       return true;
     } catch (error) {
       if (error?.name === "AbortError") notify(t("hdRestoreCanceled"));
-      else notify(`${t("hdRestoreFailed")}：${error instanceof Error ? error.message : String(error)}`);
+      else notify(formatUiFailure(t, "hdRestoreFailed", error));
       setJob((current) => ({ ...current, running: false }));
       return false;
     } finally {

@@ -1,16 +1,16 @@
 # Me Ensina AI — Editor de Vídeo 2.0
 
-Editor local de vídeo com plugin para Codex. **Plugin 2.1.0, runtime piloto 0.2.0: Mac Apple Silicon, Mac Intel e Windows x64.** A validação por plataforma está no relatório de compatibilidade; funções experimentais não estão homologadas.
+Editor local de vídeo com plugin para Codex. **Plugin 2.1.1, runtime piloto 0.2.1: Mac Apple Silicon, Mac Intel e Windows x64.** A validação por plataforma está no relatório de compatibilidade; funções experimentais não estão homologadas.
 
 ## Arquivo para instalar no Claude
 
-Se preferir a opção **Enviar/Upload de plugin**, baixe **Me-Ensina-AI-Editor-de-Video-2.1.0-Claude.zip** na [release atual](https://github.com/contatomeensinaai-ai/me-ensina-ai-editor/releases/tag/v0.2.0-pilot). Este é o ZIP do plugin, diferente do pacote de preparação do editor.
+Se preferir a opção **Enviar/Upload de plugin**, baixe **Me-Ensina-AI-Editor-de-Video-2.1.1-Claude.zip** na [release atual](https://github.com/contatomeensinaai-ai/me-ensina-ai-editor/releases/tag/v0.2.1-pilot). Este é o ZIP do plugin, diferente do pacote de preparação do editor.
 
 Marketplace exclusivo: `me-ensina-ai-video-2`. Plugin: `me-ensina-ai-video-editor`. Os manifestos internos continuam com os nomes exigidos pelo Claude.
 
 ## Nome e atualização
 
-O plugin agora se chama **Me Ensina AI — Editor de Vídeo 2.0**, com identificador `me-ensina-ai-video-editor`, para distinguir de plugins anteriores. Atualize o marketplace e instale o novo identificador. O plugin antigo não é removido automaticamente. A versão 2.1.0 adiciona preparação nativa por sistema, com runtime 0.2.0 e hashes específicos para cada arquitetura.
+O plugin agora se chama **Me Ensina AI — Editor de Vídeo 2.0**, com identificador `me-ensina-ai-video-editor`, para distinguir de plugins anteriores. Atualize o marketplace e instale o novo identificador. O plugin antigo não é removido automaticamente. A versão 2.1.1 usa o runtime 0.2.1 e completa a tradução dos erros, do progresso e das descrições dos painéis. A interface oferece Português, English e Español. Mantém a preparação nativa por sistema e hashes específicos para cada arquitetura.
 
 ## Instalar no Claude Code
 

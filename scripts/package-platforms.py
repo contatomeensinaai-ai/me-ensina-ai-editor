@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,hashlib,json,tarfile,zipfile,tempfile,shutil
 parser=argparse.ArgumentParser();parser.add_argument('--downloads',type=Path,required=True);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
 root=Path(__file__).resolve().parents[1];args.output.mkdir(parents=True,exist_ok=True)
-version='0.2.0';specs={
+version='0.2.1';specs={
 'darwin-arm64':('node-v22.23.2-darwin-arm64.tar.gz','61130f394c1630d211dd50aecc4353d379480f36d3ac913cd85dbba1aed585c6'),
 'darwin-x64':('node-v22.23.2-darwin-x64.tar.gz','58e99022c2ff89395576cc7fd4d98cea24bb68081475d5f88b801ee8729fb026'),
 'win32-x64':('node-v22.23.2-win-x64.zip','1177b4137ba5adaa56354ae40f1080c7450e8ae09cecb47da459d1c52ac99f97')}
@@ -42,6 +42,6 @@ for platform,(name,expected) in specs.items():
    for f in sorted(stage.rglob('*')):
     if f.is_file():z.write(f,package+'/'+str(f.relative_to(stage)))
   sha=hashlib.sha256(out.read_bytes()).hexdigest();out.with_suffix('.zip.sha256').write_text(sha+'  '+out.name+'\n')
-  result['platforms'][platform]={'url':'https://github.com/contatomeensinaai-ai/me-ensina-ai-editor/releases/download/v0.2.0-pilot/'+out.name,'sha256':sha,'packageDirectory':package}
+  result['platforms'][platform]={'url':f'https://github.com/contatomeensinaai-ai/me-ensina-ai-editor/releases/download/v{version}-pilot/'+out.name,'sha256':sha,'packageDirectory':package}
   print(platform,out.stat().st_size,sha,flush=True)
 (args.output/'releases.json').write_text(json.dumps(result,indent=2)+'\n')

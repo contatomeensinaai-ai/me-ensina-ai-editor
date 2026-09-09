@@ -10,7 +10,7 @@
     {
       "name": "me-ensina-ai-video-editor",
       "source": "./plugins/me-ensina-ai-video-editor",
-      "description": "Me Ensina AI — Editor de Vídeo 2.0. Piloto para Mac Apple Silicon."
+      "description": "Me Ensina AI — Editor de Vídeo 2.0. Piloto para Mac Apple Silicon, Mac Intel e Windows x64."
     }
   ]
 }
